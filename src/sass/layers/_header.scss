@@ -1,0 +1,98 @@
+.header {
+    padding: 88px 46.15px 16px 27px;
+    height: 185px;
+    background: url(../../../public/img/header/bg.png) no-repeat center;
+    background-size: cover;
+}
+.header-row {
+    width: 1350px;
+    background: url(../../../public/img/header/bg-row.png) no-repeat center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 86px 16px 67px;
+    color: $color-white;
+    margin: 0 auto;
+}
+.header-box {
+    display: flex;
+    column-gap: 81px;
+    align-items: center;
+}
+.header-box:first-child {
+    column-gap: 18px;
+}
+.icon-tel {
+}
+.menu {
+    display: flex;
+    column-gap: 18px;
+    align-items: center;
+}
+.menu-item {
+    display: flex;
+    font-family: 'Involve', sans-serif;
+    column-gap: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.62px;
+    text-align: left;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.item-icon {
+    display: block;
+    width: 12px;
+    height: 8.92px;
+    background: url(../../../public/img/icons/arrow-down.png) no-repeat center;
+    background-size: cover;
+}
+.menu-list {
+    position: absolute;
+    display: none;
+}
+.menu-items {
+}
+.menu-pnone {
+}
+.link-phone {
+    font-family: 'Involve', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.62px;
+    text-align: left;
+    color:$color-white;
+}
+.logo-text {
+    font-family: 'NK133', sans-serif;
+    color: $color-beige;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 35px;
+}
+.header-logo {
+    position: absolute;
+    top:-62px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.header-logo img {
+    width: 206px;
+}
+.header-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 12px;
+}
+.header-text p:first-child {
+    margin-bottom: 12px;
+}
+.social {
+    display: flex;
+    column-gap: 12px;
+}
+.link-social {
+}
