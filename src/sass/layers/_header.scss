@@ -3,6 +3,8 @@
     height: 185px;
     background: url(../../../public/img/header/bg.png) no-repeat center;
     background-size: cover;
+    border-bottom-left-radius: 33px;
+    border-bottom-right-radius: 33px;
 }
 .header-row {
     width: 1350px;
@@ -24,8 +26,7 @@
 .header-box:first-child {
     column-gap: 18px;
 }
-.icon-tel {
-}
+
 .menu {
     display: flex;
     column-gap: 18px;
@@ -54,10 +55,7 @@
     position: absolute;
     display: none;
 }
-.menu-items {
-}
-.menu-pnone {
-}
+
 .link-phone {
     font-family: 'Involve', sans-serif;
     font-size: 14px;
@@ -93,6 +91,4 @@
 .social {
     display: flex;
     column-gap: 12px;
-}
-.link-social {
 }

@@ -1,43 +1,129 @@
 .section-description {
-    padding: 50px 0;
+    padding: 45px 0 101px;
+    background: yellowgreen;
 }
 .container {
 }
 .description {
+    display: flex;
+    column-gap: 65px;
 }
 .description-content {
+    width: 519px;
+    padding: 26px 0 15px;
 }
 .description-title {
 }
 .title-1 {
 }
 .subtitle {
+    font-family: 'NK133', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 35px;
+    text-align: left;
 }
+
 .description-list {
+    margin-top: 49px;
 }
 .description-item {
+    display: flex;
+    column-gap: 6px;
+    font-family: 'Involve', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.94px;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+}
+
+.arrow-right {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url(../../../public/img/icons/arrow-right.svg) no-repeat center;
+    background-size: cover;
 }
 .description-text {
+    font-family: 'Involve',sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.62px;
 }
 .description-contacts {
+    margin-top: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .contacts-map {
+    display: flex;
+    font-family: 'Involve', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color:$color-purple;
+    line-height: 18.62px;
+    text-align: left;
+    align-items: center;
 }
 .icon-contacts {
 }
-.social {
+
+.icon-element {
+    display: block;
+    width: 37px;
+    height: 37px;
+    background: url(../../../public/img/icons/icon-element.svg) no-repeat center;
+    background-size: cover;
+}
+.description-social {
+    width: 193px;
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    padding: 17.5px 23.5px;
+    background: $color-beige;
+    color:$color-dark;
+    border-radius: 90px;
+    align-items: center;
 }
 .social-text {
+    font-family: 'Involve', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.62px;
+    text-align: left;
 }
 .icon-link {
 }
 .description-form {
+    position: relative;
+    padding: 36px 74px 76px 74px;
+    border-radius: 65px;
+    background: $color-beige;
+}
+.description-image {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .form-title {
+    margin-bottom: 32px;
 }
 .form {
 }
 .input {
+    width: 100%;
+    padding: 17.5px 21px;
+    color:$color-purple;
+    background: $color-white;
+    border-radius: 90px;
+    margin-bottom: 9px;
+}
+.input:last-child {
+    margin-bottom: 0;
 }
 .btn-text {
 }

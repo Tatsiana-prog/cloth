@@ -5,7 +5,8 @@
 }
 @font-face {
   font-family: "NK133";
-  src: url("/public/fonts/NK133/nk133.otf") format("otf");
+  src: url("/public/fonts/NK133/nk133.ttf") format("ttff");
+  src: url("/public/fonts/NK133/nk133.woff") format("woff");
 }
 /* Mixins */
 html {
@@ -103,6 +104,7 @@ img {
 }
 
 .container {
+  width: 1350px;
   margin: 0 auto;
 }
 @media screen and (max-width: 1399px) {
@@ -117,32 +119,22 @@ img {
 }
 
 .title-1 {
-  font-size: 3.2rem;
-  line-height: 1.5;
-  letter-spacing: 5.76px;
-  color: #ffffff;
-  text-transform: uppercase;
+  font-family: "Involve", sans-serif;
+  font-size: 50px;
   font-weight: 600;
-  letter-spacing: 0.55rem;
-  text-align: center;
-  margin: 1.2rem 0;
+  line-height: 50px;
+  text-align: left;
+  color: #692F6C;
+  margin-bottom: 8px;
 }
 
 .title-2 {
-  font-size: 2.4rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 1.52;
-  letter-spacing: 0.35rem;
-  text-transform: uppercase;
-  color: #ffffff;
+  font-family: "NK133", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 35px;
+  text-align: center;
 }
-@media (max-width: 430px) {
-  .title-2 {
-    letter-spacing: 0.4rem;
-  }
-}
-
 .title-3 {
   font-weight: 500;
   font-size: 1.2rem;
@@ -263,181 +255,30 @@ legend {
   display: block;
 }
 
-.menu-btns {
+.form-btn {
   display: flex;
-  justify-content: space-between;
-  width: 1100px;
-  margin: 0 auto;
-  animation: textUp ease-in 0.3s;
-  height: 60px;
-  text-align: center;
-}
-
-.btn {
-  position: relative;
-  display: block;
-  padding: 10px 15px; /* Добавим фиксированный отступ  */
-  font-size: 15px;
-  cursor: pointer;
-  text-align: center;
-}
-.btn:last-child {
-  margin-right: 0;
-}
-
-.btn:hover, .btn:active, .btn.active {
-  padding: 10px 10px;
-  animation: fadeIn ease-in 0.7s;
-}
-.btn:hover .main-text, .btn:active .main-text, .btn.active .main-text {
-  color: rgb(55, 119, 157);
-  font-size: 20px; /* Увеличение шрифта при наведении */
-}
-.btn:hover .reflection, .btn:active .reflection, .btn.active .reflection {
-  top: 130%;
-  animation: fadeIn ease 0.5s;
-  opacity: 1; /* Установка прозрачности отражения */
-}
-
-.btn .main-text {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 15px;
-  position: relative;
-  font-weight: 700;
-  z-index: 2; /* Основной текст выше отраженного */
-  transition: color 0.3s ease, font-size 0.3s ease; /* Плавный переход для цвета и размера текста */
-}
-
-.btn .reflection {
-  position: absolute;
-  top: 150%; /* Размещаем отражение ниже основного текста */
-  left: 0;
-  width: 100%;
-  transform: scaleY(-1); /* Зеркалим отражённый текст по вертикали */
-  transform-origin: top;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 26px;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  background: linear-gradient(0deg, #37779D, #37779D), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 0; /* Изначально скрыто */
-  filter: blur(2px);
-  transition: all 0.3s ease; /* Плавный переход для прозрачности и размытия */
-}
-
-.description-button {
-  width: 300px;
-  height: 50px;
-  margin: 0 auto;
-}
-
-.card-wrap {
-  perspective: 250px;
-  transform-style: preserve-3d;
-  cursor: pointer;
-  z-index: 2000;
-  position: relative;
-  margin-top: 5px;
-}
-
-.card {
-  position: relative;
-  width: 300px !important;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  padding: 17px;
-  height: 51px;
-  overflow: hidden;
-  border-radius: 4px;
-  transition: transform 0.5s ease-out;
-  z-index: 1;
-  color: #fff;
-  cursor: pointer;
-  box-sizing: border-box;
-  border: 1px solid transparent;
-  background: linear-gradient(rgb(144, 15, 55), rgb(144, 15, 55)) padding-box, linear-gradient(90deg, rgb(232, 232, 232), rgb(177, 177, 177) 19%, rgb(232, 232, 232) 50%, rgb(164, 164, 164) 76%, rgb(232, 232, 232)) border-box;
-  background-clip: padding-box, border-box;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  backface-visibility: hidden;
-}
-
-.card.fast-click {
-  background: #590620;
-  box-shadow: inset -2px -2px 8px 0 rgba(0, 0, 0, 0.5), inset 2px 2px 8px 0 rgba(0, 0, 0, 0.5);
-  border: 1px solid transparent;
-  background: linear-gradient(#590620, #590620) padding-box, linear-gradient(90deg, rgb(232, 232, 232), rgb(177, 177, 177) 19%, rgb(232, 232, 232) 50%, rgb(164, 164, 164) 76%, rgb(232, 232, 232)) border-box;
-}
-
-.card-content span.fast-click {
-  transform: scale(0.97);
-  transition: all 0.2s ease;
-}
-
-.card:active span.fast-click {
-  transform: scale(0.97);
-  transition: all 0.2s ease;
-}
-
-.card:active span {
-  transform: scale(0.97);
-  transition: all 0.2s ease;
-}
-
-.card::before {
-  background: radial-gradient(250px circle at var(--mouse-x) var(--mouse-y), rgba(199, 199, 199, 0.2196078431), transparent 30%);
-  border-radius: inherit;
-  content: "";
-  height: 100%;
-  left: 0px;
-  position: absolute;
-  top: 0px;
   width: 100%;
-  opacity: 0;
-  transition: opacity 300ms ease;
-  z-index: 20;
+  padding: 17.5px 0;
+  margin-top: 10px;
+  background: #692F6C;
+  border-radius: 90px;
+  background: linear-gradient(270deg, #C568CA 15.8%, #A941AE 50%);
 }
 
-.card:hover::before {
-  opacity: 1;
-}
-
-.card:active {
-  background: #590620;
-  box-shadow: inset -2px -2px 8px 0 rgba(0, 0, 0, 0.5), inset 2px 2px 8px 0 rgba(0, 0, 0, 0.5);
-  border: 1px solid transparent;
-  background: linear-gradient(#590620, #590620) padding-box, linear-gradient(90deg, rgb(232, 232, 232), rgb(177, 177, 177) 19%, rgb(232, 232, 232) 50%, rgb(164, 164, 164) 76%, rgb(232, 232, 232)) border-box;
-}
-
-.card-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-.card-content span {
-  font-family: "ST-SimpleSquare";
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 110%;
-  letter-spacing: 0.06em;
+.btn-submit {
+  background: transparent;
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.62px;
   text-align: center;
-  background: linear-gradient(140deg, #727272 0%, #b1b1b1 19%, #e8e8e8 50%, #a4a4a4 76%, #424242 100%);
-  background-clip: text;
-  will-change: transform;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  backface-visibility: hidden;
-  transition: none;
-  transform: translateZ(0);
-  will-change: transform;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.btn-arrow {
+  display: inline-flex;
 }
 
 .header {
@@ -445,6 +286,8 @@ legend {
   height: 185px;
   background: url(../../../public/img/header/bg.png) no-repeat center;
   background-size: cover;
+  border-bottom-left-radius: 33px;
+  border-bottom-right-radius: 33px;
 }
 
 .header-row {
@@ -545,7 +388,133 @@ legend {
 }
 
 .section-description {
-  padding: 50px 0;
+  padding: 45px 0 101px;
+  background: yellowgreen;
+}
+
+.description {
+  display: flex;
+  column-gap: 65px;
+}
+
+.description-content {
+  width: 519px;
+  padding: 26px 0 15px;
+}
+
+.subtitle {
+  font-family: "NK133", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 35px;
+  text-align: left;
+}
+
+.description-list {
+  margin-top: 49px;
+}
+
+.description-item {
+  display: flex;
+  column-gap: 6px;
+  font-family: "Involve", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23.94px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+
+.arrow-right {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: url(../../../public/img/icons/arrow-right.svg) no-repeat center;
+  background-size: cover;
+}
+
+.description-text {
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.62px;
+}
+
+.description-contacts {
+  margin-top: 47px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contacts-map {
+  display: flex;
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #692F6C;
+  line-height: 18.62px;
+  text-align: left;
+  align-items: center;
+}
+
+.icon-element {
+  display: block;
+  width: 37px;
+  height: 37px;
+  background: url(../../../public/img/icons/icon-element.svg) no-repeat center;
+  background-size: cover;
+}
+
+.description-social {
+  width: 193px;
+  height: 54px;
+  display: flex;
+  justify-content: space-between;
+  padding: 17.5px 23.5px;
+  background: #F5E0C7;
+  color: #423A2F;
+  border-radius: 90px;
+  align-items: center;
+}
+
+.social-text {
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.62px;
+  text-align: left;
+}
+
+.description-form {
+  position: relative;
+  padding: 36px 74px 76px 74px;
+  border-radius: 65px;
+  background: #F5E0C7;
+}
+
+.description-image {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.form-title {
+  margin-bottom: 32px;
+}
+
+.input {
+  width: 100%;
+  padding: 17.5px 21px;
+  color: #692F6C;
+  background: #ffffff;
+  border-radius: 90px;
+  margin-bottom: 9px;
+}
+
+.input:last-child {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

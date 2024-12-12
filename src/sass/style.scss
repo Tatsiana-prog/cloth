@@ -6,7 +6,8 @@
 
 @font-face {
      font-family: 'NK133';
-     src: url('/public/fonts/NK133/nk133.otf') format('otf');
+     src: url('/public/fonts/NK133/nk133.ttf') format('ttff');
+     src: url('/public/fonts/NK133/nk133.woff') format('woff');
 }
 
 @import 'abstracts/variables';
