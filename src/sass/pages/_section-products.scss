@@ -1,0 +1,198 @@
+.section-products {
+    padding: 66px 0 44px;
+    background: $color-white;
+   
+}
+.container {
+}
+.products {
+}
+.products-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 26px;
+    border-radius: 31px;
+    background: $color-purple;
+}
+
+.products-title {
+    color:$color-beige;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.62px;
+    text-transform: uppercase;
+}
+
+.products-btns {
+    display: flex;
+    column-gap: 31px;
+    color:$color-white;
+}
+.product-btn {
+    display: flex;
+    column-gap: 6px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.62px;
+    cursor: pointer;
+}
+
+.icon-check {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $color-white;
+}
+.products-contact {
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+}
+.link-phone {
+}
+.social {
+}
+.link-social {
+}
+.products-cards {
+    margin-top:  50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:18px;
+}
+
+.product-card {
+    position: relative;
+    background: #FCF7F7;
+    width: 256px;
+    height: 398px;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    text-align: center;
+}
+.product-image {
+    width: 256px;
+    height: 138px;
+    margin-bottom: 16px;
+    & img {
+        width: 256px;
+        height: 138px;
+        object-fit: cover;
+        border-radius: 24px;
+    }
+}
+.product-content {
+    padding: 16px 17px 35px 16px;
+}
+.product-name {
+    font-family: 'Involve', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.94px;
+    color:$color-purple;
+}
+.product-list {
+}
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+.species {
+    font-family: 'Involve', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.62px;
+    color:rgba(82, 68, 49, 0.56);
+}
+.look {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.62px;
+    font-family: 'Involve', sans-serif;
+    color:$color-purple;
+}
+.product-size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 6px;
+    font-family: 'Involve', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.94px;
+    color:rgba(82, 68, 49, 0.56);
+}
+.icon-info {
+}
+
+.product-card__button-wrapper {
+    text-align: center;
+}
+.product-card__btn {
+    margin-top: 6px;
+    color:rgba(42, 171, 238, 1);
+    font-family: 'Involve', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 18.62px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-stock {
+    position: absolute;
+    width: 101px;
+    height: 29px;
+    top: 24.29px;
+    left: 14px;
+    padding: 5px 14.5px;
+    border-radius: 38px;
+    background: $color-purple;
+
+    font-family: 'Involve', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+    color:$color-beige;
+    opacity: 0;
+}
+.product-order {
+    position: absolute;
+    width: 101px;
+    height: 29px;
+    top: 24.29px;
+    left: 14px;
+    padding: 5px 14.5px;
+    border-radius: 38px;
+    background: rgba(255, 255, 255, 1);
+
+
+    font-family: 'Involve', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+    color:$color-purple;
+    opacity: 0;
+}
+.product-review {
+    position: absolute;
+    top:16px;
+    right: 11.89px;
+    cursor: pointer;
+}
+.products .form {
+    display: flex;
+    & .form-desc {
+        width: 504px;
+
+    }
+& .form-content {
+
+}}

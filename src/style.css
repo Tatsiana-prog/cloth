@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Involve";
+  font-family: "Involve", sans-serif;
   src: url("/public/fonts/Involve/Involve-Regular.ttf") format("ttf");
 }
 @font-face {
@@ -129,17 +129,30 @@ img {
 }
 
 .title-2 {
-  font-family: "NK133", sans-serif;
+  font-family: "Involve", sans-serif;
+  color: #692F6C;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 50px;
+  text-transform: uppercase;
+}
+
+.title-3 {
+  font-family: "NK133";
   font-size: 28px;
   font-weight: 400;
   line-height: 35px;
   text-align: center;
+  color: #423A2F;
 }
-.title-3 {
-  font-weight: 500;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+
+.title-4 {
+  font-family: "Involve", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23.94px;
+  text-align: left;
+  color: #692F6C;
 }
 
 @keyframes fadeIn {
@@ -172,6 +185,10 @@ img {
     opacity: 0; /* Уменьшаем прозрачность при сдвиге */
   }
 }
+.color-purple {
+  color: #692F6C;
+}
+
 /* Reset and base styles  */
 * {
   padding: 0px;
@@ -255,12 +272,12 @@ legend {
   display: block;
 }
 
-.form-btn {
+.btn-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 54px;
   padding: 17.5px 0;
-  margin-top: 10px;
   background: #692F6C;
   border-radius: 90px;
   background: linear-gradient(270deg, #C568CA 15.8%, #A941AE 50%);
@@ -486,7 +503,7 @@ legend {
   text-align: left;
 }
 
-.description-form {
+.form {
   position: relative;
   padding: 36px 74px 76px 74px;
   border-radius: 65px;
@@ -504,17 +521,330 @@ legend {
   margin-bottom: 32px;
 }
 
+.form-desc .input {
+  margin-bottom: 8px;
+}
+
 .input {
   width: 100%;
   padding: 17.5px 21px;
   color: #692F6C;
   background: #ffffff;
   border-radius: 90px;
-  margin-bottom: 9px;
 }
 
 .input:last-child {
   margin-bottom: 0;
+}
+
+.section-custom {
+  position: relative;
+  padding: 100px 0;
+}
+
+.custom-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -5;
+  width: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.custom-image img {
+  width: 100%;
+  height: 618px;
+  border-radius: 24px;
+}
+
+.custom {
+  padding: 52px 62px 65px 95px;
+  border-radius: 65px;
+  background: #ffffff;
+}
+
+.custom-row {
+  display: flex;
+  column-gap: 41px;
+}
+
+.custom-content {
+  width: 50%;
+}
+
+.custom-content .subtitle {
+  margin-bottom: 22px;
+}
+
+.custom-boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.custom-box {
+  margin-bottom: 20px;
+}
+
+.box-link {
+  display: block;
+  padding: 7px 29px;
+  width: 520px;
+  height: 34px;
+  background: url(../../../public/img/header/bg-row.png) no-repeat center;
+  background-size: contain;
+  color: #ffffff;
+  font-family: "Involve", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 23.94px;
+  margin-bottom: 12px;
+}
+
+.box-item {
+  display: flex;
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.box-item .arrow-right {
+  margin-right: 6px;
+}
+
+.custom-desc {
+  width: 50%;
+}
+.custom-desc .title-3 {
+  text-align: left;
+}
+
+.custom-text {
+  margin-top: 32px;
+}
+
+.custom-text:nth-of-type(2) {
+  margin-bottom: 32px;
+}
+
+.custom-form {
+  margin-top: 8px;
+}
+.custom-form .input {
+  width: 288px;
+  height: 54px;
+  padding: 8px 21px 8px 21px;
+  border-radius: 90px;
+  border: 1px solid #692F6C;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  column-gap: 13px;
+}
+
+.custom-text {
+  font-family: "Involve", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23.94px;
+}
+
+.custom-text:nth-of-type(2) {
+  font-weight: 400;
+}
+
+.section-products {
+  padding: 66px 0 44px;
+  background: #ffffff;
+}
+
+.products-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 26px;
+  border-radius: 31px;
+  background: #692F6C;
+}
+
+.products-title {
+  color: #F5E0C7;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.62px;
+  text-transform: uppercase;
+}
+
+.products-btns {
+  display: flex;
+  column-gap: 31px;
+  color: #ffffff;
+}
+
+.product-btn {
+  display: flex;
+  column-gap: 6px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.62px;
+  cursor: pointer;
+}
+
+.icon-check {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.products-contact {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+}
+
+.products-cards {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.product-card {
+  position: relative;
+  background: #FCF7F7;
+  width: 256px;
+  height: 398px;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  text-align: center;
+}
+
+.product-image {
+  width: 256px;
+  height: 138px;
+  margin-bottom: 16px;
+}
+.product-image img {
+  width: 256px;
+  height: 138px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.product-content {
+  padding: 16px 17px 35px 16px;
+}
+
+.product-name {
+  font-family: "Involve", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23.94px;
+  color: #692F6C;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.species {
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.62px;
+  color: rgba(82, 68, 49, 0.56);
+}
+
+.look {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.62px;
+  font-family: "Involve", sans-serif;
+  color: #692F6C;
+}
+
+.product-size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 6px;
+  font-family: "Involve", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23.94px;
+  color: rgba(82, 68, 49, 0.56);
+}
+
+.product-card__button-wrapper {
+  text-align: center;
+}
+
+.product-card__btn {
+  margin-top: 6px;
+  color: rgb(42, 171, 238);
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 18.62px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-stock {
+  position: absolute;
+  width: 101px;
+  height: 29px;
+  top: 24.29px;
+  left: 14px;
+  padding: 5px 14.5px;
+  border-radius: 38px;
+  background: #692F6C;
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  color: #F5E0C7;
+  opacity: 0;
+}
+
+.product-order {
+  position: absolute;
+  width: 101px;
+  height: 29px;
+  top: 24.29px;
+  left: 14px;
+  padding: 5px 14.5px;
+  border-radius: 38px;
+  background: rgb(255, 255, 255);
+  font-family: "Involve", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  color: #692F6C;
+  opacity: 0;
+}
+
+.product-review {
+  position: absolute;
+  top: 16px;
+  right: 11.89px;
+  cursor: pointer;
+}
+
+.products .form {
+  display: flex;
+}
+.products .form .form-desc {
+  width: 504px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @font-face {
-     font-family: 'Involve';
+     font-family: 'Involve', sans-serif;
      src: url('/public/fonts/Involve/Involve-Regular.ttf') format('ttf');
 }
 
@@ -23,6 +23,8 @@
 @import 'layers/header';
 
 @import 'pages/section-description';
+@import 'pages/section-custom';
+@import 'pages/section-products';
 
 
 

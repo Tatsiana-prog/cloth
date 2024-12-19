@@ -97,7 +97,7 @@
 }
 .icon-link {
 }
-.description-form {
+.form {
     position: relative;
     padding: 36px 74px 76px 74px;
     border-radius: 65px;
@@ -112,7 +112,10 @@
 .form-title {
     margin-bottom: 32px;
 }
-.form {
+.form-desc {
+   & .input {
+    margin-bottom: 8px;
+   }
 }
 .input {
     width: 100%;
@@ -120,7 +123,6 @@
     color:$color-purple;
     background: $color-white;
     border-radius: 90px;
-    margin-bottom: 9px;
 }
 .input:last-child {
     margin-bottom: 0;

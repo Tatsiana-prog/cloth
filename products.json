@@ -1,0 +1,406 @@
+ [
+  {
+    "name": "Флис",
+    "description": "Флис односторонний",
+    "category": "ткань Флис",
+    "sale":"В наличии",
+    "image1": "./public/img/products/flis/onesided/product1/img1.jpg",
+    "image2": "./public/img/products/flis/onesided/product1/img2.png",
+    "image3": "./public/img/products/flis/onesided/product1/img3.png",
+    "image4": "./public/img/products/flis/onesided/product1/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+
+  {
+    "name": "Флис",
+    "description": "Флис односторонний",
+    "category": "ткань Флис",
+    "sale":"Под заказ",
+    "image1": "./public/img/products/flis/onesided/product2/img1.jpg",
+    "image2": "./public/img/products/flis/onesided/product2/img2.png",
+    "image3": "./public/img/products/flis/onesided/product2/img3.png",
+    "image4": "./public/img/products/flis/onesided/product2/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+  {
+    "name": "Флис",
+    "description": "Флис односторонний",
+    "category": "ткань Флис",
+    "sale":"В наличии",
+    "image1": "./public/img/products/flis/onesided/product3/img1.jpg",
+    "image2": "./public/img/products/flis/onesided/product3/img2.png",
+    "image3": "./public/img/products/flis/onesided/product3/img3.png",
+    "image4": "./public/img/products/flis/onesided/product3/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+  {
+    "name": "Флис",
+    "description": "Флис односторонний",
+    "category": "ткань Флис",
+    "sale":"В наличии",
+    "image1": "./public/img/products/flis/onesided/product4/img1.jpg",
+    "image2": "./public/img/products/flis/onesided/product4/img2.png",
+    "image3": "./public/img/products/flis/onesided/product4/img3.png",
+    "image4": "./public/img/products/flis/onesided/product4/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+  {
+    "name": "Флис",
+    "description": "Флис односторонний",
+    "category": "ткань Флис",
+    "sale":"Под заказ",
+    "image1": "./public/img/products/flis/onesided/product5/img1.jpg",
+    "image2": "./public/img/products/flis/onesided/product5/img2.png",
+    "image3": "./public/img/products/flis/onesided/product5/img3.png",
+    "image4": "./public/img/products/flis/onesided/product5/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+
+  
+    {
+    "name": "Флис",
+    "description": "Флис двуxcторонний",
+    "category": "ткань Флис",
+    "image1": "./public/img/products/flis/twosided/product1/img1.jpg",
+    "image2": "./public/img/products/flis/twosided/product1/img2.png",
+    "image3": "./public/img/products/flis/twosided/product1/img3.png",
+    "image4": "./public/img/products/flis/twosided/product1/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "+200",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+  {
+  "name": "Флис",
+    "description": "Флис двуxcторонний",
+    "category": "ткань Флис",
+    "sale":"В наличии",
+    "image1": "./public/img/products/flis/twosided/product2/img1.jpg",
+    "image2": "./public/img/products/flis/twosided/product2/img2.png",
+    "image3": "./public/img/products/flis/twosided/product2/img3.png",
+    "image4": "./public/img/products/flis/twosided/product2/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+  {
+    "name": "Флис",
+    "description": "Флис двуxcторонний",
+    "category": "ткань Флис",
+    "sale":"В наличии",
+    "image1": "./public/img/products/flis/twosided/product3/img1.jpg",
+    "image2": "./public/img/products/flis/twosided/product3/img2.png",
+    "image3": "./public/img/products/flis/twosided/product3/img3.png",
+    "image4": "./public/img/products/flis/twosided/product3/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+  {
+    "name": "Флис",
+    "description": "Флис двуxcторонний",
+    "category": "ткань Флис",
+    "image1": "./public/img/products/flis/twosided/product4/img1.jpg",
+    "image2": "./public/img/products/flis/twosided/product4/img2.png",
+    "image3": "./public/img/products/flis/twosided/product4/img3.png",
+    "image4": "./public/img/products/flis/twosided/product4/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+  {
+  "name": "Флис",
+    "description": "Флис двуxcторонний",
+    "category": "ткань Флис",
+    "sale":"В наличии",
+    "image1": "./public/img/products/flis/twosided/product5/img1.jpg",
+    "image2": "./public/img/products/flis/twosided/product5/img2.png",
+    "image3": "./public/img/products/flis/twosided/product5/img3.png",
+    "image4": "./public/img/products/flis/twosided/product5/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  }, 
+
+
+
+
+
+  {"name": "Футер",
+    "description": "Футер 2-х нитка",
+    "category": "ткань Футер",
+    "sale":"В наличии",
+    "image1": "./public/img/products/footer/twostring/product1/img1.png",
+    "image2": "./public/img/products/footer/twostring/product1/img2.png",
+    "image3": "./public/img/products/footer/twostring/product1/img3.png",
+    "image4": "./public/img/products/footer/twostring/product1/img4.png",
+    "content": {
+      "Плотность": "140г/м2",
+      "Цвет": {
+        "белый": "белый",
+        "корричневый": "корричневый",
+        "фиалковый": "фиалковый"
+      },
+      "Состав": "100% полиэстер",
+     "ширина": "150-220",
+      "Страна производитель": "Китай",
+      "Цена": "от 500р /кг (5 п / м)"
+    }
+  },
+  {"name": "Футер",
+  "description": "Футер 2-х нитка",
+  "category": "ткань Футер",
+  "sale":"В наличии",
+  "image1": "./public/img/products/footer/twostring/product2/img1.png",
+  "image2": "./public/img/products/footer/twostring/product2/img2.png",
+  "image3": "./public/img/products/footer/twostring/product2/img3.png",
+  "image4": "./public/img/products/footer/twostring/product2/img4.png",
+  "content": {
+    "Плотность": "140г/м2",
+    "Цвет": {
+      "белый": "белый",
+      "корричневый": "корричневый",
+      "фиалковый": "фиалковый"
+    },
+    "Состав": "100% полиэстер",
+   "ширина": "150-220",
+    "Страна производитель": "Китай",
+    "Цена": "от 500р /кг (5 п / м)"
+  }
+} ,
+{"name": "Футер",
+"description": "Футер 2-х нитка",
+"category": "ткань Футер",
+"sale":"Под заказ",
+"image1": "./public/img/products/footer/twostring/product3/img1.png",
+"image2": "./public/img/products/footer/twostring/product3/img2.png",
+"image3": "./public/img/products/footer/twostring/product3/img3.png",
+"image4": "./public/img/products/footer/twostring/product3/img4.png",
+"content": {
+  "Плотность": "140г/м2",
+  "Цвет": {
+    "белый": "белый",
+    "корричневый": "корричневый",
+    "фиалковый": "фиалковый"
+  },
+  "Состав":"100% полиэстер",
+ "ширина": "150-220",
+  "Страна производитель": "Китай",
+  "Цена": "от 500р /кг (5 п / м)"
+  }
+},
+
+
+
+{"name": "Футер",
+"description": "Футер 3-х нитка",
+"category": "ткань Футер",
+"sale":"Под заказ",
+"image1": "./public/img/products/footer/thirdsring/product1/img1.png",
+"image2": "./public/img/products/footer/thirdsring/product1/img2.png",
+"image3": "./public/img/products/footer/thirdsring/product1/img3.png",
+"image4": "./public/img/products/footer/thirdsring/product1/img4.png",
+"content": {
+  "Плотность": "140г/м2",
+  "Цвет": {
+    "белый": "белый",
+    "корричневый": "корричневый",
+    "фиалковый": "фиалковый"
+  },
+  "Состав": "100% полиэстер",
+ "ширина": "150-220",
+  "Страна производитель": "Китай",
+  "Цена": "от 500р /кг (5 п / м)"
+  }
+} ,
+{"name": "Футер",
+"description": "Футер 3-х нитка",
+"category": "ткань Футер",
+"sale":"В наличии",
+"image1": "./public/img/products/footer/thirdsring/product2/img1.png",
+"image2": "./public/img/products/footer/thirdsring/product2/img2.png",
+"image3": "./public/img/products/footer/thirdsring/product2/img3.png",
+"image4": "./public/img/products/footer/thirdsring/product2/img4.png",
+"content": {
+  "Плотность": "140г/м2",
+  "Цвет": {
+    "белый": "белый",
+    "корричневый": "корричневый",
+    "фиалковый": "фиалковый"
+  },
+  "Состав": "100% полиэстер",
+ "ширина": "150-220",
+  "Страна производитель": "Китай",
+  "Цена": "от 500р /кг (5 п / м)"
+  }
+} ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{"name": "Другие",
+"description": "шелк",
+"category": "другие",
+"sale":"В наличии",
+"image1": "./public/img/products/other/product1/img1.jpg",
+"image2": "./public/img/products/other/product1/img2.jpg",
+"image3": "./public/img/products/other/product1/img3.jpg",
+"image4": "./public/img/products/other/product1/img4.jpg",
+"content": {
+  "Плотность": "140г/м2",
+  "Цвет": {
+    "белый": "белый",
+    "корричневый": "корричневый",
+    "фиалковый": "фиалковый"
+  },
+  "Состав": "100% полиэстер",
+ "ширина": "150-220",
+  "Страна производитель": "Китай",
+  "Цена": "от 500р /кг (5 п / м)"
+  }
+},
+
+{"name": "Другие",
+"description": "шерсть",
+"category": "другие",
+"sale":"В наличии",
+"image1": "./public/img/products/other/product2/img1.jpg",
+"image2": "./public/img/products/other/product2/img2.jpg",
+"image3": "./public/img/products/other/product2/img3.jpg",
+"image4": "./public/img/products/other/product2/img4.jpg",
+"content": {
+  "Плотность": "140г/м2",
+  "Цвет": {
+    "белый": "белый",
+    "корричневый": "корричневый",
+    "фиалковый": "фиалковый"
+  },
+  "Состав": "100% полиэстер",
+  "ширина": "150-220",
+  "Страна производитель": "Китай",
+  "Цена": "от 500р /кг (5 п / м)"
+  }
+}
+
+
+
+
+
+]

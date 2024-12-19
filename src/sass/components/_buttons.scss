@@ -1,15 +1,13 @@
-.form-btn {
+.btn-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
-   padding: 17.5px 0;
-   margin-top: 10px;
-   background: $color-purple;
-   border-radius: 90px;
-   background: linear-gradient(270deg, #C568CA 15.8%, #A941AE 50%);
+  height: 54px;
+  padding: 17.5px 0;
+  background: $color-purple;
+  border-radius: 90px;
+  background: linear-gradient(270deg, #C568CA 15.8%, #A941AE 50%);
 }
-
-
 .btn-submit {
   background: transparent;
   font-family: 'Involve', sans-serif;
