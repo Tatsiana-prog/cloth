@@ -1,5 +1,8 @@
+
+
 // Функция для создания карточки товара
 function createProductCard(productsData, container) {
+ 
   const productCard = document.createElement('div');
   productCard.classList.add('product-card');
 
@@ -125,82 +128,130 @@ function createProductCard(productsData, container) {
   container.appendChild(productCard);
 }
 
-// Загрузка данных и создание карточек
+
 let allProducts = [];
 fetch('products.json')
-.then(response => response.json())
-.then(data => {
-  allProducts = data; // Сохраняем все продукты для последующей фильтрации
-  const productContainer = document.getElementById('products-cards');
-  data.forEach(productsData => createProductCard(productsData, productContainer));
-  // Устанавливаем "All" кнопкой по умолчанию
-  const btnAll = document.getElementById('all');
-  btnAll.click(); // Эмулируем клик на кнопку "All"
-})
-.catch(error => {
-  console.error('Произошла ошибка при загрузке данных:', error);
-});
-// Обработка кнопок для фильтрации
-const btnCustom1 = document.getElementById('custom1');
-btnCustom1.addEventListener('click', function() {
-    const filteredCards = allProducts.filter(card => card.name === "Футер");
+  .then(response => response.json())
+  .then(data => {
+    allProducts = data; // Сохраняем все продукты для последующей фильтрации
     const productContainer = document.getElementById('products-cards');
-    productContainer.innerHTML = ''; // Очистите контейнер перед добавлением
-    filteredCards.forEach(productsData => createProductCard(productsData, productContainer));
-});
+    
+    // Создаем блоки для карточек и ряды для карточек
 
-const btnCustom2 = document.getElementById('custom2');
-btnCustom2.addEventListener('click', function() {
-    const filteredCards = allProducts.filter(card => card.name === "Флис");
-    const productContainer = document.getElementById('products-cards');
-    productContainer.innerHTML = ''; // Очистите контейнер перед добавлением
-    filteredCards.forEach(productsData => createProductCard(productsData, productContainer));
-});
+  //блоки
+    const product1 = document.createElement('div');
+    const product2 = document.createElement('div');
+    const product3 = document.createElement('div');
 
-const btnCustom3 = document.getElementById('custom3');
-btnCustom3.addEventListener('click', function() {
-    const filteredCards = allProducts.filter(card => card.sale === "В наличии");
-    const productContainer = document.getElementById('products-cards');
-    productContainer.innerHTML = ''; // Очистите контейнер перед добавлением
-    filteredCards.forEach(productsData => createProductCard(productsData, productContainer));
-});
+    product1.classList.add('product-1');
+    product2.classList.add('product-2');
+    product3.classList.add('product-3');
 
-const btnCustom4 = document.getElementById('custom4');
-btnCustom4.addEventListener('click', function() {
-    const filteredCards = allProducts.filter(card => card.sale === "Под заказ");
-    const productContainer = document.getElementById('products-cards');
-    productContainer.innerHTML = ''; // Очистите контейнер перед добавлением
-    filteredCards.forEach(productsData => createProductCard(productsData, productContainer));
-});
+    //ряды
+    
 
-// Обработка кнопки "All" для показа всех карточек
-const btnAll = document.getElementById('all');
-btnAll.addEventListener('click', function() {
-    const productContainer = document.getElementById('products-cards');
-    productContainer.innerHTML = ''; // Очистите контейнер перед добавлением
-    allProducts.forEach(productsData => createProductCard(productsData, productContainer));
-});
+    const product1Row1 = document.createElement('div');
+    product1Row1.classList.add('row-1');
 
-// Получаем все кнопки и иконки
-const buttons = document.querySelectorAll('.product-btn');
-const iconImgs = document.querySelectorAll('.icon-img');
+    const product1Row2 = document.createElement('div');
+    product1Row2.classList.add('row-2');
 
-// Функция, которая скрывает все иконки
-function hideAllIcons() {
-    iconImgs.forEach(icon => {
-        icon.style.opacity = 0; // Скрыть иконку
+    const product1Row3 = document.createElement('div');
+
+
+
+    const product2Row1 = document.createElement('div');
+    product2Row1.classList.add('row-1');
+
+    const product2Row2 = document.createElement('div');
+    product2Row2.classList.add('row-2');
+
+
+    const product3Row1 = document.createElement('div');
+    product3Row1.classList.add('row-1');
+
+    // Create the product title block
+    const productTitle = document.createElement('div');
+    productTitle.classList.add('product-title');
+    
+    // Create the title box
+    const titleBox = document.createElement('div');
+    titleBox.classList.add('title-box');
+    titleBox.innerHTML = '<a href="#" class="product-link">Cмотреть все ткани:</a><span class="product-header">Флис односторонний</span>';
+    productTitle.appendChild(titleBox);
+
+    // Create the title icon
+    const titleIcon = document.createElement('div');
+    titleIcon.classList.add('title-icon');
+    titleIcon.innerHTML = `
+        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.449219" width="24" height="24" rx="12" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6921 6.103C17.8475 6.00705 18.0331 5.97662 18.2099 6.0181C18.3867 6.05957 18.541 6.16972 18.6404 6.32543L19.3348 7.41239C19.4253 7.55438 19.464 7.72463 19.4441 7.89309C19.4242 8.06154 19.347 8.21736 19.2261 8.33306L19.2239 8.33594L19.1741 8.38345L19.0163 8.53821C18.1432 9.40753 17.2964 10.3044 16.4773 11.2275C14.9364 12.9667 13.1065 15.2428 11.8748 17.4512C11.5312 18.0674 10.6916 18.1999 10.1936 17.6679L5.64516 12.8176C5.57998 12.7481 5.52908 12.6658 5.4955 12.5757C5.46191 12.4856 5.44632 12.3895 5.44966 12.293C5.453 12.1966 5.47519 12.1018 5.51492 12.0144C5.55465 11.9269 5.6111 11.8486 5.68093 11.784L7.05564 10.5113C7.17645 10.3995 7.33136 10.3343 7.49385 10.3268C7.65634 10.3193 7.81632 10.37 7.9464 10.4703L10.2673 12.2562C13.8927 8.58716 15.9485 7.17916 17.6921 6.103Z" fill="#692F6C"/>
+        </svg>`;
+
+    productTitle.appendChild(titleIcon);
+
+    const rowWrapper = document.createElement('div');
+    rowWrapper.appendChild(product1Row1);
+
+
+// Append title box and title icon to product title
+
+
+    
+    // Разделяем карточки по условию
+    data.forEach(productsData => {
+      if (productsData.description === "Флис односторонний") {
+        createProductCard(productsData, product1Row1);
+      } else 
+      if (productsData.description === "Флис двуxcторонний") {
+        createProductCard(productsData, product1Row2);
+      } else
+      if (productsData.description === "Трикотаж на флисе") {
+        createProductCard(productsData, product1Row3);
+      }
+
+      if (productsData.description === "Футер 2-х нитка") {
+        createProductCard(productsData, product2Row1);
+      } else 
+      if (productsData.description === "Футер 3-х нитка") {
+        createProductCard(productsData, product2Row2);
+      } else 
+      if (productsData.description === "Ткань для термобелья") {
+        createProductCard(productsData, product3Row1);
+      }
+
     });
-}
+    // Добавляем блоки в контейнер
+    productContainer.appendChild(product1);
+    product1.appendChild(rowWrapper);
+    rowWrapper.appendChild(product1Row1);
+    rowWrapper.appendChild(productTitle);
 
-// Устанавливаем обработчики событий для всех кнопок
-buttons.forEach(button => {
-    button.addEventListener('click', function() {
-        hideAllIcons(); // Сначала скрываем все иконки
-        // Показываем иконку у текущей кнопки
-        const iconImg = button.querySelector('.icon-img');
-        if (iconImg) {
-            iconImg.classList.add("fade-in");
-            iconImg.style.opacity = 1; // Показываем иконку
-        }
-    });
-});
+   
+
+
+    productContainer.appendChild(product2);
+    product2.appendChild(product2Row1);
+    product2.appendChild(product2Row2);
+
+    productContainer.appendChild(product3);
+    product3.appendChild(product3Row1);
+
+  })
+
+
+
+
+
+
+
+
+  .catch(error => {
+    console.error('Произошла ошибка при загрузке данных:', error);
+  });
+
+  
+
+
+
