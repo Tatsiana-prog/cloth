@@ -147,6 +147,37 @@ fetch('products.json')
     product2.classList.add('product-2');
     product3.classList.add('product-3');
 
+
+    // Клики по кнопкам
+const allButton = document.getElementById('all');
+const custom1Button = document.getElementById('custom1');
+const custom2Button = document.getElementById('custom2');
+
+// Функция для скрытия всех блоков продуктов
+function hideAllProducts() {
+    product1.style.display = 'none';
+    product2.style.display = 'none';
+    product3.style.display = 'none';
+}
+
+// Добавление обработчиков событий
+allButton.addEventListener('click', () => {
+    hideAllProducts();
+    product1.style.display = 'block';
+    product2.style.display = 'block';
+    product3.style.display = 'block';
+});
+
+custom1Button.addEventListener('click', () => {
+    hideAllProducts();
+    product2.style.display = 'block';
+});
+
+custom2Button.addEventListener('click', () => {
+    hideAllProducts();
+    product1.style.display = 'block';
+});
+
     //ряды
     
 
@@ -240,18 +271,11 @@ fetch('products.json')
 
   })
 
-
-
-
-
-
-
-
+//клики по кнопкам
   .catch(error => {
     console.error('Произошла ошибка при загрузке данных:', error);
   });
 
   
-
 
 
