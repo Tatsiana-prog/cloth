@@ -40,11 +40,29 @@
 }
 
 .icon-check {
-    display: block;
+    display: flex;
+    justify-content: center;
     width: 24px;
     height: 24px;
     border-radius: 50%;
     background: $color-white;
+    align-items: center;
+}
+.icon-img {
+        display: block;
+        width: 14px;
+        height: 14px;
+        opacity: 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.icon-img {
+    display: block;
+    width: 14px;
+    height: 14px;
 }
 .products-contact {
     display: flex;
@@ -61,7 +79,7 @@
     margin-top:  50px;
     display: flex;
     flex-wrap: wrap;
-    gap:18px;
+    gap:16px;
 }
 
 .product-card {
@@ -78,7 +96,6 @@
 .product-image {
     width: 256px;
     height: 138px;
-    margin-bottom: 16px;
     & img {
         width: 256px;
         height: 138px;
@@ -97,6 +114,7 @@
     color:$color-purple;
 }
 .product-list {
+    margin-top: 11px;
 }
 .product-item {
     display: flex;
@@ -132,10 +150,10 @@
 }
 
 .product-card__button-wrapper {
-    text-align: center;
+   margin-top: 6px;
+   text-align: center;
 }
 .product-card__btn {
-    margin-top: 6px;
     color:rgba(42, 171, 238, 1);
     font-family: 'Involve', sans-serif;
     font-size: 14px;
@@ -144,6 +162,8 @@
     line-height: 18.62px;
     margin-left: auto;
     margin-right: auto;
+    background: transparent;
+    cursor: pointer;
 }
 
 .product-stock {
@@ -161,7 +181,7 @@
     font-weight: 600;
     font-style: italic;
     color:$color-beige;
-    opacity: 0;
+    display: none;
 }
 .product-order {
     position: absolute;
@@ -173,14 +193,14 @@
     border-radius: 38px;
     background: rgba(255, 255, 255, 1);
 
-
     font-family: 'Involve', sans-serif;
     font-size: 14px;
     font-weight: 600;
     font-style: italic;
     color:$color-purple;
-    opacity: 0;
+    display: none;
 }
+
 .product-review {
     position: absolute;
     top:16px;
@@ -196,3 +216,15 @@
 & .form-content {
 
 }}
+.product-density {
+    font-family: 'Involve', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.94px;
+    color:$color-purple;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+

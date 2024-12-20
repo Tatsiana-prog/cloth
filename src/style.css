@@ -693,11 +693,30 @@ legend {
 }
 
 .icon-check {
-  display: block;
+  display: flex;
+  justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background: #ffffff;
+  align-items: center;
+}
+
+.icon-img {
+  display: block;
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.icon-img {
+  display: block;
+  width: 14px;
+  height: 14px;
 }
 
 .products-contact {
@@ -710,7 +729,7 @@ legend {
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 16px;
 }
 
 .product-card {
@@ -728,7 +747,6 @@ legend {
 .product-image {
   width: 256px;
   height: 138px;
-  margin-bottom: 16px;
 }
 .product-image img {
   width: 256px;
@@ -747,6 +765,10 @@ legend {
   font-weight: 600;
   line-height: 23.94px;
   color: #692F6C;
+}
+
+.product-list {
+  margin-top: 11px;
 }
 
 .product-item {
@@ -784,11 +806,11 @@ legend {
 }
 
 .product-card__button-wrapper {
+  margin-top: 6px;
   text-align: center;
 }
 
 .product-card__btn {
-  margin-top: 6px;
   color: rgb(42, 171, 238);
   font-family: "Involve", sans-serif;
   font-size: 14px;
@@ -797,6 +819,8 @@ legend {
   line-height: 18.62px;
   margin-left: auto;
   margin-right: auto;
+  background: transparent;
+  cursor: pointer;
 }
 
 .product-stock {
@@ -813,7 +837,7 @@ legend {
   font-weight: 600;
   font-style: italic;
   color: #F5E0C7;
-  opacity: 0;
+  display: none;
 }
 
 .product-order {
@@ -830,7 +854,7 @@ legend {
   font-weight: 600;
   font-style: italic;
   color: #692F6C;
-  opacity: 0;
+  display: none;
 }
 
 .product-review {
@@ -845,6 +869,16 @@ legend {
 }
 .products .form .form-desc {
   width: 504px;
+}
+.product-density {
+  font-family: "Involve", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23.94px;
+  color: #692F6C;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 /*# sourceMappingURL=style.css.map */
