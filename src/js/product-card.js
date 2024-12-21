@@ -134,7 +134,8 @@ fetch('products.json')
   .then(response => response.json())
   .then(data => {
     allProducts = data; // Сохраняем все продукты для последующей фильтрации
-    const productContainer = document.getElementById('products-cards');
+    const productContainer = document.getElementById('products-cards');    
+    
     
     // Создаем блоки для карточек и ряды для карточек
 
@@ -152,6 +153,10 @@ fetch('products.json')
 const allButton = document.getElementById('all');
 const custom1Button = document.getElementById('custom1');
 const custom2Button = document.getElementById('custom2');
+const custom3Button = document.getElementById('custom3');
+const custom4Button = document.getElementById('custom4');
+
+
 
 // Функция для скрытия всех блоков продуктов
 function hideAllProducts() {
@@ -161,14 +166,14 @@ function hideAllProducts() {
 }
 
 // Добавление обработчиков событий
-allButton.addEventListener('click', () => {
+allButton.addEventListener('click', () => { 
     hideAllProducts();
     product1.style.display = 'block';
     product2.style.display = 'block';
     product3.style.display = 'block';
 });
 
-custom1Button.addEventListener('click', () => {
+custom1Button.addEventListener('click', () => { 
     hideAllProducts();
     product2.style.display = 'block';
 });
@@ -177,6 +182,22 @@ custom2Button.addEventListener('click', () => {
     hideAllProducts();
     product1.style.display = 'block';
 });
+
+custom3Button.addEventListener('click', () => {
+  hideAllProducts();
+  productContainer.innerHTML = ''; // Очистите контейнер перед добавлением
+  const filteredCards = allProducts.filter(card => card.sale === "В наличии");  
+  filteredCards.forEach(productsData => createProductCard(productsData, productContainer));
+});
+
+custom4Button.addEventListener('click', () => {
+  hideAllProducts();
+  productContainer.innerHTML = ''; // Очистите контейнер перед добавлением
+  const filteredCards = allProducts.filter(card => card.sale === "Под заказ");  
+  filteredCards.forEach(productsData => createProductCard(productsData, productContainer));
+})
+
+
 
     //ряды
     
@@ -257,6 +278,7 @@ custom2Button.addEventListener('click', () => {
     productContainer.appendChild(product1);
     product1.appendChild(rowWrapper);
     rowWrapper.appendChild(product1Row1);
+    rowWrapper.appendChild(product1Row2);
     rowWrapper.appendChild(productTitle);
 
    
