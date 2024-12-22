@@ -33,6 +33,7 @@
     align-items: center;
 }
 .menu-item {
+    position: relative;
     display: flex;
     font-family: 'Involve', sans-serif;
     column-gap: 2px;
@@ -44,6 +45,12 @@
     align-items: center;
 }
 
+.menu-item:hover {
+    .menu-list {
+        display: block;
+    }
+}
+
 .item-icon {
     display: block;
     width: 12px;
@@ -53,9 +60,35 @@
 }
 .menu-list {
     position: absolute;
+    top:50px;
+    left: 0;
     display: none;
+    width: 278px;
 }
-
+.menu-items {
+   
+    background:$color-white;
+    
+    &:hover {
+        background:$color-purple;
+         .menu-link {
+            color:$color-white;
+         }
+    }
+}
+.menu-link {
+    padding: 6px 21.44px;
+    color:$color-purple;
+    font-family: Involve, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    color:$color-purple;
+   
+    border-bottom: 1px solid $color-purple;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+ }
 .link-phone {
     font-family: 'Involve', sans-serif;
     font-size: 14px;

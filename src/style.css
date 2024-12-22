@@ -569,6 +569,7 @@ textarea::placeholder {
 }
 
 .menu-item {
+  position: relative;
   display: flex;
   font-family: "Involve", sans-serif;
   column-gap: 2px;
@@ -578,6 +579,10 @@ textarea::placeholder {
   text-align: left;
   text-transform: uppercase;
   align-items: center;
+}
+
+.menu-item:hover .menu-list {
+  display: block;
 }
 
 .item-icon {
@@ -590,7 +595,33 @@ textarea::placeholder {
 
 .menu-list {
   position: absolute;
+  top: 50px;
+  left: 0;
   display: none;
+  width: 278px;
+}
+
+.menu-items {
+  background: #ffffff;
+}
+.menu-items:hover {
+  background: #692F6C;
+}
+.menu-items:hover .menu-link {
+  color: #ffffff;
+}
+
+.menu-link {
+  padding: 6px 21.44px;
+  color: #692F6C;
+  font-family: Involve, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  color: #692F6C;
+  border-bottom: 1px solid #692F6C;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 .link-phone {
