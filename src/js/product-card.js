@@ -1,5 +1,3 @@
-
-
 // Функция для создания карточки товара
 function createProductCard(productsData, container) {
  
@@ -128,16 +126,13 @@ function createProductCard(productsData, container) {
   container.appendChild(productCard);
 }
 
-
 let allProducts = [];
 fetch('products.json')
   .then(response => response.json())
   .then(data => {
     allProducts = data; // Сохраняем все продукты для последующей фильтрации
-    const productContainer = document.getElementById('products-cards');    
-    
-    
-    // Создаем блоки для карточек и ряды для карточек
+    const productContainer = document.getElementById('products-cards');
+  // Создаем блоки для карточек и ряды для карточек
 
   //блоки
     const product1 = document.createElement('div');
@@ -148,7 +143,6 @@ fetch('products.json')
     product2.classList.add('product-2');
     product3.classList.add('product-3');
 
-
     // Клики по кнопкам
 const allButton = document.getElementById('all');
 const custom1Button = document.getElementById('custom1');
@@ -156,7 +150,10 @@ const custom2Button = document.getElementById('custom2');
 const custom3Button = document.getElementById('custom3');
 const custom4Button = document.getElementById('custom4');
 
-
+//появление блоков с текстом
+const content1 = document.getElementById('content1');
+const content2 = document.getElementById('content2');
+const content3 = document.getElementById('content3');
 
 // Функция для скрытия всех блоков продуктов
 function hideAllProducts() {
@@ -171,16 +168,26 @@ allButton.addEventListener('click', () => {
     product1.style.display = 'block';
     product2.style.display = 'block';
     product3.style.display = 'block';
+
+    content3.style.display = 'block';
+    content1.style.display = 'none';
+    content2.style.display = 'none';
 });
 
 custom1Button.addEventListener('click', () => { 
     hideAllProducts();
     product2.style.display = 'block';
+    content2.style.display = 'block';
+    content1.style.display = 'none';
+    content3.style.display = 'none';
 });
 
 custom2Button.addEventListener('click', () => {
     hideAllProducts();
     product1.style.display = 'block';
+    content1.style.display = 'block';
+    content3.style.display = 'none';
+    content2.style.display = 'none';
 });
 
 custom3Button.addEventListener('click', () => {
@@ -196,12 +203,7 @@ custom4Button.addEventListener('click', () => {
   const filteredCards = allProducts.filter(card => card.sale === "Под заказ");  
   filteredCards.forEach(productsData => createProductCard(productsData, productContainer));
 })
-
-
-
     //ряды
-    
-
     const product1Row1 = document.createElement('div');
     product1Row1.classList.add('row-1');
 
@@ -225,7 +227,7 @@ custom4Button.addEventListener('click', () => {
     // Create the product title block
     const productTitle = document.createElement('div');
     productTitle.classList.add('product-title');
-    
+
     // Create the title box
     const titleBox = document.createElement('div');
     titleBox.classList.add('title-box');
@@ -248,14 +250,11 @@ custom4Button.addEventListener('click', () => {
 
 
 // Append title box and title icon to product title
-
-
-    
-    // Разделяем карточки по условию
+// Разделяем карточки по условию
     data.forEach(productsData => {
       if (productsData.description === "Флис односторонний") {
         createProductCard(productsData, product1Row1);
-      } else 
+      } else
       if (productsData.description === "Флис двуxcторонний") {
         createProductCard(productsData, product1Row2);
       } else
@@ -265,24 +264,22 @@ custom4Button.addEventListener('click', () => {
 
       if (productsData.description === "Футер 2-х нитка") {
         createProductCard(productsData, product2Row1);
-      } else 
+      } else
       if (productsData.description === "Футер 3-х нитка") {
         createProductCard(productsData, product2Row2);
-      } else 
+      } else
       if (productsData.description === "Ткань для термобелья") {
         createProductCard(productsData, product3Row1);
       }
 
     });
-    // Добавляем блоки в контейнер
+
+  //Добавляем блоки в контейнер
     productContainer.appendChild(product1);
     product1.appendChild(rowWrapper);
     rowWrapper.appendChild(product1Row1);
     rowWrapper.appendChild(product1Row2);
     rowWrapper.appendChild(productTitle);
-
-   
-
 
     productContainer.appendChild(product2);
     product2.appendChild(product2Row1);
@@ -290,7 +287,6 @@ custom4Button.addEventListener('click', () => {
 
     productContainer.appendChild(product3);
     product3.appendChild(product3Row1);
-
   })
 
 //клики по кнопкам
@@ -298,6 +294,26 @@ custom4Button.addEventListener('click', () => {
     console.error('Произошла ошибка при загрузке данных:', error);
   });
 
-  
+  // Получаем все кнопки и иконки
+const buttons = document.querySelectorAll('.product-btn');
+const iconImgs = document.querySelectorAll('.icon-img');
 
+// Функция, которая скрывает все иконки
+function hideAllIcons() {
+    iconImgs.forEach(icon => {
+        icon.style.opacity = 0; // Скрыть иконку
+    });
+}
 
+// Устанавливаем обработчики событий для всех кнопок
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        hideAllIcons(); // Сначала скрываем все иконки
+        // Показываем иконку у текущей кнопки
+        const iconImg = button.querySelector('.icon-img');
+        if (iconImg) {
+            iconImg.classList.add("fade-in");
+            iconImg.style.opacity = 1; // Показываем иконку
+        }
+    });
+});

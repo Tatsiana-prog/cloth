@@ -1,0 +1,25 @@
+.section-shipment {
+    padding: 84px 0 51px 0;
+
+}
+.container {
+}
+.shipment {
+    display: flex;
+    flex-direction: column;
+    gap:42px;
+    max-width: 1160px;
+}
+.shipment-box {
+    .title-3 {
+    margin-bottom: 16px;}
+}
+.shipment-text {
+    text-align: center;
+    margin-bottom: 29px;
+    font-family: Involve, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.94px;
+    text-align: center;
+}

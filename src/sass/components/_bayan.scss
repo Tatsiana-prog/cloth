@@ -1,0 +1,77 @@
+.icon-add {
+    display: flex;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    background: url(/public/img/icons/icon-add.png) no-repeat center;
+    background-size: cover;
+    transition: transform 0.3s; /* Добавляем transition для плавного перехода */
+}
+
+.input-question:checked + label>.icon-add {
+    transform: rotate(45deg);
+}
+
+.input-question:checked + .question {
+    color:$color-dark;
+}
+
+.input-question:checked ~ .answer {
+    display: block;
+}
+
+.input-question:checked ~ .question {
+    background: $color-beige-add;
+}
+
+.question-box {
+    width: 100%;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+.question {
+    padding: 19.5px 31px;
+    border-radius: 12px;
+    background: $color-beige;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    font-family: Involve, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.94px;
+}
+
+.accordeon-text {
+    display: block;
+}
+
+.input-question {
+    width: 0;
+    height: 0;
+    position: absolute;
+    appearance: none;
+}
+
+.answer {
+    padding: 20px 8px 0 0;
+    display: none;
+    cursor: pointer;
+    text-align: left;
+    animation: 0.8s show ease;
+
+   
+    font-family: Involve, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23.94px;
+}
+
+@keyframes show {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

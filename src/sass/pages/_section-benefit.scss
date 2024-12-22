@@ -1,0 +1,80 @@
+.section-benefit {
+    position: relative;
+}
+.container {
+}
+.benefit {
+}
+.title-2 {
+}
+.benefit-boxes {
+    display: flex;
+}
+.benefit-column {
+    width: 30%;
+}
+.benefit-image {
+}
+.benefit-row {
+    display: flex;
+}
+
+.benefit-buttons {
+    display: flex;
+    column-gap: 10px;
+    margin-bottom: 37px;
+}
+
+.benefit-description {
+    display: flex;
+    column-gap: 36px;
+    padding: 48px 56px 52px 74px;
+    border-radius: 65px;
+    background: $color-white;
+}
+
+#benefit-content1, #benefit-content2, #benefit-content3 {
+    display: none;
+}
+
+.benefit-info {
+}                                      
+.benefit-list {
+    & .title-3 {
+        margin-bottom: 16px;
+}
+}
+
+.benefit-text {
+    font-family: Involve, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.94px;
+    text-align: left;
+    margin-bottom: 18px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.benefit-desc {
+}
+.consult-form__wrapper {
+}
+.consult-form {
+}
+.form-row {
+}
+.input {
+}
+.btn-wrapper {
+}
+.btn-submit {
+}
+.btn-arrow {
+}
+.input-box {
+}
+.input-custom {
+}
+.checkbox-text {
+}
