@@ -1018,9 +1018,6 @@ textarea::placeholder {
 
 .products-cards {
   margin-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
 }
 
 .product-card {
@@ -1166,35 +1163,6 @@ textarea::placeholder {
   text-decoration-skip-ink: none;
 }
 
-.product-1, .product-2, .product-3 {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  width: 100%;
-  background: yellow;
-}
-
-.row-1 {
-  display: flex;
-  width: 100%;
-  background: red;
-  gap: 16px;
-  margin-bottom: 19px;
-}
-
-.row-2 {
-  display: flex;
-  width: 100%;
-  background: blue;
-  gap: 16px;
-}
-
-.row-3 {
-  display: flex;
-  width: 100%;
-  background: rgb(0, 255, 170);
-}
-
 .product-title {
   position: relative;
   padding: 14.5px 38px;
@@ -1220,7 +1188,7 @@ textarea::placeholder {
   background: red;
 }
 
-.title-box {
+.row-box {
   display: flex;
   column-gap: 10px;
   align-items: center;
@@ -1297,6 +1265,13 @@ textarea::placeholder {
   margin-bottom: 10px;
 }
 
+.row-1, .row-2, .row-3, .row-4, .row-5, .row-6, .row-7, .row-8 {
+  display: flex;
+  column-gap: 18px;
+  margin-top: 35px;
+  margin-bottom: 19px;
+}
+
 .form-content {
   width: 595px;
   font-family: Involve, sans-serif;
@@ -1321,6 +1296,47 @@ textarea::placeholder {
   font-size: 14px;
   font-weight: 600;
   line-height: 18.62px;
+  color: #423A2F;
+}
+
+.row-title {
+  position: relative;
+  padding: 14.5px 38px;
+  background: #FCF7F7;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 33px;
+}
+
+.row-title::before {
+  content: "";
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  width: 65%;
+  height: 1px;
+  background: #423A2F;
+  opacity: 0.5;
+}
+
+.row-box {
+  font-family: Involve, sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 18.62px;
+  text-align: left;
+}
+
+.view-all {
+  color: rgb(42, 171, 238);
+}
+
+.title-name {
+  color: #423A2F;
+}
+
+.row-icon {
   color: #423A2F;
 }
 
