@@ -107,3 +107,13 @@
   color:$color-dark;
   cursor: pointer;
 }
+
+.btn-active {
+  color:$color-beige;
+  & .sale-arrow {
+    background: $color-beige;
+  }
+  & .icon-arrow {
+     background: $color-beige;
+  }
+}

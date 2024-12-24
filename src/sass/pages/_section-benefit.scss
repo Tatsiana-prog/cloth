@@ -9,14 +9,19 @@
 }
 .benefit-boxes {
     display: flex;
+    column-gap: 14px;
+    margin-bottom: 85px;
 }
 .benefit-column {
-    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap:14px;
 }
 .benefit-image {
 }
 .benefit-row {
     display: flex;
+    gap:14px;
 }
 
 .benefit-buttons {
@@ -35,6 +40,10 @@
 
 #benefit-content1, #benefit-content2, #benefit-content3 {
     display: none;
+}
+
+#benefit-content1 {
+    display: block;
 }
 
 .benefit-info {

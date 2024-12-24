@@ -1,7 +1,4 @@
 //form for questions
-.questions-form {
-    padding: 49px 11px 60px 40px;
-}
 
 .questions-form .input {
     margin-bottom: 8px;
@@ -15,11 +12,12 @@ input::placeholder {
     text-align: left;
     color: $color-purple;/* Задайте желаемый цвет текста плейсхолдера здесь */
 }
-.question-form {
+.questions-form {
     padding: 49px 36px 60px 40px;
     width: 599px;
     height: 702px;
     border-radius: 65px;
+    box-shadow: 0px -12px 86.5px #F5E0C7;
 }
 .questions-form .input {
     border: 1px solid $color-purple;
@@ -60,24 +58,36 @@ textarea::placeholder {
   .input-custom[type="checkbox"]:checked {
     background: url(/public/img/icons/icon-check.svg) no-repeat center;
   }
+  .custom-all {
+  
+  }
+.custom-all[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border:2px solid $color-purple;
+    outline: none;
+    cursor: pointer;
+  }
 
-  .input-box {
-    margin: 16px auto 10px;
+  /* Style the custom checkbox icon */
+  .custom-all[type="checkbox"]:checked {
+    background: $color-purple url(../../../public/img/icons/custom-all.png) no-repeat center;
+}
+
+.input-box {
+    margin: 16px auto 0;
     display: inline-flex;
     align-items: center;
     column-gap: 12px;
-  }
-  .input-custom {
-   
-  }
-.checkbox-text {
-   
 }
-.questions-custom {
+.text-all {
+    font-family: Involve, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.62px;
 }
-.btn-wrapper {
-}
-.btn-submit {
-}
-.btn-arrow {
-}
+

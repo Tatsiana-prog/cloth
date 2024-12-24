@@ -333,8 +333,15 @@
 
 .form-wrapper {
 }
-.form-desc {
+.form-products {
     width: 504px;
+    & .btn-wrapper {
+        margin: 16px auto 13px;
+    }
+}
+
+#products-name, #products-email, #product-tel {
+    margin-bottom: 10px;
 }
 .input {
 }
@@ -370,5 +377,4 @@
     font-weight: 600;
     line-height: 18.62px; 
     color:$color-dark;
-    margin-bottom: 10px;
 }

@@ -13,7 +13,12 @@
 .question-card {
     width: 321px;
     height: 295px;
+    & img {
+        width: 321px;
+        height: 295px;
+    }
 }
+
 .questions-content {
     display: flex;
     column-gap: 45px;

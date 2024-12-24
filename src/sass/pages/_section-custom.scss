@@ -23,6 +23,7 @@
     padding: 52px 62px 65px 95px;
     border-radius: 65px;
     background: $color-white;
+    box-shadow: 0px -12px 86.5px #F5E0C7;
 }
 .custom-row {
     display: flex;
@@ -90,7 +91,7 @@
 .custom-text:nth-of-type(2) {
     margin-bottom: 32px;
 }
-.consult-form {
+.consult-form , .form-row{
     margin-top: 8px;
     & .input {
         width:288px;

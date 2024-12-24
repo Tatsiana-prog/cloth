@@ -86,6 +86,13 @@ benefitBtn1.addEventListener('click', () => {
 
     benefitContent2.style.display = "none";
     benefitContent3.style.display = "none";
+
+
+    benefitBtn1.classList.add('btn-active');
+    benefitBtn1.classList.add('fadeIn');
+
+    benefitBtn2.classList.remove('btn-active');
+    benefitBtn3.classList.remove('btn-active');
 });
 
 benefitBtn2.addEventListener('click', () => {
@@ -94,6 +101,12 @@ benefitBtn2.addEventListener('click', () => {
 
     benefitContent1.style.display = "none";
     benefitContent3.style.display = "none";
+
+    benefitBtn2.classList.add('btn-active');
+    benefitBtn2.classList.add('fadeIn');
+
+    benefitBtn1.classList.remove('btn-active');
+    benefitBtn3.classList.remove('btn-active');
 });
 
 benefitBtn3.addEventListener('click', () => {
@@ -102,6 +115,12 @@ benefitBtn3.addEventListener('click', () => {
 
     benefitContent1.style.display = "none";
     benefitContent2.style.display = "none";
+
+    benefitBtn3.classList.add('btn-active');
+    benefitBtn3.classList.add('fadeIn');
+
+    benefitBtn1.classList.remove('btn-active');
+    benefitBtn2.classList.remove('btn-active');
 });
 
 
