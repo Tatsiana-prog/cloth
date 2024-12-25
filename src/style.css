@@ -562,6 +562,250 @@ textarea::placeholder {
   line-height: 18.62px;
 }
 
+.card-row {
+  display: flex;
+  column-gap: 33px;
+}
+
+.card-image {
+  margin-bottom: 15px;
+}
+
+.card-image img {
+  width: 581px;
+  height: 451px;
+  border-radius: 33px;
+}
+
+.card-image_wrapper {
+  display: flex;
+  column-gap: 15px;
+}
+
+.card-image_wrapper .card-image img {
+  width: 185px;
+  height: 103px;
+  border-radius: 33px;
+}
+
+.card-description .title-3 {
+  font-family: "Involve", sans-serif;
+  color: #692F6C;
+}
+
+.card-box {
+  display: flex;
+  column-gap: 24px;
+  margin-bottom: 12px;
+}
+
+.card-sale {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 357px;
+  height: 43px;
+  background: url(/public/img/card/bg-element.png) no-repeat center;
+  background-size: contain;
+  color: #692F6C;
+  font-size: 18px;
+  font-family: Involve, sans-serif;
+  font-weight: 600;
+}
+
+.menu-color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 274px;
+  height: 34px;
+  background: url(/public/img/card/bg-element1.png) no-repeat center;
+  background-size: contain;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: Involve, sans-serif;
+  font-weight: 600;
+}
+
+.color-wrapper {
+  background: #692F6C;
+}
+
+.card-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-name {
+  position: relative;
+  display: block;
+  font-size: 18px;
+  font-family: Involve, sans-serif;
+  font-weight: 600;
+  color: rgba(81.81, 68.03, 49.09, 0.56);
+  width: 357px;
+  text-align: left;
+}
+
+.card-item .item-name::before {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  right: 0;
+  background: rgba(81.81, 68.03, 49.09, 0.56);
+  width: 70%;
+  height: 1px;
+}
+
+.card-list .card-item:nth-child(2) .item-name::before {
+  width: 87%;
+}
+
+.card-list .card-item:nth-child(3) .item-name::before {
+  width: 82%;
+}
+
+.card-list .card-item:nth-child(4) .item-name::before {
+  width: 78%;
+}
+
+.card-list .card-item:nth-child(5) .item-name::before {
+  width: 42%;
+}
+
+.card-list .card-item:nth-child(6) .item-name::before {
+  width: 72%;
+}
+
+.item-name:nth-of-type(3)::before {
+  width: 78%;
+}
+
+.box-size {
+  display: flex;
+  display: none;
+}
+
+.card-buttons {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 19px;
+}
+
+.card-btn1 {
+  width: 324px;
+  height: 54px;
+  padding: 30px;
+  border-radius: 90px;
+  border: 2px #692F6C solid;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  color: #692F6C;
+  font-size: 14px;
+  font-family: Involve, sans-serif;
+  font-weight: 600;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.card-btn2 {
+  width: 326px;
+  height: 54px;
+  padding: 30px;
+  background: #692F6C;
+  border-radius: 90px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  color: white;
+  font-size: 14px;
+  font-family: Involve, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card-content__wrapper {
+  height: 88.62px;
+  padding-left: 51px;
+  padding-right: 51px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #FCF7F7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 22px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.card-content {
+  display: flex;
+  column-gap: 6px;
+  width: 180px;
+  height: 52px;
+  border-radius: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+.card-content:hover {
+  background: #FFF4E8;
+}
+.card-content:active {
+  background: #FFF4E8;
+}
+
+.content-icon {
+  width: 55px;
+  height: 45px;
+}
+
+.card-text {
+  font-size: 14px;
+  font-family: Involve, sans-serif;
+  font-weight: 600;
+  word-wrap: break-word;
+  color: #423A2F;
+}
+
+.item-mean {
+  background: red;
+  font-size: 18px;
+  color: #692F6C;
+}
+
+#count-card {
+  display: flex;
+  column-gap: 7px;
+  font-size: 18px;
+}
+
+#decrease, #increase {
+  -webkit-box-flex: 0;
+  width: 56.92px;
+  padding: 11.55px 23.96px;
+  height: 24px;
+  font-size: 18px;
+  background: #F5E0C7;
+  border-radius: 900px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -ms-flex: 0 0 30px;
+  flex: 0 0 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
 .header {
   padding: 88px 46.15px 16px 27px;
   height: 185px;

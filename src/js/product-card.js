@@ -161,6 +161,11 @@ fetch('products.json')
     const custom3Button = document.getElementById('custom3');
     const custom4Button = document.getElementById('custom4');
 
+    //появление блоков с текстом
+    const content1 = document.getElementById('content1');
+    const content2 = document.getElementById('content2');
+    const content3 = document.getElementById('content3');
+
 
     allButton.addEventListener('click', () => {
       // Очистить все контейнеры перед добавлением карточек
@@ -196,6 +201,9 @@ fetch('products.json')
       // Добавить карточки
       addCardsToRow(row4, 'Футер 2-х нитка');
       addCardsToRow(row5, 'Футер 3-х нитка');
+      content2.style.display = "block";
+      content1.style.display = "none";
+      content3.style.display = "none";
   });
   
   custom2Button.addEventListener('click', () => { 
@@ -211,6 +219,9 @@ fetch('products.json')
     // Добавить карточки
       addCardsToRow(row1, 'Флис односторонний');
       addCardsToRow(row2, "Флис двуxcторонний");
+      content1.style.display = "block";
+      content2.style.display = "none";
+      content3.style.display = "none";
   });
 
   custom3Button.addEventListener('click', () => { 
