@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Функция для создания карточки товара
-    function createProductCard() {
+    // Функция для рендеринга карточки товара
+    function renderProductCard(product) {
         const card = document.createElement('div');
         card.className = 'card';
 
@@ -10,28 +10,42 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardImages = document.createElement('div');
         cardImages.className = 'card-images';
 
-        const mainImage = document.createElement('div');
-        mainImage.className = 'card-image';
-        const mainImg = document.createElement('img');
-        mainImg.src = './public/img/products/flis/onesided/product1/img1.jpg';
-        mainImg.alt = 'image';
-        mainImage.appendChild(mainImg);
+        // Проверка на наличие изображений в объекте товара
+        const images = [product.image1, product.image2, product.image3, product.image4];
+        const validImages = images.filter(image => image); // Фильтруем пустые изображения
 
-        const imageWrapper = document.createElement('div');
-        imageWrapper.className = 'card-image_wrapper';
+        if (validImages.length > 0) {
+            // Основное изображение
+            const mainImage = document.createElement('div');
+            mainImage.className = 'card-image';
+            const mainImg = document.createElement('img');
+            mainImg.src = validImages[0];  // Первое изображение
+            mainImg.alt = 'image';
+            mainImage.appendChild(mainImg);
 
-        for (let i = 0; i < 3; i++) { // Добавляем три изображения
-            const smallImage = document.createElement('div');
-            smallImage.className = 'card-image';
-            const img = document.createElement('img');
-            img.src = './public/img/products/flis/onesided/product1/img1.jpg';
-            img.alt = 'image';
-            smallImage.appendChild(img);
-            imageWrapper.appendChild(smallImage);
+            const imageWrapper = document.createElement('div');
+            imageWrapper.className = 'card-image_wrapper';
+
+            validImages.slice(1).forEach(imageSrc => { // Добавляем оставшиеся изображения
+                const smallImage = document.createElement('div');
+                smallImage.className = 'card-image';
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = 'image';
+                smallImage.appendChild(img);
+                imageWrapper.appendChild(smallImage);
+            });
+
+            cardImages.appendChild(mainImage);
+            cardImages.appendChild(imageWrapper);
+        } else {
+            // Если изображений нет, показываем заглушку или пустое место
+            const noImage = document.createElement('div');
+            noImage.className = 'no-image';
+            noImage.textContent = 'Изображение отсутствует';
+            cardImages.appendChild(noImage);
         }
 
-        cardImages.appendChild(mainImage);
-        cardImages.appendChild(imageWrapper);
         cardRow.appendChild(cardImages);
 
         const cardDescription = document.createElement('div');
@@ -39,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const title = document.createElement('h3');
         title.className = 'title-3';
-        title.textContent = 'Флис односторонний';
+        title.textContent = product.description || 'Без описания';  // Если описание отсутствует, показываем заглушку
         cardDescription.appendChild(title);
 
         const cardBox = document.createElement('div');
@@ -48,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const cardSale = document.createElement('div');
         cardSale.className = 'card-sale';
-        cardSale.textContent = 'В наличии';
+        cardSale.textContent = product.sale || 'Не указано';  // Если статус отсутствует, показываем заглушку
         cardBox.appendChild(cardSale);
 
         const fieldsetColor = document.createElement('fieldset');
@@ -58,24 +72,45 @@ document.addEventListener('DOMContentLoaded', () => {
         fieldsetColor.appendChild(legendColor);
 
         const colorWrapper = document.createElement('div');
-        colorWrapper.className = 'color-wrapper';
-        const colors = ['color1', 'color2', 'color3', 'color4'];
+        colorWrapper.className = 'color';
 
-        colors.forEach((color, index) => {
+        // Массив для хранения выбранного цвета
+        let selectedColor = null;
+
+        // Генерация блоков для выбора цвета
+        for (const colorKey in product.content['Цвет']) {
             const div = document.createElement('div');
             const input = document.createElement('input');
             input.type = 'radio';
-            input.id = `color${index + 1}`;
-            input.name = 'color';
-            input.value = color;
-            if (index === 0) input.checked = true; // Первый цвет по умолчанию выбран
+            input.id = `color-${colorKey}-${product.id}`;  // Добавляем уникальный идентификатор с ID товара
+            input.name = `color-${product.id}`;  // Уникальное имя для группы радиокнопок
+            input.value = colorKey;
+
             const label = document.createElement('label');
-            label.htmlFor = `color${index + 1}`;
-            label.textContent = color;
+            label.htmlFor = `color-${colorKey}-${product.id}`;
+            label.textContent = product.content['Цвет'][colorKey];
+
             div.appendChild(input);
             div.appendChild(label);
             colorWrapper.appendChild(div);
-            legendColor.appendChild(colorWrapper);
+        }
+
+        // Обработка события выбора радиокнопки
+        colorWrapper.addEventListener('change', function(event) {
+            if (event.target.name.includes('color')) {  // Проверяем, что это выбор цвета
+                const selectedColorKey = event.target.value;
+                selectedColor = product.content['Цвет'][selectedColorKey]; // Сохраняем выбранный цвет
+
+                // Обновляем элемент для текущей карточки
+                const colorLi = card.querySelector('.card-item.color'); // Используем card как родитель
+                if (colorLi) {
+                    const itemMean = colorLi.querySelector('.item-mean');
+                    itemMean.textContent = selectedColor || 'Не указано';
+                }
+
+                // Дополнительные действия, например, вывод в консоль
+                console.log(`Выбранный цвет для товара ${product.id}:`, selectedColor);
+            }
         });
 
         fieldsetColor.appendChild(colorWrapper);
@@ -83,59 +118,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const cardList = document.createElement('ul');
         cardList.className = 'card-list';
+
         const items = [
-            { name: 'плотность', mean: 'ytgyt' },
-            { name: 'цвет', mean: '' },
-            { name: 'состав', mean: '' },
-            { name: 'ширина', mean: '150-220' },
-            { name: 'страна производитель', mean: 'Китай' },
+            { name: 'Плотность', mean: product.content['Плотность'] },
+            { name: 'Цвет', mean: selectedColor || 'Не указано' }, // Сюда добавляем цвет, который будет обновляться
+            { name: 'Состав', mean: product.content['Состав'] },
+            { name: 'Ширина', mean: product.content['ширина'] },
+            { name: 'Страна производитель', mean: product.content['Страна производитель'] },
+            { name: 'Цена', mean: product.content['Цена'] }
         ];
 
         items.forEach(item => {
             const listItem = document.createElement('li');
             listItem.className = 'card-item';
+            if (item.name === 'Цвет') {
+                listItem.classList.add('color'); // Добавляем класс для цвета
+            }
             const itemName = document.createElement('span');
             itemName.className = 'item-name';
             itemName.textContent = item.name;
             const itemMean = document.createElement('span');
             itemMean.className = 'item-mean';
-            itemMean.textContent = item.mean;
+            itemMean.textContent = item.mean || 'Не указано';  // Проверка значения
             listItem.appendChild(itemName);
             listItem.appendChild(itemMean);
-
-            if (item.name === 'ширина') {
-                const sizeFieldset = document.createElement('fieldset');
-                const sizeLegend = document.createElement('legend');
-                sizeLegend.textContent = 'Выбрать';
-                sizeFieldset.appendChild(sizeLegend);
-                const boxSize = document.createElement('div');
-                const sizes = ['150', '180', '220'];
-
-                sizes.forEach((size, index) => {
-                    const div = document.createElement('div');
-                    const input = document.createElement('input');
-                    input.type = 'radio';
-                    input.id = `size${index + 1}`;
-                    input.name = 'size';
-                    input.value = `size${index + 1}`;
-                    if (index === 0) input.checked = true; // Первый размер по умолчанию выбран
-                    const label = document.createElement('label');
-                    label.htmlFor = `size${index + 1}`;
-                    label.textContent = size;
-                    div.appendChild(input);
-                    div.appendChild(label);
-                    boxSize.appendChild(div);
-                });
-
-                sizeFieldset.appendChild(boxSize);
-                listItem.appendChild(sizeFieldset);
-            }
-
             cardList.appendChild(listItem);
         });
 
         cardDescription.appendChild(cardList);
 
+        // Добавляем количество товара
         const countCard = document.createElement('div');
         countCard.id = 'count-card';
         const decreaseButton = document.createElement('button');
@@ -159,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         countCard.appendChild(increaseButton);
         cardList.appendChild(countCard);
 
+        // Кнопки "Заказать образец" и "Купить"
         const cardButtons = document.createElement('div');
         cardButtons.className = 'card-buttons';
         const sampleButton = document.createElement('button');
@@ -174,8 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const cardContentWrapper = document.createElement('div');
         cardContentWrapper.className = 'card-content__wrapper';
-       
 
+        // Иконки с дополнительной информацией
         const features = [
             { icon: './public/img/card/icon-1.svg', text: 'Возможности' },
             { icon: './public/img/card/icon-2.svg', text: 'Доставка' },
@@ -199,19 +212,29 @@ document.addEventListener('DOMContentLoaded', () => {
             cardContentWrapper.appendChild(cardContent);
         });
 
-       
         cardDescription.appendChild(cardBox);
         cardRow.appendChild(cardDescription);
         card.appendChild(cardRow);
         cardDescription.appendChild(cardList);
         cardDescription.appendChild(cardButtons);
         cardDescription.appendChild(cardContentWrapper);
-       
 
         // Добавляем карточку на страницу
         document.body.appendChild(card);
     }
 
-    // Вызов функции для создания карточки товара
-    createProductCard();
+    // Загружаем данные из JSON и создаем карточки товара
+    fetch('./products.json')  // Путь к JSON файлу
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Ошибка загрузки данных');
+            }
+            return response.json();
+        })
+        .then(data => {
+            data.forEach(product => {
+                renderProductCard(product);  // Вызываем новую функцию для рендеринга
+            });
+        })
+        .catch(error => console.error('Ошибка:', error));
 });

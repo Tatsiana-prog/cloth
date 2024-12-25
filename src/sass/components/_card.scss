@@ -76,7 +76,8 @@
 }
 .card-item {
     display: flex;
-    justify-content: space-between
+    column-gap: 24px;
+    //justify-content: space-between
 }
 .item-name {
     position: relative;
