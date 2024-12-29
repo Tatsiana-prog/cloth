@@ -1,9 +1,12 @@
 #count-card {
+  position: absolute;
+  bottom: 0;
+  right: 17%;
   display: flex;
   column-gap: 7px;
   font-size: 18px;
 }
-  #decrease, #increase {
+  .decrease, .increase {
     -webkit-box-flex: 0;
     width: 56.92px;
     padding: 11.55px 23.96px;
@@ -27,4 +30,6 @@
     cursor: pointer;
   }
   
-  
+  .counter-text {
+    color: $color-purple;
+  }

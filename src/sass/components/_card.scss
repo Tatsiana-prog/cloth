@@ -4,6 +4,9 @@
     display: flex;
     column-gap: 33px;
 }
+.card {
+   
+}
 .card-images {
 }
 .card-image {
@@ -63,9 +66,10 @@
     background-size: contain;
     color:$color-white;
 
-   font-size: 18px;
-   font-family: Involve, sans-serif;
-   font-weight: 600;
+    font-size: 18px;
+    font-family: Involve, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .color-wrapper {
@@ -73,10 +77,12 @@
     background: #692F6C;
 }
 .card-list {
+    position: relative;
 }
 .card-item {
     display: flex;
     column-gap: 24px;
+    margin-bottom: 12px;
     //justify-content: space-between
 }
 .item-name {
@@ -93,7 +99,7 @@
 .card-item .item-name::before {
     content: "";
     position: absolute;
-    bottom: 12px;
+    bottom: 5px;
     right: 0;
     background: $color-dark-light;
     width: 70%;
@@ -114,11 +120,19 @@
 .card-list .card-item:nth-child(5) .item-name::before {
     width: 42%;
 }
-
+.card-list .card-item:nth-child(6)  {
+    justify-content: flex-start;
+    width: 300px;
+    //background: #692F6C;
+    & .item-name {
+        width:40px;
+    }
+}
 
 .card-list .card-item:nth-child(6) .item-name::before {
-    width: 72%;
+    width: 0;
 }
+
 .item-name:nth-of-type(3)::before {
     width: 78%;
 }
@@ -211,7 +225,48 @@
 }
 
 .item-mean {
-    background: red;
     font-size: 18px;
     color:$color-purple;
 }
+
+.color-wrapper {
+    width: 243px;
+    height: 230px;
+    padding: 14px 15px 22px 18px;
+    background: #FCF7F7;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    //display: none;
+
+    transition: opacity 0.5s ease-out;  
+}
+
+/* Default styles for custom radio button */
+.custom-radio {
+    display: none;
+}
+
+.custom-label {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;   
+    font-size: 18px;
+    color: $color-dark;
+    cursor: pointer;
+}
+
+.icon-label {
+    width: 14px;
+    height: 12px;
+    background: url(/public/img/icons/icon-chectpurple.svg) no-repeat center;
+    background-size: cover;
+    opacity: 0;
+}
+
+/* Styles for checked custom radio button */
+.custom-radio:checked + .custom-label {
+    & .icon-label {
+        opacity: 1;
+}}

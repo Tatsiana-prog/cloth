@@ -199,10 +199,12 @@
 }
 
 .product-review {
+    display: inline-flex;
     position: absolute;
     top:16px;
     right: 11.89px;
     cursor: pointer;
+    z-index: 2000;
 }
 
 

@@ -1,9 +1,9 @@
+document.addEventListener('DOMContentLoaded', function() {
+
 // Функция для создания карточки товара
 function createProductCard(productsData, container) {
- 
   const productCard = document.createElement('div');
   productCard.classList.add('product-card');
-
   // Изображение продукта
   const productImage = document.createElement('div');
   productImage.classList.add('product-image');
@@ -12,7 +12,6 @@ function createProductCard(productsData, container) {
   image.alt = productsData.description;
   productImage.appendChild(image);
   productCard.appendChild(productImage);
-
   // Название продукта
   const productContent = document.createElement('div');
   productContent.classList.add('product-content');
@@ -71,23 +70,421 @@ function createProductCard(productsData, container) {
   productCard.appendChild(productOrder);
 
   // Отзывы
-  const productReview = document.createElement('div');
+  const productReview = document.createElement('button');
   productReview.classList.add('product-review');
+  productReview.setAttribute('data-id', productsData.id); // добавляем data-id
   productReview.innerHTML = `
-    <svg width="48" height="47" viewBox="0 0 48 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="23.1533" cy="23.0557" r="23.0557" fill="#F5E0C7"/>
-      <path d="M12.1533 23.0557C12.1533 23.0557 16.1533 15.0557 23.1533 15.0557C30.1533 15.0557 34.1533 23.0557 34.1533 23.0557C34.1533 23.0557 30.1533 31.0557 23.1533 31.0557C16.1533 31.0557 12.1533 23.0557 12.1533 23.0557Z" stroke="#692F6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M23.1533 26.0557C24.8102 26.0557 26.1533 24.7125 26.1533 23.0557C26.1533 21.3988 24.8102 20.0557 23.1533 20.0557C21.4965 20.0557 20.1533 21.3988 20.1533 23.0557C20.1533 24.7125 21.4965 26.0557 23.1533 26.0557Z" stroke="#692F6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `;
+  <img src="/public/img/icons/icon-review.svg" alt="image">
+`;
+  const productReviewButtons = document.querySelectorAll('.product-review');
+  console.log(productReviewButtons.length);
+  productReviewButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Получаем id товара из атрибута 'data-id' кнопки
+      const productId = this.getAttribute('data-id');
+      console.log('ghbdtn');
+
+      // Загружаем данные из JSON и ищем нужный товар по id
+      fetch('products.json')  // Путь к JSON файлу с товарами
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Ошибка загрузки данных');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Находим товар с нужным id
+          const product = data.find(item => item.id === parseInt(productId));
+
+          // Если товар найден, вызываем функцию renderProductCard
+          if (product) {
+            renderProductCard(product);  // Отображаем карточку товара
+          } else {
+            console.error('Товар не найден');
+          }
+        })
+        .catch(error => console.error('Ошибка:', error));
+    });
+
+function renderProductCard(product) {
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const cardRow = document.createElement('div');
+  cardRow.className = 'card-row';
+
+  const cardImages = document.createElement('div');
+  cardImages.className = 'card-images';
+
+  // Проверка на наличие изображений в объекте товара
+  const images = [product.image1, product.image2, product.image3, product.image4];
+  const validImages = images.filter(image => image); // Фильтруем пустые изображения
+
+  if (validImages.length > 0) {
+      // Основное изображение
+      const mainImage = document.createElement('div');
+      mainImage.className = 'card-image';
+      const mainImg = document.createElement('img');
+      mainImg.src = validImages[0];  // Первое изображение
+      mainImg.alt = 'image';
+      mainImage.appendChild(mainImg);
+
+      const imageWrapper = document.createElement('div');
+      imageWrapper.className = 'card-image_wrapper';
+
+      validImages.slice(1).forEach(imageSrc => { // Добавляем оставшиеся изображения
+          const smallImage = document.createElement('div');
+          smallImage.className = 'card-image';
+          const img = document.createElement('img');
+          img.src = imageSrc;
+          img.alt = 'image';
+          smallImage.appendChild(img);
+          imageWrapper.appendChild(smallImage);
+      });
+
+      cardImages.appendChild(mainImage);
+      cardImages.appendChild(imageWrapper);
+  } else {
+      // Если изображений нет, показываем заглушку или пустое место
+      const noImage = document.createElement('div');
+      noImage.className = 'no-image';
+      noImage.textContent = 'Изображение отсутствует';
+      cardImages.appendChild(noImage);
+  }
+
+  cardRow.appendChild(cardImages);
+
+  const cardDescription = document.createElement('div');
+  cardDescription.className = 'card-description';
+
+  const title = document.createElement('h3');
+  title.className = 'title-3';
+  title.textContent = product.description || 'Без описания';  // Если описание отсутствует, показываем заглушку
+  cardDescription.appendChild(title);
+
+  const cardBox = document.createElement('div');
+  cardBox.className = 'card-box';
+  cardDescription.appendChild(cardBox);
+
+  const cardSale = document.createElement('div');
+  cardSale.className = 'card-sale';
+  cardSale.textContent = product.sale || 'Не указано';  // Если статус отсутствует, показываем заглушку
+  cardBox.appendChild(cardSale);
+
+  const fieldsetColor = document.createElement('fieldset');
+  const legendColor = document.createElement('legend');
+  legendColor.className = 'menu-color';
+  legendColor.textContent = 'Выберите цвет';
+  fieldsetColor.appendChild(legendColor);
+
+  const colorWrapper = document.createElement('div');
+  colorWrapper.className = 'color-wrapper';
+
+  // Массив для хранения выбранного цвета
+  let selectedColor = null;
+
+  // Генерация блоков для выбора цвета
+  for (const colorKey in product.content['Цвет']) {
+      const div = document.createElement('div');
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.id = `color-${colorKey}-${product.id}`;  // Добавляем уникальный идентификатор с ID товара
+      input.name = `color-${product.id}`;  // Уникальное имя для группы радиокнопок
+      input.value = colorKey;
+      input.className = 'custom-radio';
+
+      const label = document.createElement('label');
+      label.htmlFor = `color-${colorKey}-${product.id}`;
+      label.textContent = product.content['Цвет'][colorKey];
+      label.className = 'custom-label';
+
+      const iconlabel = document.createElement('span');
+      iconlabel.className = 'icon-label';
+      label.appendChild(iconlabel);
+
+      div.appendChild(input);
+      div.appendChild(label);
+      colorWrapper.appendChild(div);
+  }
+
+  // Обработка события выбора радиокнопки
+  colorWrapper.addEventListener('change', function(event) {
+      if (event.target.name.includes('color')) {  // Проверяем, что это выбор цвета
+          const selectedColorKey = event.target.value;
+          selectedColor = product.content['Цвет'][selectedColorKey]; // Сохраняем выбранный цвет
+
+          // Обновляем элемент для текущей карточки
+          const colorLi = card.querySelector('.card-item.color'); // Используем card как родитель
+          if (colorLi) {
+              const itemMean = colorLi.querySelector('.item-mean');
+              itemMean.textContent = selectedColor || 'Не указано';
+          }
+
+          // Дополнительные действия, например, вывод в консоль
+          console.log(`Выбранный цвет для товара ${product.id}:`, selectedColor);
+      }
+  });
+
+  fieldsetColor.appendChild(colorWrapper);
+  cardBox.appendChild(fieldsetColor);
+
+  const cardList = document.createElement('ul');
+  cardList.className = 'card-list';
+
+  const items = [
+      { name: 'Плотность', mean: product.content['Плотность'] },
+      { name: 'Цвет', mean: selectedColor || 'Не указано' }, // Сюда добавляем цвет, который будет обновляться
+      { name: 'Состав', mean: product.content['Состав'] },
+      { name: 'Ширина', mean: product.content['ширина'] },
+      { name: 'Страна производитель', mean: product.content['Страна производитель'] },
+      { name: 'Цена', mean: product.content['Цена'] }
+  ];
+
+  items.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.className = 'card-item';
+      if (item.name === 'Цвет') {
+          listItem.classList.add('color'); // Добавляем класс для цвета
+      }
+      const itemName = document.createElement('span');
+      itemName.className = 'item-name';
+      itemName.textContent = item.name;
+      const itemMean = document.createElement('span');
+      itemMean.className = 'item-mean';
+      itemMean.textContent = item.mean || 'Не указано';  // Проверка значения
+      listItem.appendChild(itemName);
+      listItem.appendChild(itemMean);
+      cardList.appendChild(listItem);
+  });
+
+  cardDescription.appendChild(cardList);
+
+  // Добавляем количество товара
+  const countCard = document.createElement('div');
+  countCard.id = 'count-card';
+  const decreaseButton = document.createElement('button');
+  decreaseButton.id = 'decrease';
+  decreaseButton.textContent = '-';
+  const counterText = document.createElement('div');
+  counterText.className = 'cuonter-text';
+  const quantitySpan = document.createElement('span');
+  quantitySpan.id = 'quantity';
+  quantitySpan.textContent = '1';
+  const unitSpan = document.createElement('span');
+  unitSpan.textContent = 'рул.';
+  counterText.appendChild(quantitySpan);
+  counterText.appendChild(unitSpan);
+  const increaseButton = document.createElement('button');
+  increaseButton.id = 'increase';
+  increaseButton.textContent = '+';
+
+  countCard.appendChild(decreaseButton);
+  countCard.appendChild(counterText);
+  countCard.appendChild(increaseButton);
+  cardList.appendChild(countCard);
+
+  // Кнопки "Заказать образец" и "Купить"
+  const cardButtons = document.createElement('div');
+  cardButtons.className = 'card-buttons';
+  const sampleButton = document.createElement('button');
+  sampleButton.className = 'card-btn1';
+  sampleButton.textContent = 'Заказать образец';
+  const buyButton = document.createElement('button');
+  buyButton.className = 'card-btn2';
+  buyButton.id = 'order-button';
+  buyButton.textContent = 'Купить';
+
+  cardButtons.appendChild(sampleButton);
+  cardButtons.appendChild(buyButton);
+
+  const cardContentWrapper = document.createElement('div');
+  cardContentWrapper.className = 'card-content__wrapper';
+
+  // Иконки с дополнительной информацией
+  const features = [
+      { icon: './public/img/card/icon-1.svg', text: 'Возможности' },
+      { icon: './public/img/card/icon-2.svg', text: 'Доставка' },
+      { icon: './public/img/card/icon-3.svg', text: 'Оплата' },
+  ];
+
+  features.forEach(feature => {
+      const cardContent = document.createElement('div');
+      cardContent.className = 'card-content';
+      const contentIcon = document.createElement('span');
+      contentIcon.className = 'content-icon';
+      const img = document.createElement('img');
+      img.src = feature.icon;
+      img.alt = 'icon';
+      contentIcon.appendChild(img);
+      const cardText = document.createElement('span');
+      cardText.className = 'card-text';
+      cardText.textContent = feature.text;
+      cardContent.appendChild(contentIcon);
+      cardContent.appendChild(cardText);
+      cardContentWrapper.appendChild(cardContent);
+  });
+
+  cardDescription.appendChild(cardContentWrapper);
+  cardRow.appendChild(cardDescription);
+  card.appendChild(cardRow);
+
+  // Добавляем карточку на страницу
+  document.body.appendChild(card);
+}
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const iconInfo = document.createElement('span');
   iconInfo.classList.add('icon-info');
-  iconInfo.innerHTML = `
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="9.59753" cy="9.5155" r="9.5155" fill="#F5E0C7"/>
-      <path d="M9.22195 12.0099C9.22195 11.6901 9.24099 11.4121 9.27907 11.176C9.32476 10.9323 9.39711 10.7076 9.49612 10.502C9.59512 10.2964 9.72839 10.0984 9.89594 9.908C10.0711 9.71761 10.2881 9.51199 10.5471 9.29114C10.7908 9.08552 10.9621 8.89132 11.0611 8.70854C11.1601 8.52577 11.2096 8.32776 11.2096 8.11452C11.2096 7.74136 11.0878 7.43673 10.8441 7.20065C10.6004 6.95695 10.2881 6.8351 9.90736 6.8351C9.13818 6.8351 8.69648 7.31488 8.58224 8.27445H7.30282C7.32566 7.85559 7.40563 7.48243 7.54271 7.15495C7.67979 6.81987 7.85876 6.53809 8.07961 6.30962C8.30808 6.07354 8.57843 5.89457 8.89067 5.77272C9.20291 5.64325 9.54943 5.57852 9.93021 5.57852C10.3034 5.57852 10.6461 5.64325 10.9583 5.77272C11.2782 5.90218 11.5523 6.08115 11.7808 6.30962C12.0093 6.53809 12.1882 6.81225 12.3177 7.13211C12.4472 7.44435 12.5119 7.78324 12.5119 8.14879C12.5119 8.33918 12.4929 8.51815 12.4548 8.68569C12.4167 8.84562 12.352 9.00555 12.2606 9.16548C12.1768 9.31779 12.0626 9.47391 11.9179 9.63384C11.7732 9.79377 11.598 9.96893 11.3924 10.1593C11.2096 10.3192 11.0611 10.4639 10.9469 10.5934C10.8327 10.7229 10.7413 10.8561 10.6727 10.9932C10.6118 11.1303 10.5661 11.2788 10.5356 11.4387C10.5128 11.5987 10.5014 11.7891 10.5014 12.0099H9.22195ZM9.22195 12.7182H10.5128V14.1689H9.22195V12.7182Z" fill="#423A2F"/>
-    </svg>
-  `;
+  iconInfo.innerHTML = ` ... `; // Сюда вставьте SVG для информации
   productCard.appendChild(productReview);
   productSize.appendChild(iconInfo); // Переместили сюда
 
@@ -103,7 +500,6 @@ function createProductCard(productsData, container) {
 
           // Если ключ "Цвет", нужно отобразить только фиалковый
           if (key === "Цвет") {
-              // Проверяем, есть ли "фиалковый" цвет в объекте content[key]
               const purpleColor = content[key]["фиалковый"];
               if (purpleColor) {
                   const spanLook = document.createElement('span');
@@ -132,7 +528,6 @@ fetch('products.json')
   .then(data => {
     allProducts = data; // Сохраняем все продукты для последующей фильтрации
     const productContainer = document.querySelector('.products-cards');
-    // Получаем контейнеры для карточек
     const row1 = document.querySelector('.row-1');
     const row2 = document.querySelector('.row-2');
     const row3 = document.querySelector('.row-3');
@@ -154,60 +549,47 @@ fetch('products.json')
       filteredProducts.forEach(product => createProductCard(product, rowClass));
     }
 
-    //клики по кнопкам 
+    // Клики по кнопкам
     const allButton = document.getElementById('all');
     const custom1Button = document.getElementById('custom1');
     const custom2Button = document.getElementById('custom2');
     const custom3Button = document.getElementById('custom3');
     const custom4Button = document.getElementById('custom4');
 
-    //появление блоков с текстом
     const content1 = document.getElementById('content1');
     const content2 = document.getElementById('content2');
     const content3 = document.getElementById('content3');
 
-
     allButton.addEventListener('click', () => {
-      // Очистить все контейнеры перед добавлением карточек
       row1.innerHTML = '';
       row2.innerHTML = '';
       row3.innerHTML = '';
       row4.innerHTML = '';
       row5.innerHTML = '';
       row6.innerHTML = '';
-      row6.innerHTML = '';
-
-  
-      // Добавить карточки
       addCardsToRow(row1, 'Флис односторонний');
       addCardsToRow(row2, "Флис двуxcторонний");
       addCardsToRow(row3, 'Трикотаж на флисе');
       addCardsToRow(row4, 'Футер 2-х нитка');
       addCardsToRow(row5, 'Футер 3-х нитка');
       addCardsToRow(row6, 'Ткань для термобелья');
-  });
-  
-  custom1Button.addEventListener('click', () => { 
-     // Очистить все контейнеры перед добавлением карточек
-     row1.innerHTML = '';
-     row2.innerHTML = '';
-     row3.innerHTML = '';
-     row4.innerHTML = '';
-     row5.innerHTML = '';
-     row6.innerHTML = '';
-     row7.innerHTML = '';
-     row8.innerHTML = '';
-  
-      // Добавить карточки
-      addCardsToRow(row4, 'Футер 2-х нитка');
-      addCardsToRow(row5, 'Футер 3-х нитка');
-      content2.style.display = "block";
-      content1.style.display = "none";
-      content3.style.display = "none";
-  });
-  
-  custom2Button.addEventListener('click', () => { 
-      // Очистить все контейнеры перед добавлением карточек
+    });
+
+    // Вызываем отображение карточек по умолчанию сразу после загрузки данных
+    row1.innerHTML = '';
+    row2.innerHTML = '';
+    row3.innerHTML = '';
+    row4.innerHTML = '';
+    row5.innerHTML = '';
+    row6.innerHTML = '';
+    addCardsToRow(row1, 'Флис односторонний');
+    addCardsToRow(row2, "Флис двуxcторонний");
+    addCardsToRow(row3, 'Трикотаж на флисе');
+    addCardsToRow(row4, 'Футер 2-х нитка');
+    addCardsToRow(row5, 'Футер 3-х нитка');
+    addCardsToRow(row6, 'Ткань для термобелья');
+
+    custom1Button.addEventListener('click', () => { 
       row1.innerHTML = '';
       row2.innerHTML = '';
       row3.innerHTML = '';
@@ -216,43 +598,213 @@ fetch('products.json')
       row6.innerHTML = '';
       row7.innerHTML = '';
       row8.innerHTML = '';
-    // Добавить карточки
+      addCardsToRow(row4, 'Футер 2-х нитка');
+      addCardsToRow(row5, 'Футер 3-х нитка');
+      content2.style.display = "block";
+      content1.style.display = "none";
+      content3.style.display = "none";
+    });
+
+    custom2Button.addEventListener('click', () => { 
+      row1.innerHTML = '';
+      row2.innerHTML = '';
+      row3.innerHTML = '';
+      row4.innerHTML = '';
+      row5.innerHTML = '';
+      row6.innerHTML = '';
+      row7.innerHTML = '';
+      row8.innerHTML = '';
       addCardsToRow(row1, 'Флис односторонний');
       addCardsToRow(row2, "Флис двуxcторонний");
       content1.style.display = "block";
       content2.style.display = "none";
       content3.style.display = "none";
-  });
+    });
 
-  custom3Button.addEventListener('click', () => { 
-     // Очистить все контейнеры перед добавлением карточек
-     row1.innerHTML = '';
-     row2.innerHTML = '';
-     row3.innerHTML = '';
-     row4.innerHTML = '';
-     row5.innerHTML = '';
-     row6.innerHTML = '';
-     row7.innerHTML = '';
-     row8.innerHTML = '';
-  
-      // Добавить карточки
+    custom3Button.addEventListener('click', () => { 
+      row1.innerHTML = '';
+      row2.innerHTML = '';
+      row3.innerHTML = '';
+      row4.innerHTML = '';
+      row5.innerHTML = '';
+      row6.innerHTML = '';
+      row7.innerHTML = '';
+      row8.innerHTML = '';
       addCardsToContainer(row7, "В наличии");
-  });
-  
-  custom4Button.addEventListener('click', () => {
-    // Очистить все контейнеры перед добавлением карточек
-    row1.innerHTML = '';
-    row2.innerHTML = '';
-    row3.innerHTML = '';
-    row4.innerHTML = '';
-    row5.innerHTML = '';
-    row6.innerHTML = '';
-    row7.innerHTML = '';
-    row8.innerHTML = '';
-      // Добавить карточки
+    });
+
+    custom4Button.addEventListener('click', () => {
+      row1.innerHTML = '';
+      row2.innerHTML = '';
+      row3.innerHTML = '';
+      row4.innerHTML = '';
+      row5.innerHTML = '';
+      row6.innerHTML = '';
+      row7.innerHTML = '';
+      row8.innerHTML = '';
       addCardsToContainer(row8, "Под заказ");
+    });
   });
-  
 
 
-  });
+ 
+
+    cardRow.appendChild(cardImages);
+
+    const cardDescription = document.createElement('div');
+    cardDescription.className = 'card-description';
+
+    const title = document.createElement('h3');
+    title.className = 'title-3';
+    title.textContent = product.description || 'Без описания';  // Если описание отсутствует, показываем заглушку
+    cardDescription.appendChild(title);
+
+    const cardBox = document.createElement('div');
+    cardBox.className = 'card-box';
+    cardDescription.appendChild(cardBox);
+
+    const cardSale = document.createElement('div');
+    cardSale.className = 'card-sale';
+    cardSale.textContent = product.sale || 'Не указано';  // Если статус отсутствует, показываем заглушку
+    cardBox.appendChild(cardSale);
+
+    const fieldsetColor = document.createElement('fieldset');
+    const legendColor = document.createElement('legend');
+    legendColor.className = 'menu-color';
+    legendColor.textContent = 'Выберите цвет';
+    fieldsetColor.appendChild(legendColor);
+
+    const colorWrapper = document.createElement('div');
+    colorWrapper.className = 'color-wrapper';
+
+    // Массив для хранения выбранного цвета
+    let selectedColor = null;
+
+    // Генерация блоков для выбора цвета
+    for (const colorKey in product.content['Цвет']) {
+        const div = document.createElement('div');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.id = `color-${colorKey}-${product.id}`;  // Добавляем уникальный идентификатор с ID товара
+        input.name = `color-${product.id}`;  // Уникальное имя для группы радиокнопок
+        input.value = colorKey;
+        input.className = 'custom-radio';
+
+        const label = document.createElement('label');
+        label.htmlFor = `color-${colorKey}-${product.id}`;
+        label.textContent = product.content['Цвет'][colorKey];
+        label.className = 'custom-label';
+
+        const iconlabel = document.createElement('span');
+        iconlabel.className = 'icon-label';
+        label.appendChild(iconlabel);
+
+        div.appendChild(input);
+        div.appendChild(label);
+        colorWrapper.appendChild(div);
+    }
+
+    // Обработка события выбора радиокнопки
+    colorWrapper.addEventListener('change', function(event) {
+        if (event.target.name.includes('color')) {  // Проверяем, что это выбор цвета
+            const selectedColorKey = event.target.value;
+            selectedColor = product.content['Цвет'][selectedColorKey]; // Сохраняем выбранный цвет
+
+            // Обновляем элемент для текущей карточки
+            const colorLi = card.querySelector('.card-item.color'); // Используем card как родитель
+            if (colorLi) {
+                const itemMean = colorLi.querySelector('.item-mean');
+                itemMean.textContent = selectedColor || 'Не указано';
+            }
+
+            // Дополнительные действия, например, вывод в консоль
+            console.log(`Выбранный цвет для товара ${product.id}:`, selectedColor);
+        }
+    });
+
+    fieldsetColor.appendChild(colorWrapper);
+    cardBox.appendChild(fieldsetColor);
+
+    const cardList = document.createElement('ul');
+    cardList.className = 'card-list';
+
+    const items = [
+        { name: 'Плотность', mean: product.content['Плотность'] },
+        { name: 'Цвет', mean: selectedColor || 'Не указано' }, // Сюда добавляем цвет, который будет обновляться
+        { name: 'Состав', mean: product.content['Состав'] },
+        { name: 'Ширина', mean: product.content['ширина'] },
+        { name: 'Страна производитель', mean: product.content['Страна производитель'] },
+        { name: 'Цена', mean: product.content['Цена'] }
+    ];
+
+    items.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.className = 'card-item';
+        if (item.name === 'Цвет') {
+            listItem.classList.add('color'); // Добавляем класс для цвета
+        }
+        const itemName = document.createElement('span');
+        itemName.className = 'item-name';
+        itemName.textContent = item.name;
+        const itemMean = document.createElement('span');
+        itemMean.className = 'item-mean';
+        itemMean.textContent = item.mean || 'Не указано';  // Проверка значения
+        listItem.appendChild(itemName);
+        listItem.appendChild(itemMean);
+        cardList.appendChild(listItem);
+    });
+
+    cardDescription.appendChild(cardList);
+
+    // Добавляем количество товара
+    const countCard = document.createElement('div');
+    countCard.id = 'count-card';
+    const decreaseButton = document.createElement('button');
+    decreaseButton.id = 'decrease';
+    decreaseButton.textContent = '-';
+    const counterText = document.createElement('div');
+    counterText.className = 'cuonter-text';
+    const quantitySpan = document.createElement('span');
+    quantitySpan.id = 'quantity';
+    quantitySpan.textContent = '1';
+    const unitSpan = document.createElement('span');
+    unitSpan.textContent = 'рул.';
+    counterText.appendChild(quantitySpan);
+    counterText.appendChild(unitSpan);
+    const increaseButton = document.createElement('button');
+    increaseButton.id = 'increase';
+    increaseButton.textContent = '+';
+
+    countCard.appendChild(decreaseButton);
+    countCard.appendChild(counterText);
+    countCard.appendChild(increaseButton);
+    cardList.appendChild(countCard);
+
+    // Кнопки "Заказать образец" и "Купить"
+    const cardButtons = document.createElement('div');
+    cardButtons.className = 'card-buttons';
+    const sampleButton = document.createElement('button');
+    sampleButton.className = 'card-btn1';
+    sampleButton.textContent = 'Заказать образец';
+    const buyButton = document.createElement('button');
+    buyButton.className = 'card-btn2';
+    buyButton.id = 'order-button';
+    buyButton.textContent = 'Купить';
+
+    cardButtons.appendChild(sampleButton);
+    cardButtons.appendChild(buyButton);
+
+    const cardContentWrapper = document.createElement('div');
+    cardContentWrapper.className = 'card-content__wrapper';
+
+    cardDescription.appendChild(cardContentWrapper);
+    cardRow.appendChild(cardDescription);
+    card.appendChild(cardRow);
+
+    // Добавляем карточку на страницу
+    document.body.appendChild(card);
+});
+
+
+
+
