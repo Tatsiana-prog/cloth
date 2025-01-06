@@ -231,10 +231,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return response.json();
         })
+
+        
         .then(data => {
             data.forEach(product => {
                 renderProductCard(product);  // Вызываем новую функцию для рендеринга
             });
         })
         .catch(error => console.error('Ошибка:', error));
+
+        
+
+
+
+
+
+
+
+
+
+
+        
 });

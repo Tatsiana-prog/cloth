@@ -117,3 +117,18 @@
      background: $color-beige;
   }
 }
+.btn-back__wrapper {
+  display: inline-flex;
+  gap:6px;
+  align-items: center;
+  margin-bottom: 23px;
+ 
+}
+
+.back-button {
+  font-family: 'Involve', sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  color:rgba(83, 69, 50, 0.56);
+  background: transparent;
+}

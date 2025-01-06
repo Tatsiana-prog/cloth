@@ -1,4 +1,5 @@
 .section-products {
+    position: relative;
     padding: 66px 0 44px;
     background: $color-white;
 }
@@ -36,6 +37,9 @@
     cursor: pointer;
 }
 
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
 .icon-check {
     display: flex;
     justify-content: center;
@@ -46,21 +50,15 @@
     align-items: center;
 }
 .icon-img {
-        display: block;
-        width: 14px;
-        height: 14px;
-        opacity: 0;
-}
-
-.fade-in {
-    animation: fadeIn 0.5s ease-in;
-}
-
-.icon-img {
     display: block;
     width: 14px;
     height: 14px;
+    background: url("../../../public/img/icons/icon-check.svg") no-repeat center;
+    background-size: cover;
+    opacity: 0;
 }
+
+
 .products-contact {
     display: flex;
     column-gap: 12px;
@@ -69,6 +67,9 @@
 
 .products-cards {
     margin-top:  50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .product-card {
@@ -200,9 +201,13 @@
 
 .product-review {
     position: absolute;
+    display: flex;
+    justify-content: center;
     top:16px;
     right: 11.89px;
     cursor: pointer;
+    border-radius: 50%;
+    background: transparent;
 }
 
 

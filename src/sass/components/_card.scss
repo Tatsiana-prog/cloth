@@ -28,6 +28,7 @@
     & .title-3 {
         font-family: 'Involve', sans-serif;
         color:$color-purple;
+        margin-bottom: 19px;
     }
 }
 .card-title {
@@ -54,29 +55,31 @@
 
 
 .menu-color {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 274px;
     height: 34px;
-    background: url(/public/img/card/bg-element1.png) no-repeat center;
+    background: url(../../../public/img/card/bg-element1.png) no-repeat center;
     background-size: contain;
     color:$color-white;
+    cursor: pointer;
 
    font-size: 18px;
    font-family: Involve, sans-serif;
    font-weight: 600;
 }
 
-.color-wrapper {
-    //display: none;
-    background: #692F6C;
-}
+
 .card-list {
+    position: relative;
+    margin-bottom: 20px;
 }
 .card-item {
     display: flex;
     column-gap: 24px;
+    margin-bottom: 12px;
     //justify-content: space-between
 }
 .item-name {
@@ -93,11 +96,19 @@
 .card-item .item-name::before {
     content: "";
     position: absolute;
-    bottom: 12px;
+    bottom: 5px;
     right: 0;
     background: $color-dark-light;
     width: 70%;
     height: 1px;
+}
+
+.card-list .card-item:nth-child(6)  .item-name {
+    width: 50px;
+    &::before {
+        width: 107.89px;
+        right: -310px;
+    }
 }
 
 .card-list .card-item:nth-child(2) .item-name::before {
@@ -116,9 +127,7 @@
 }
 
 
-.card-list .card-item:nth-child(6) .item-name::before {
-    width: 72%;
-}
+
 .item-name:nth-of-type(3)::before {
     width: 78%;
 }
@@ -211,7 +220,67 @@
 }
 
 .item-mean {
-    background: red;
     font-size: 18px;
     color:$color-purple;
+}
+
+.color-wrapper {
+   position: absolute;
+   top:35px;
+   left: 20px;
+   width: 243px;
+   height: 230px;
+   padding: 14px 18px 22px 18px;
+   background: #FCF7F7;
+   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   border-bottom-left-radius: 22px;
+   border-bottom-right-radius: 22px;
+   display: none;
+   z-index: 10;
+}
+
+.menu-color:hover {
+    & .color-wrapper {
+        display: block;
+    }
+}
+
+/* Hide the default checkbox */
+.input-color[type="radio"] {
+    display: none;
+}
+
+.custom-color {
+    display: flex;
+    justify-content: space-between;
+    color:$color-dark;
+    font-size: 18px;
+    font-family: 'Involve', sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.icon-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    
+}
+
+.icon-img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: rgb(239, 161, 135);
+       
+}
+
+/* Show the image when the radio button is checked */
+.input-color[type="radio"]:checked .icon-img {
+    background: url("../../../public/img/icons/icon-check.svg") no-repeat center;
+    display: block;
+    
 }

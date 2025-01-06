@@ -6,8 +6,8 @@
 }
 @font-face {
   font-family: "NK133";
-  src: url("/public/fonts/NK133/nk133.ttf") format("ttff");
-  src: url("/public/fonts/NK133/nk133.woff") format("woff");
+  src: url("../../public/fonts/NK133/nk133.ttf") format("ttff");
+  src: url("../../public/fonts/NK133/nk133.woff") format("woff");
 }
 /* Mixins */
 html {
@@ -22,6 +22,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -391,6 +392,21 @@ legend {
   background: #F5E0C7;
 }
 
+.btn-back__wrapper {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 23px;
+}
+
+.back-button {
+  font-family: "Involve", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  color: rgba(83, 69, 50, 0.56);
+  background: transparent;
+}
+
 .icon-add {
   display: flex;
   justify-content: center;
@@ -591,6 +607,7 @@ textarea::placeholder {
 .card-description .title-3 {
   font-family: "Involve", sans-serif;
   color: #692F6C;
+  margin-bottom: 19px;
 }
 
 .card-box {
@@ -614,26 +631,30 @@ textarea::placeholder {
 }
 
 .menu-color {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 274px;
   height: 34px;
-  background: url(/public/img/card/bg-element1.png) no-repeat center;
+  background: url(../../../public/img/card/bg-element1.png) no-repeat center;
   background-size: contain;
   color: #ffffff;
+  cursor: pointer;
   font-size: 18px;
   font-family: Involve, sans-serif;
   font-weight: 600;
 }
 
-.color-wrapper {
-  background: #692F6C;
+.card-list {
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .card-item {
   display: flex;
   column-gap: 24px;
+  margin-bottom: 12px;
 }
 
 .item-name {
@@ -650,11 +671,19 @@ textarea::placeholder {
 .card-item .item-name::before {
   content: "";
   position: absolute;
-  bottom: 12px;
+  bottom: 5px;
   right: 0;
   background: rgba(81.81, 68.03, 49.09, 0.56);
   width: 70%;
   height: 1px;
+}
+
+.card-list .card-item:nth-child(6) .item-name {
+  width: 50px;
+}
+.card-list .card-item:nth-child(6) .item-name::before {
+  width: 107.89px;
+  right: -310px;
 }
 
 .card-list .card-item:nth-child(2) .item-name::before {
@@ -671,10 +700,6 @@ textarea::placeholder {
 
 .card-list .card-item:nth-child(5) .item-name::before {
   width: 42%;
-}
-
-.card-list .card-item:nth-child(6) .item-name::before {
-  width: 72%;
 }
 
 .item-name:nth-of-type(3)::before {
@@ -772,18 +797,77 @@ textarea::placeholder {
 }
 
 .item-mean {
-  background: red;
   font-size: 18px;
   color: #692F6C;
 }
 
-#count-card {
+.color-wrapper {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  width: 243px;
+  height: 230px;
+  padding: 14px 18px 22px 18px;
+  background: #FCF7F7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  display: none;
+  z-index: 10;
+}
+
+.menu-color:hover .color-wrapper {
+  display: block;
+}
+
+/* Hide the default checkbox */
+.input-color[type=radio] {
+  display: none;
+}
+
+.custom-color {
+  display: flex;
+  justify-content: space-between;
+  color: #423A2F;
+  font-size: 18px;
+  font-family: "Involve", sans-serif;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.icon-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.icon-img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: rgb(239, 161, 135);
+}
+
+/* Show the image when the radio button is checked */
+.input-color[type=radio]:checked .icon-img {
+  background: url("../../../public/img/icons/icon-check.svg") no-repeat center;
+  display: block;
+}
+
+.count-card {
+  position: absolute;
+  bottom: 0;
+  right: 15%;
   display: flex;
   column-gap: 7px;
   font-size: 18px;
+  color: #692F6C;
 }
 
-#decrease, #increase {
+.decrease, .increase {
   -webkit-box-flex: 0;
   width: 56.92px;
   padding: 11.55px 23.96px;
@@ -806,10 +890,123 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+.window-delivery {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 76px 120px 93px 120px;
+  display: flex;
+  height: 606px;
+  width: 1200px;
+  border-radius: 34px;
+  justify-content: flex-start;
+  gap: 51px;
+  font-size: 28px;
+  background: #ffffff;
+  display: none;
+  z-index: 1000;
+}
+
+.window-title {
+  color: #692F6C;
+  margin-bottom: 34px;
+  text-transform: uppercase;
+}
+.window-title .title-4 {
+  font-size: 28px;
+}
+
+.window-subtitle {
+  color: #692F6C;
+  font-weight: 550;
+}
+
+.window-text {
+  color: #423A2F;
+  margin-top: 19px;
+  margin-bottom: 25px;
+}
+
+.window-list {
+  margin-top: 19px;
+  margin-bottom: 25px;
+}
+
+.window-item {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  margin-bottom: 19px;
+}
+
+.window-item:last-child {
+  margin-bottom: 0;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: url(../../../public/img/icons/icon-close.png) no-repeat center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.window-payment {
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 1200px;
+  transform: translate(-50%, -50%);
+  padding: 76px 120px 93px 120px;
+  height: 448px;
+  border-radius: 34px;
+  overflow: hidden;
+  font-size: 28px;
+  z-index: 1000;
+  background: #ffffff;
+}
+
+.window-possibilities {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 1200px;
+  transform: translate(-50%, -50%);
+  display: none;
+  padding: 76px 120px 93px 120px;
+  height: 653px;
+  border-radius: 34px;
+  overflow: hidden;
+  font-size: 28px;
+  background: #ffffff;
+  z-index: 1000;
+}
+.window-possibilities .window-text {
+  margin-top: 5px;
+  margin-bottom: 34px;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
 .header {
   padding: 88px 46.15px 16px 27px;
   height: 185px;
-  background: url(../../../public/img/header/bg.png) no-repeat center;
+  background: url(../public/img/header/bg.png) no-repeat center;
   background-size: cover;
   border-bottom-left-radius: 33px;
   border-bottom-right-radius: 33px;
@@ -817,7 +1014,7 @@ textarea::placeholder {
 
 .header-row {
   width: 1350px;
-  background: url(../../../public/img/header/bg-row.png) no-repeat center;
+  background: url(../public/img/header/bg-row.png) no-repeat center;
   background-size: cover;
   position: relative;
   display: flex;
@@ -865,7 +1062,7 @@ textarea::placeholder {
   display: block;
   width: 12px;
   height: 8.92px;
-  background: url(../../../public/img/icons/arrow-down.png) no-repeat center;
+  background: url(../public/img/icons/arrow-down.png) no-repeat center;
   background-size: cover;
 }
 
@@ -951,7 +1148,7 @@ textarea::placeholder {
 
 .section-description {
   padding: 45px 0 101px;
-  background: yellowgreen;
+  background: rgb(50, 205, 205);
 }
 
 .description {
@@ -1190,6 +1387,7 @@ textarea::placeholder {
 }
 
 .section-products {
+  position: relative;
   padding: 66px 0 44px;
   background: #ffffff;
 }
@@ -1227,6 +1425,10 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
 .icon-check {
   display: flex;
   justify-content: center;
@@ -1241,17 +1443,9 @@ textarea::placeholder {
   display: block;
   width: 14px;
   height: 14px;
+  background: url("../../../public/img/icons/icon-check.svg") no-repeat center;
+  background-size: cover;
   opacity: 0;
-}
-
-.fade-in {
-  animation: fadeIn 0.5s ease-in;
-}
-
-.icon-img {
-  display: block;
-  width: 14px;
-  height: 14px;
 }
 
 .products-contact {
@@ -1262,6 +1456,9 @@ textarea::placeholder {
 
 .products-cards {
   margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .product-card {
@@ -1391,9 +1588,13 @@ textarea::placeholder {
 
 .product-review {
   position: absolute;
+  display: flex;
+  justify-content: center;
   top: 16px;
   right: 11.89px;
   cursor: pointer;
+  border-radius: 50%;
+  background: transparent;
 }
 
 .product-density {
