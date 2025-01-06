@@ -78,10 +78,7 @@
 
 .card-list {
     position: relative;
-<<<<<<< HEAD
     margin-bottom: 20px;
-=======
->>>>>>> b36775f5f7e8732c773a913845d39a494fd7f632
 }
 .card-item {
     display: flex;
@@ -141,12 +138,9 @@
     }
 }
 
-<<<<<<< HEAD
-=======
 .card-list .card-item:nth-child(6) .item-name::before {
     width: 0;
 }
->>>>>>> b36775f5f7e8732c773a913845d39a494fd7f632
 
 .item-name:nth-of-type(3)::before {
     width: 78%;
@@ -245,7 +239,6 @@
 }
 
 .color-wrapper {
-<<<<<<< HEAD
    position: absolute;
    top:35px;
    left: 20px;
@@ -288,7 +281,6 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    
 }
 
 .icon-img {
@@ -296,54 +288,11 @@
     width: 24px;
     height: 24px;
     background: rgb(239, 161, 135);
-       
 }
 
 /* Show the image when the radio button is checked */
 .input-color[type="radio"]:checked .icon-img {
     background: url("../../../public/img/icons/icon-check.svg") no-repeat center;
     display: block;
-    
-}
-=======
-    width: 243px;
-    height: 230px;
-    padding: 14px 15px 22px 18px;
-    background: #FCF7F7;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-bottom-left-radius: 22px;
-    border-bottom-right-radius: 22px;
-    //display: none;
-
-    transition: opacity 0.5s ease-out;  
 }
 
-/* Default styles for custom radio button */
-.custom-radio {
-    display: none;
-}
-
-.custom-label {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 10px;   
-    font-size: 18px;
-    color: $color-dark;
-    cursor: pointer;
-}
-
-.icon-label {
-    width: 14px;
-    height: 12px;
-    background: url(/public/img/icons/icon-chectpurple.svg) no-repeat center;
-    background-size: cover;
-    opacity: 0;
-}
-
-/* Styles for checked custom radio button */
-.custom-radio:checked + .custom-label {
-    & .icon-label {
-        opacity: 1;
-}}
->>>>>>> b36775f5f7e8732c773a913845d39a494fd7f632
