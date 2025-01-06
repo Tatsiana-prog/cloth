@@ -200,14 +200,19 @@
 }
 
 .product-review {
+    display: inline-flex;
     position: absolute;
     display: flex;
     justify-content: center;
     top:16px;
     right: 11.89px;
     cursor: pointer;
+<<<<<<< HEAD
     border-radius: 50%;
     background: transparent;
+=======
+    z-index: 2000;
+>>>>>>> b36775f5f7e8732c773a913845d39a494fd7f632
 }
 
 

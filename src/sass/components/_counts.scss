@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 .count-card {
   position: absolute;
   bottom: 0;
   right: 15%;
+=======
+#count-card {
+  position: absolute;
+  bottom: 0;
+  right: 17%;
+>>>>>>> b36775f5f7e8732c773a913845d39a494fd7f632
   display: flex;
   column-gap: 7px;
   font-size: 18px;
@@ -31,4 +38,6 @@
     cursor: pointer;
   }
   
-  
+  .counter-text {
+    color: $color-purple;
+  }
