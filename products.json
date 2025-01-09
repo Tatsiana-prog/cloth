@@ -558,7 +558,8 @@
 "image2": "./public/img/products/other/product1/img2.jpg",
 "image3": "./public/img/products/other/product1/img3.jpg",
 "image4": "./public/img/products/other/product1/img4.jpg",
-"content": {
+ "content": {
+    "Плотность": "140г/м2",
   "Цвет": {
     "Первый цвет": "Первый цвет",
     "Второй цвет": "Второй цвет",

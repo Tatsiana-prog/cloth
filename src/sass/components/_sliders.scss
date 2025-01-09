@@ -1,0 +1,42 @@
+.slider {
+    width: 577px;
+    position: relative;
+   
+   
+}
+.slider-wrapper {
+    width: 577px; /* Увеличиваем ширину на отступ */
+    overflow: hidden;
+   
+}
+.slider-line {
+    position: relative;
+    width: 1731px;
+    display: flex;
+    left: 0;
+    transition: all ease-in 1s;
+}
+.slider-img {
+    width: 577px;
+    height: 385px;
+    flex-shrink: 0; /* Не позволяет изображениям уменьшаться */
+    object-fit: cover;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+.dot.active {
+    background-color: #717171;
+}

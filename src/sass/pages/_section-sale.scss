@@ -27,6 +27,10 @@
     padding: 47.5px 43px 73px 43px;
 
 }
+
+.sale-desc {
+    width: 50%;
+}
 .sale-content1 {
     padding: 21px 100px;
     text-align: center;
@@ -78,7 +82,7 @@
     justify-content: center;
     width: 73px;
     height: 73px;
-    background: $color-dark;
+    background: rgba(66, 58, 47, 0.5);
     border-radius: 50%;
     border: 2px solid $color-white;
     cursor: pointer;
@@ -118,7 +122,7 @@
 }
 
 .slider-img {
-    width: 589px;
+    width: 577px;
     height: 385px;
     border-radius: 24px;
 }

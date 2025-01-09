@@ -45,6 +45,13 @@
     background: $color-beige-add;
   }
 }
+
+.link-social:hover, .link-phone:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
+  color: $color-white;
+
+}
 .social-text {
   font-family: 'Involve', sans-serif;
   font-size: 14px;

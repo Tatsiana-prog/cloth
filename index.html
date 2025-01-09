@@ -447,42 +447,33 @@
                             </div>
                         </div>
                     </div>
-                <div class="window-delivery" id="window-delivery">
-                    <div class="window-image">
-                        <img src="./public/img/delivery/image.png" alt="image">
+                <div class="window-order">
+                    <div class="window-title"><h4 class ="title-4">Заказать образец</h4></div>
+                    <div class="order-box">
+                        <div class="order-name"></div>
+                        <div class="order-desc"></div>
+                        <div class="order-color"></div>
                     </div>
-                    <div class="window-content">
-                        <div class="window-title"><h4 class="title-4">ИНФОРМАЦИЯ О ДОСТАВКЕ</h4></div>
-                        <div class="window-subtitle">Доставка ткани</div>
-                        <div class="window-text"> “ТК Деловые линии” и “ТК Байкал сервис”</div>
-                        <div class="window-subtitle">Самовывоз ткани со склада</div>
-                        <ul class="window-list">
-                            <li class="window-item"><span class="arrow-right"></span>пн - чт: с 8:00 до 18:00</li>
-                            <li class="window-item"><span class="arrow-right"></span>пт: с 8:00 до 17:00</li>
-                            <li class="window-item"><span class="arrow-right"></span>сб: с 8:00 до 14:00</li>
-                        </ul>
-                    </div>
-                    <div class="btn-close"></div>
-                </div>
-                <div class="window-possibilities" id="window-possibilities">
-                   <div class="window-title"><h4 class="title-4">ВОЗМОЖНОСТИ “ТЕКСТИЛЬ ПОЛОТНО”</h4></div>
-                    <div class="window-subtitle">Ткань</div>
-                    <div class="window-text"> Постоянные цвета в ток. Контроль за трендовыми цветами. Полотно разной ширины. Полное обеспечение производства.</div>
-                    <div class="window-subtitle">Поставки</div>
-                    <div class="window-text">Работа идет напрямую с производителями ткани в Китае, Узбекистане. Отлаженная логистика, без таможенных проблем и задержек. Поставки контейнерами. Возможна работа эксклюзивных контейнерных поставок.</div>
-                    <div class="window-subtitle">Склад</div>
-                    <div class="window-text">Склад работает по принципу постоянного наличия ассортимента. Возможны ограничения в объеме.</div>
-                    <div class="btn-close"></div>
-                </div>
-                <div class="window-payment" id="window-payment">
-                    <div class="window-title"><h4 class="title-4">ИНФОРМАЦИЯ ПО ОПЛАТЕ</h4></div>
-                    <div class="window-text"><b>Принимаем оплату от Юридических лиц, ИП, и физических лиц на р/с предприятия, или иными способами, не противоречащими законодательства РФ</b></div>
-                    <div class="window-subtitle">Для постоянных клиентов можем предложить</div>
-                    <ul class="window-list">
-                        <li class="window-item"><span class="arrow-right"></span>Прогрессивную систему скидок;</li>
-                        <li class="window-item"><span class="arrow-right"></span>Возможность отсрочки платежа.</li>
-                    </ul>
-                    <div class="btn-close"></div>
+                    <div class="order-form__wrapper">
+                       <form class="order-form">
+                        <div class="input-boxes">
+                            <input class="input" type="text" id="questions-name" name="name" placeholder="Имя">
+                            <input class="input" type="email" id="questions-email" name="email" placeholder="Эл.почта">
+                        </div>
+                        <textarea name="textarea" rows="5" cols="15"  placeholder="Комментарий"></textarea><br>
+                        <div class="input-box">
+                            <input class="input-custom" type="checkbox" id="custom" name="custom"><span class="checkbox-text">Даю согласие на обработку персональных данных<br>
+                        </div>
+                        <div class="btn-wrapper">
+                            <button class="btn-submit" type="submit">Заказать <span class="btn-arrow">
+                                <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.659 6.70614C9.58531 6.77481 9.52621 6.85761 9.48522 6.94961C9.44423 7.04161 9.42218 7.14092 9.42041 7.24162C9.41863 7.34232 9.43716 7.44235 9.47488 7.53574C9.5126 7.62913 9.56874 7.71396 9.63996 7.78518C9.71118 7.8564 9.79601 7.91255 9.8894 7.95027C9.98279 7.98799 10.0828 8.00651 10.1835 8.00474C10.2842 8.00296 10.3835 7.98092 10.4755 7.93993C10.5675 7.89893 10.6503 7.83983 10.719 7.76614L14.5 3.98614L10.72 0.206144C10.5786 0.0694572 10.3892 -0.0062288 10.1925 -0.00461333C9.9959 -0.00299786 9.80775 0.0757902 9.66863 0.214781C9.52951 0.353772 9.45054 0.541845 9.44874 0.738493C9.44694 0.935141 9.52245 1.12463 9.659 1.26614L11.629 3.23614L1.25 3.23614C1.05109 3.23614 0.860323 3.31516 0.71967 3.45581C0.579018 3.59647 0.5 3.78723 0.5 3.98614C0.5 4.18506 0.579018 4.37582 0.71967 4.51647C0.860323 4.65713 1.05109 4.73614 1.25 4.73614L11.629 4.73614L9.659 6.70614Z" fill="white"/>
+                                </svg>
+                                </span>
+                            </button>
+                        </div>
+                            </form>
+                        </div>
                 </div>
             </section>
             <section class="section-advantages">
@@ -634,25 +625,25 @@
                             <h3 class="title-3">Чтобы кУпить ТКАНЬ ПО ОПТОВОЙ ЦЕНЕ ИЗУЧИТЕ </h3>
                             <p class="sale-text color-purple">НАШИ ПРЕДЛОЖЕНИЯ И ВОСПОЛЬЗУЙТЕСЬ УСЛУГОЙ КОСУЛЬТАНТА ПО ПОДБОРУ ТКАНИ</p>
                             <div class="sale-form">
-                            <form>
-                                <div class="form-box">
-                                    <input class="input" type="text" id="sale-name" name="name" placeholder="Имя"><br>
-                                    <input class="input" type="email" id="sale-email" name="email" placeholder="Эл.почта"><br>
-                                    <input class="input" type="tel" id="sale-tel" name="tel" placeholder="Тел"><br>
-                                    <div class="btn-wrapper">
-                                        <button class="btn-submit" type="submit">Оставить заявку
-                                            <span class="btn-arrow">
-                                                <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.659 6.70614C9.58531 6.77481 9.52621 6.85761 9.48522 6.94961C9.44423 7.04161 9.42218 7.14092 9.42041 7.24162C9.41863 7.34232 9.43716 7.44235 9.47488 7.53574C9.5126 7.62913 9.56874 7.71396 9.63996 7.78518C9.71118 7.8564 9.79601 7.91255 9.8894 7.95027C9.98279 7.98799 10.0828 8.00651 10.1835 8.00474C10.2842 8.00296 10.3835 7.98092 10.4755 7.93993C10.5675 7.89893 10.6503 7.83983 10.719 7.76614L14.5 3.98614L10.72 0.206144C10.5786 0.0694572 10.3892 -0.0062288 10.1925 -0.00461333C9.9959 -0.00299786 9.80775 0.0757902 9.66863 0.214781C9.52951 0.353772 9.45054 0.541845 9.44874 0.738493C9.44694 0.935141 9.52245 1.12463 9.659 1.26614L11.629 3.23614L1.25 3.23614C1.05109 3.23614 0.860323 3.31516 0.71967 3.45581C0.579018 3.59647 0.5 3.78723 0.5 3.98614C0.5 4.18506 0.579018 4.37582 0.71967 4.51647C0.860323 4.65713 1.05109 4.73614 1.25 4.73614L11.629 4.73614L9.659 6.70614Z" fill="white"/>
-                                                </svg>
-                                            </span>
-                                        </button>
+                                <form>
+                                    <div class="form-box">
+                                        <input class="input" type="text" id="sale-name" name="name" placeholder="Имя"><br>
+                                        <input class="input" type="email" id="sale-email" name="email" placeholder="Эл.почта"><br>
+                                        <input class="input" type="tel" id="sale-tel" name="tel" placeholder="Тел"><br>
+                                        <div class="btn-wrapper">
+                                            <button class="btn-submit" type="submit">Оставить заявку
+                                                <span class="btn-arrow">
+                                                    <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.659 6.70614C9.58531 6.77481 9.52621 6.85761 9.48522 6.94961C9.44423 7.04161 9.42218 7.14092 9.42041 7.24162C9.41863 7.34232 9.43716 7.44235 9.47488 7.53574C9.5126 7.62913 9.56874 7.71396 9.63996 7.78518C9.71118 7.8564 9.79601 7.91255 9.8894 7.95027C9.98279 7.98799 10.0828 8.00651 10.1835 8.00474C10.2842 8.00296 10.3835 7.98092 10.4755 7.93993C10.5675 7.89893 10.6503 7.83983 10.719 7.76614L14.5 3.98614L10.72 0.206144C10.5786 0.0694572 10.3892 -0.0062288 10.1925 -0.00461333C9.9959 -0.00299786 9.80775 0.0757902 9.66863 0.214781C9.52951 0.353772 9.45054 0.541845 9.44874 0.738493C9.44694 0.935141 9.52245 1.12463 9.659 1.26614L11.629 3.23614L1.25 3.23614C1.05109 3.23614 0.860323 3.31516 0.71967 3.45581C0.579018 3.59647 0.5 3.78723 0.5 3.98614C0.5 4.18506 0.579018 4.37582 0.71967 4.51647C0.860323 4.65713 1.05109 4.73614 1.25 4.73614L11.629 4.73614L9.659 6.70614Z" fill="white"/>
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="input-box">
-                                    <input class="input-custom" type="checkbox" id="custom" name="custom"><span class="checkbox-text">Нажимая на кнопку “Отправить заявку”, вы соглашаетесь <a href="">с политикой конфиденциальности</a></span><br>
-                                </div>
-                            </form>
+                                    <div class="input-box">
+                                        <input class="input-custom" type="checkbox" id="custom" name="custom"><span class="checkbox-text">Нажимая на кнопку “Отправить заявку”, вы соглашаетесь <a href="">с политикой конфиденциальности</a></span><br>
+                                    </div>
+                                </form>
                             </div>
                                 <div class="sale-image">
                                     <img src="./public/img/description/form-img.png" alt="image">
@@ -661,25 +652,27 @@
                         <div class="sale-content" id="sale-content1">
                             <div class="slider">
                                 <div class="slider-wrapper">
-                                    <div class="slider-line">
-                                        <img class="slider-img" src="/public/img/sale/img1.jpg" alt="image">
+                                    <div class="slider-line" id="slider-1">
+                                            <img class="slider-img" src="./public/img/sale/img1.jpg" alt="image">
+                                            <img class="slider-img" src="./public/img/sale/img2.jpg" alt="image">
+                                            <img class="slider-img" src="./public/img/sale/img3.jpg" alt="image">
                                     </div>
+                                    <div class="dots">
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                            <span class="dot"></span>
+                                    </div>
+                                    <span class="arrow-prev" id="arrow-prev">
+                                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.3272 17.1581C9.10816 17.3858 8.81112 17.5137 8.5014 17.5137C8.19168 17.5137 7.89464 17.3858 7.6756 17.1581L0.667424 9.87041C0.448452 9.64264 0.325441 9.33376 0.325441 9.01169C0.325441 8.68962 0.448452 8.38073 0.667424 8.15296L7.67561 0.865325C7.8959 0.644074 8.19095 0.521649 8.4972 0.524417C8.80345 0.527185 9.09641 0.654924 9.31297 0.880122C9.52953 1.10532 9.65237 1.40996 9.65504 1.72842C9.6577 2.04689 9.53997 2.3537 9.3272 2.58278L4.31285 7.79708L17.8456 7.79708C18.1554 7.79708 18.4525 7.92505 18.6716 8.15283C18.8906 8.38062 19.0137 8.68956 19.0137 9.01169C19.0137 9.33382 18.8906 9.64276 18.6716 9.87055C18.4525 10.0983 18.1554 10.2263 17.8456 10.2263L4.31285 10.2263L9.3272 15.4406C9.54617 15.6684 9.66918 15.9773 9.66918 16.2993C9.66918 16.6214 9.54617 16.9303 9.3272 17.1581Z" fill="white"/>
+                                                </svg>
+                                    </span>
+                                    <span class="arrow-next" id="arrow-next">
+                                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1914 0.85562C10.4104 0.627916 10.7074 0.5 11.0172 0.5C11.3269 0.5 11.6239 0.627916 11.843 0.85562L18.8511 8.14326C19.0701 8.37103 19.1931 8.67991 19.1931 9.00198C19.1931 9.32405 19.0701 9.63294 18.8511 9.86071L11.843 17.1483C11.6227 17.3696 11.3276 17.492 11.0214 17.4893C10.7151 17.4865 10.4221 17.3587 10.2056 17.1336C9.98902 16.9084 9.86618 16.6037 9.86352 16.2852C9.86086 15.9668 9.97859 15.66 10.1914 15.4309L15.2057 10.2166L1.67291 10.2166C1.36313 10.2166 1.06604 10.0886 0.84699 9.86084C0.627941 9.63306 0.504882 9.32412 0.504882 9.00198C0.504882 8.67985 0.627941 8.37091 0.84699 8.14313C1.06604 7.91534 1.36313 7.78738 1.67291 7.78738L15.2057 7.78738L10.1914 2.57307C9.97238 2.3453 9.84937 2.03642 9.84937 1.71435C9.84937 1.39228 9.97238 1.08339 10.1914 0.85562Z" fill="white"/>
+                                                </svg>
+                                    </span>
                                 </div>
-                                <div class="dots">
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                    <span class="dot"></span>
-                                </div>
-                                <span class="arrow-prev">
-                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.3272 17.1581C9.10816 17.3858 8.81112 17.5137 8.5014 17.5137C8.19168 17.5137 7.89464 17.3858 7.6756 17.1581L0.667424 9.87041C0.448452 9.64264 0.325441 9.33376 0.325441 9.01169C0.325441 8.68962 0.448452 8.38073 0.667424 8.15296L7.67561 0.865325C7.8959 0.644074 8.19095 0.521649 8.4972 0.524417C8.80345 0.527185 9.09641 0.654924 9.31297 0.880122C9.52953 1.10532 9.65237 1.40996 9.65504 1.72842C9.6577 2.04689 9.53997 2.3537 9.3272 2.58278L4.31285 7.79708L17.8456 7.79708C18.1554 7.79708 18.4525 7.92505 18.6716 8.15283C18.8906 8.38062 19.0137 8.68956 19.0137 9.01169C19.0137 9.33382 18.8906 9.64276 18.6716 9.87055C18.4525 10.0983 18.1554 10.2263 17.8456 10.2263L4.31285 10.2263L9.3272 15.4406C9.54617 15.6684 9.66918 15.9773 9.66918 16.2993C9.66918 16.6214 9.54617 16.9303 9.3272 17.1581Z" fill="white"/>
-                                        </svg>
-                                </span>
-                                <span class="arrow-next">
-                                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1914 0.85562C10.4104 0.627916 10.7074 0.5 11.0172 0.5C11.3269 0.5 11.6239 0.627916 11.843 0.85562L18.8511 8.14326C19.0701 8.37103 19.1931 8.67991 19.1931 9.00198C19.1931 9.32405 19.0701 9.63294 18.8511 9.86071L11.843 17.1483C11.6227 17.3696 11.3276 17.492 11.0214 17.4893C10.7151 17.4865 10.4221 17.3587 10.2056 17.1336C9.98902 16.9084 9.86618 16.6037 9.86352 16.2852C9.86086 15.9668 9.97859 15.66 10.1914 15.4309L15.2057 10.2166L1.67291 10.2166C1.36313 10.2166 1.06604 10.0886 0.84699 9.86084C0.627941 9.63306 0.504882 9.32412 0.504882 9.00198C0.504882 8.67985 0.627941 8.37091 0.84699 8.14313C1.06604 7.91534 1.36313 7.78738 1.67291 7.78738L15.2057 7.78738L10.1914 2.57307C9.97238 2.3453 9.84937 2.03642 9.84937 1.71435C9.84937 1.39228 9.97238 1.08339 10.1914 0.85562Z" fill="white"/>
-                                        </svg>
-                                </span>
                             </div>
                             <div class="sale-desc">
                                 <h2 class="title-2">Tкань от производителя из китая</h2>
@@ -1127,7 +1120,9 @@
                 <div class="container">
                     <div class="view">
                         <h2 class="title-2">Вы смотрели</h2>
-                        <div class="view-cards"></div>
+                        <div id="watched">
+                            <div id="watched-list"></div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -1159,7 +1154,9 @@
             </div>
         </footer>
     <script src="src/js/product-card.js"></script>
-    <script src="src/js/script.js"></script>
+    <script src="src/js/sale.js"></script>
+    <script src="src/js/slider.js"></script>
+ 
     </body>
 
 </html>

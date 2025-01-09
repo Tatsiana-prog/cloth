@@ -22,7 +22,6 @@ html {
 }
 
 body {
-  position: relative;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -322,6 +321,12 @@ legend {
   background: #FFD9AB;
 }
 
+.link-social:hover, .link-phone:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in;
+  color: #ffffff;
+}
+
 .social-text {
   font-family: "Involve", sans-serif;
   font-size: 14px;
@@ -578,9 +583,27 @@ textarea::placeholder {
   line-height: 18.62px;
 }
 
+.order-form__wrapper {
+  width: 779px;
+  margin: 0 auto;
+}
+
+.section-card .product-card {
+  display: none;
+}
+
 .card-row {
   display: flex;
   column-gap: 33px;
+  justify-content: center;
+}
+
+.wrapper-card {
+  position: relative;
+}
+
+.card {
+  position: relative;
 }
 
 .card-image {
@@ -909,7 +932,7 @@ textarea::placeholder {
 
 .window-delivery {
   position: absolute;
-  top: 40%;
+  top: 0%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 76px 120px 93px 120px;
@@ -922,6 +945,7 @@ textarea::placeholder {
   font-size: 28px;
   background: #ffffff;
   display: none;
+  opacity: 1;
   z-index: 1000;
 }
 
@@ -990,6 +1014,7 @@ textarea::placeholder {
 }
 
 .window-possibilities {
+  display: none;
   position: absolute;
   top: 40%;
   left: 50%;
@@ -1018,6 +1043,82 @@ textarea::placeholder {
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
+}
+
+.window-order {
+  padding: 76px 0;
+}
+.window-order .window-title .title-4 {
+  text-align: center;
+}
+
+.order-box {
+  display: flex;
+}
+
+.input-boxes {
+  display: flex;
+  column-gap: 15px;
+  margin-bottom: 15px;
+}
+
+.input-boxes .input {
+  border: 1px solid gray;
+}
+
+.order-form textarea {
+  width: 100%;
+}
+
+.order-form .btn-wrapper {
+  margin: 36.5px auto 34px auto;
+  width: 326px;
+  cursor: pointer;
+}
+
+.slider {
+  width: 577px;
+  position: relative;
+}
+
+.slider-wrapper {
+  width: 577px; /* Увеличиваем ширину на отступ */
+  overflow: hidden;
+}
+
+.slider-line {
+  position: relative;
+  width: 1731px;
+  display: flex;
+  left: 0;
+  transition: all ease-in 1s;
+}
+
+.slider-img {
+  width: 577px;
+  height: 385px;
+  flex-shrink: 0; /* Не позволяет изображениям уменьшаться */
+  object-fit: cover;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
 }
 
 .header {
@@ -1472,6 +1573,7 @@ textarea::placeholder {
 }
 
 .products-cards {
+  position: relative;
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -1943,6 +2045,10 @@ textarea::placeholder {
   padding: 47.5px 43px 73px 43px;
 }
 
+.sale-desc {
+  width: 50%;
+}
+
 .sale-content1 {
   padding: 21px 100px;
   text-align: center;
@@ -1983,7 +2089,7 @@ textarea::placeholder {
   justify-content: center;
   width: 73px;
   height: 73px;
-  background: #423A2F;
+  background: rgba(66, 58, 47, 0.5);
   border-radius: 50%;
   border: 2px solid #ffffff;
   cursor: pointer;
@@ -2024,7 +2130,7 @@ textarea::placeholder {
 }
 
 .slider-img {
-  width: 589px;
+  width: 577px;
   height: 385px;
   border-radius: 24px;
 }

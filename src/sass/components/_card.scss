@@ -1,10 +1,17 @@
-.card {
+.section-card .product-card {
+    display: none;
 }
+
 .card-row {
     display: flex;
     column-gap: 33px;
+    justify-content: center;
+}
+.wrapper-card {
+    position: relative;
 }
 .card {
+    position: relative;
    
 }
 .card-images {
