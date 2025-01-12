@@ -547,55 +547,5 @@
   "Страна производитель": "Китай",
   "Цена": "от 500р /кг (5 п / м)"
   }
-} ,
-
-{ "id": 22,
-  "name": "Другие",
-"description": "шелк",
-"category": "другие",
-"sale":"В наличии",
-"image1": "./public/img/products/other/product1/img1.jpg",
-"image2": "./public/img/products/other/product1/img2.jpg",
-"image3": "./public/img/products/other/product1/img3.jpg",
-"image4": "./public/img/products/other/product1/img4.jpg",
- "content": {
-    "Плотность": "140г/м2",
-  "Цвет": {
-    "Первый цвет": "Первый цвет",
-    "Второй цвет": "Второй цвет",
-    "Третий цвет": "Третий цвет",
-    "Четвертый цвет": "Четвертый цвет",
-    "Фиалковый": "фиалковый"
-  },
-  "Состав": "100% полиэстер",
- "ширина": "150-220",
-  "Страна производитель": "Китай",
-  "Цена": "от 500р /кг (5 п / м)"
-  }
-},
-
-{"id": 23,
-  "name": "Другие",
-"description": "шерсть",
-"category": "другие",
-"sale":"В наличии",
-"image1": "./public/img/products/other/product2/img1.jpg",
-"image2": "./public/img/products/other/product2/img2.jpg",
-"image3": "./public/img/products/other/product2/img3.jpg",
-"image4": "./public/img/products/other/product2/img4.jpg",
-"content": {
-  "Плотность": "140г/м2",
-  "Цвет": {
-    "Первый цвет": "Первый цвет",
-    "Второй цвет": "Второй цвет",
-    "Третий цвет": "Третий цвет",
-    "Четвертый цвет": "Четвертый цвет",
-     "Фиалковый": "фиалковый"
-  },
-  "Состав": "100% полиэстер",
-  "ширина": "150-220",
-  "Страна производитель": "Китай",
-  "Цена": "от 500р /кг (5 п / м)"
-  }
 }
 ]

@@ -279,14 +279,14 @@ legend {
   width: 100%;
   height: 54px;
   padding: 17.5px 0;
-  background: #692F6C;
   border-radius: 90px;
   background: linear-gradient(270deg, #C568CA 15.8%, #A941AE 50%);
-  transition: all 1s ease-in;
   cursor: pointer;
 }
 .btn-wrapper:hover {
+  transition: 0.5s linear;
   background: #692F6C;
+  cursor: pointer;
 }
 
 .btn-submit {
@@ -410,6 +410,27 @@ legend {
   cursor: pointer;
   color: rgba(83, 69, 50, 0.56);
   background: transparent;
+}
+
+.product1-selection, .product2-selection {
+  margin-top: 20px;
+  display: none;
+  justify-content: flex-end;
+}
+
+.selection {
+  padding: 5px 20px;
+  color: #423A2F;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.selection-active {
+  background: #F5E0C7;
+  animation: fadeIn 0.5s ease-in;
 }
 
 .icon-add {
@@ -932,7 +953,7 @@ textarea::placeholder {
 
 .window-delivery {
   position: absolute;
-  top: 0%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 76px 120px 93px 120px;
@@ -1041,19 +1062,25 @@ textarea::placeholder {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 999;
 }
 
 .window-order {
   padding: 76px 0;
+  background: white;
+  border-radius: 34px;
+  overflow: hidden;
 }
 .window-order .window-title .title-4 {
   text-align: center;
+  font-family: "Involve", sans-serif;
+  font-weight: 600;
 }
 
 .order-box {
   display: flex;
+  gap: 13px;
 }
 
 .input-boxes {
@@ -1190,6 +1217,8 @@ textarea::placeholder {
   left: 0;
   display: none;
   width: 278px;
+  box-shadow: 0px 8px 86.5px #423A2F;
+  border-radius: 6px;
 }
 
 .menu-items {
@@ -1266,7 +1295,6 @@ textarea::placeholder {
 
 .section-description {
   padding: 45px 0 101px;
-  background: rgb(50, 205, 205);
 }
 
 .description {
@@ -1289,6 +1317,7 @@ textarea::placeholder {
 
 .description-list {
   margin-top: 49px;
+  margin-bottom: 11px;
 }
 
 .list-item {
@@ -1371,6 +1400,9 @@ textarea::placeholder {
 .form-desc .input:last-child {
   margin-bottom: 0px;
 }
+.form-desc .input-box {
+  margin-bottom: 10px;
+}
 
 .input {
   width: 100%;
@@ -1436,7 +1468,8 @@ textarea::placeholder {
 }
 
 .box-link {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 7px 29px;
   width: 520px;
   height: 34px;
@@ -1448,6 +1481,10 @@ textarea::placeholder {
   font-weight: 500;
   line-height: 23.94px;
   margin-bottom: 12px;
+  align-items: center;
+}
+.box-link:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .box-item {
@@ -1459,6 +1496,14 @@ textarea::placeholder {
 }
 .box-item .arrow-right {
   margin-right: 6px;
+}
+.box-item a {
+  color: #423A2F;
+  transition: all 0.5s ease-in;
+}
+
+.box-item a:hover {
+  text-decoration: underline;
 }
 
 .custom-desc {
@@ -1595,6 +1640,7 @@ textarea::placeholder {
 .product-image {
   width: 256px;
   height: 138px;
+  cursor: pointer;
 }
 .product-image img {
   width: 256px;
@@ -1642,6 +1688,7 @@ textarea::placeholder {
 }
 
 .product-size {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1904,6 +1951,35 @@ textarea::placeholder {
 
 .row-icon {
   color: #423A2F;
+}
+
+.product-info {
+  position: absolute;
+  right: -205px;
+  top: -120px;
+  width: 258px;
+  height: 87px;
+  border-radius: 11px;
+  padding: 11px 23.5px;
+  background: #ffffff;
+  box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+  font-family: "Involve", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 13.3px;
+  text-align: left;
+  color: rgb(66, 58, 47);
+  z-index: 10;
+  display: none;
+}
+
+.icon-info {
+  position: relative;
+  cursor: pointer;
+}
+
+.icon-info:hover .product-info {
+  display: block;
 }
 
 .section-advantages {

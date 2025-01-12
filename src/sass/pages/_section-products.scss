@@ -88,6 +88,7 @@
 .product-image {
     width: 256px;
     height: 138px;
+    cursor: pointer;
     & img {
         width: 256px;
         height: 138px;
@@ -135,6 +136,7 @@
 }
 
 .product-size {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -395,3 +397,33 @@
 .row-icon {
     color:$color-dark;
 }
+
+
+.product-info {
+    
+    position: absolute;
+    right: -205px;
+    top:-120px;
+    width: 258px;
+    height: 87px;
+    border-radius: 11px;
+    padding: 11px 23.5px;
+    background: $color-white;
+    box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+    font-family: 'Involve', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 13.3px;
+    text-align: left;
+    color: rgba(66, 58, 47, 1);
+    z-index: 10;
+    display: none;
+}
+
+.icon-info {
+    position: relative;
+    cursor: pointer;
+}
+.icon-info:hover .product-info {
+       display: block;
+    }

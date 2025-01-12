@@ -33,7 +33,6 @@ function loadDataFromJson() {
 function displayCards(productsData) {
   const productCardsContainer = document.querySelector('.products-cards');
   productCardsContainer.innerHTML = ''; // Очистить контейнер
-
   productsData.forEach((card, index) =>  {
       const productCard = document.createElement('div');
       productCard.classList.add('product-card');
@@ -43,8 +42,12 @@ function displayCards(productsData) {
       const image = document.createElement('img');
       image.src = card.image1;
       image.alt = card.description;
+      productImage.onclick = function() {
+        showNewFormat(index);
+      };
+
       productImage.appendChild(image);
-      productCard.appendChild(productImage);
+      productCard.appendChild(productImage);     
 
       const productContent = document.createElement('div');
       productContent.classList.add('product-content');
@@ -73,6 +76,9 @@ function displayCards(productsData) {
       sizeText.innerHTML = 'От <span class="color-purple">500₽</span>/кг (5 п/м)';
       productSize.appendChild(sizeText);
       productContent.appendChild(productSize);
+
+
+      
 
       // Кнопка "Заказать образец ткани"
       const btnWrapper = document.createElement('div');
@@ -125,6 +131,11 @@ function displayCards(productsData) {
       productCard.appendChild(productReview);
       productSize.appendChild(iconInfo); // Переместили сюда
 
+      const productInfo = document.createElement('div');
+      productInfo.classList.add('product-info');
+      productInfo.innerHTML = 'Предоставленная на сайте информация носит ознакомительный характер и не является публичной офертой.Наличие и актуальную цену уточняйте у менеджеров отдела продаж.';
+      iconInfo.appendChild(productInfo);
+
       // Отображаем свойства продукта
       keysToDisplay.forEach(key => {
           if (content[key] !== undefined) {
@@ -155,6 +166,7 @@ function displayCards(productsData) {
           }
       });
       
+     
       productCard.appendChild(productContent);
       productCardsContainer.appendChild(productCard);
   });
@@ -203,8 +215,13 @@ allButton.addEventListener('click', () => {
     content2.style.display = "none";
 });
 
+const product1Selection = document.querySelector('.product1-selection');
+const product2Selection = document.querySelector('.product2-selection');
+
 // Обработчик события для кнопки "Флис"
 custom1Button.addEventListener('click', () => {
+    product2Selection.style.display = "none";
+    product1Selection.style.display = "flex";
     showIconForButton(custom1Button); // Показать иконку только на кнопке "Флис"
     const filteredData = originalCards.filter(card => card.name === 'Футер');
     displayCards(filteredData);
@@ -216,6 +233,8 @@ custom1Button.addEventListener('click', () => {
 
 // Обработчик события для кнопки "Футер"
 custom2Button.addEventListener('click', () => {
+    product2Selection.style.display = "flex";
+    product1Selection.style.display = "none";
     showIconForButton(custom2Button); // Показать иконку только на кнопке "Футер"
     const filteredData = originalCards.filter(card => card.name === 'Флис');
     displayCards(filteredData);
@@ -225,8 +244,64 @@ custom2Button.addEventListener('click', () => {
     content2.style.display = "none";
 });
 
+
+const btnSelection1 = document.getElementById('selection-1');
+btnSelection1.addEventListener('click', () => {
+    const filteredData = originalCards.filter(card => card.description === 'Футер 2-х нитка');
+    btnSelection1.classList.add('selection-active');
+    btnSelection2.classList.remove('selection-active');
+    btnSelection6.classList.remove('selection-active');
+    displayCards(filteredData);
+})
+
+const btnSelection2 = document.getElementById('selection-2');
+btnSelection2.addEventListener('click', () => {
+    const filteredData = originalCards.filter(card => card.description === 'Футер 3-х нитка');
+    btnSelection2.classList.add('selection-active');
+    btnSelection1.classList.remove('selection-active');
+    btnSelection6.classList.remove('selection-active');
+    displayCards(filteredData);
+})
+
+const btnSelection6 = document.getElementById('selection-6');
+btnSelection6.addEventListener('click', () => {
+    const filteredData = originalCards.filter(card => card.description === 'Ткань для термобелья');
+    btnSelection6.classList.add('selection-active');
+    btnSelection1.classList.remove('selection-active');
+    btnSelection2.classList.remove('selection-active');
+    displayCards(filteredData);
+})
+
+const btnSelection3 = document.getElementById('selection-3');
+btnSelection3.addEventListener('click', () => {
+    const filteredData = originalCards.filter(card => card.description === 'Флис односторонний');
+    btnSelection3.classList.add('selection-active');
+    btnSelection4.classList.remove('selection-active');
+    displayCards(filteredData);
+})
+
+const btnSelection4 = document.getElementById('selection-4');
+btnSelection4.addEventListener('click', () => {
+    const filteredData = originalCards.filter(card => card.description === 'Флис двуxcторонний');
+    btnSelection4.classList.add('selection-active');
+    btnSelection3.classList.remove('selection-active');
+    btnSelection5.classList.remove('selection-active');
+    displayCards(filteredData);
+})
+
+const btnSelection5 = document.getElementById('selection-5');
+btnSelection5.addEventListener('click', () => {
+    const filteredData = originalCards.filter(card => card.description === 'Трикотаж на флисе');
+    btnSelection5.classList.add('selection-active');
+    btnSelection3.classList.remove('selection-active');
+    btnSelection4.classList.remove('selection-active');
+    displayCards(filteredData);
+})
+
 // Обработчик события для кнопки "В наличии"
 custom3Button.addEventListener('click', () => {
+    product2Selection.style.display = "none";
+    product1Selection.style.display = "none";
     showIconForButton(custom3Button); // Показать иконку только на кнопке "В наличии"
     const filteredData = originalCards.filter(card => card.sale === 'В наличии');
     displayCards(filteredData);
@@ -269,6 +344,7 @@ function goBack() {
     // Скрыть кнопку назад
     document.getElementById('back-button').style.display = 'none';
 }
+
 
 // Инициализация отображения карточек после загрузки данных из JSON файла
 loadDataFromJson();

@@ -1,6 +1,6 @@
 .section-description {
     padding: 45px 0 101px;
-    background: rgb(50, 205, 205);
+    //background: rgb(50, 205, 205);
 }
 .container {
 }
@@ -26,6 +26,7 @@
 
 .description-list {
     margin-top: 49px;
+    margin-bottom: 11px;
 }
 .list-item {
     display: flex;
@@ -104,6 +105,9 @@
    }
    & .input:last-child {
     margin-bottom: 0px;
+   }
+   & .input-box {
+    margin-bottom: 10px;
    }
 }
 .input {
