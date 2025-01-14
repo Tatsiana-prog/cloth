@@ -5,12 +5,13 @@
 .card-row {
     display: flex;
     column-gap: 33px;
-    justify-content: center;
+    justify-content: space-between;
 }
 .wrapper-card {
     position: relative;
 }
 .card {
+    padding: 37px 90px;
     position: relative;
 }
 .card-image {
@@ -283,3 +284,16 @@
     display: block;
 }
 
+.card-subtitle {
+    font-family: 'Involve', sans-serif;
+    font-size: 18px;
+    color: rgba(83, 69, 50, 0.56);
+    margin-bottom: 10px;
+}
+.card-data {
+   color:$color-dark;
+   font-size: 18px;
+   font-family: 'Involve', sans-serif;
+   font-weight: 500;
+   margin-bottom: 57px;
+}

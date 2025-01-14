@@ -11,16 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function displaySelectedCard(product) {
     const productCardsContainer = document.querySelector('.products-cards');
     productCardsContainer.innerHTML = ''; // Очистить контейнер
-
     // Создание карточки продукта
     const productCard = document.createElement('div');
     productCard.className = 'product-card';
-
-    // Добавьте здесь код для отображения информации о продукте (как в функции showNewFormat)
-    // Создаем блок для отображения в новом формате
-    //const product = data[index]; // Используем глобальную переменную data
     productCardsContainer.style.display = "block";
-
     productCardsContainer.innerHTML = ''; // Очистить контейнер
 
     // Создаем кнопку для отображения в старом формате
@@ -169,7 +163,6 @@ function displaySelectedCard(product) {
       }
   });
 
-  
   legendColor.appendChild(colorWrapper);
   cardBox.appendChild(fieldsetColor);
 
@@ -281,43 +274,57 @@ decreaseButton.addEventListener('click', () => {
     contentIcon.appendChild(img);
     const cardText = document.createElement('span');
     cardText.className = 'card-text';
+
     cardText.textContent = feature.text;
     cardContent.appendChild(contentIcon);
     cardContent.appendChild(cardText);
     cardContentWrapper.appendChild(cardContent);
 });
+    const cardBlock =document.createElement('div');
+    cardBlock.className = 'card-depiction';
+     
 
+     const cardSubtitle =document.createElement('p');
+     cardSubtitle.className = 'card-subtitle';
+     cardSubtitle.innerHTML = `Описание:`;
+     cardBlock.appendChild(cardSubtitle);
 
-  card.appendChild(cardRow);
+     const cardData =document.createElement('p');
+     cardData.className = 'card-data';
+     cardData.textContent = product.data;
+     cardBlock.appendChild(cardData);
+
+  card.appendChild(btnBackWrapper);
+  card.appendChild(cardRow);  
   cardRow.appendChild(cardDescription);
   cardDescription.appendChild(cardBox);
   cardDescription.appendChild(cardList);
   cardDescription.appendChild(cardButtons);
   cardDescription.appendChild(cardContentWrapper);
 
+  card.appendChild(cardBlock);
+    
   // Добавляем карточку на страницу
   productCardsContainer.innerHTML = ''; // Очистить контейнер
   productCardsContainer.appendChild(card); // Добавить карточку в контейнер
-  productCardsContainer.appendChild(btnBackWrapper);
+ 
   btnBackWrapper.appendChild(btnBackIcon);
   btnBackWrapper.appendChild(btnBack);
-  card.appendChild(cardRow);
+ 
   // Добавляем карточку на страницу
     productCardsContainer.appendChild(card); // Добавить карточку в контейнер
 
-
+//мододальные окна и кнопки
     const btnDelivery = document.getElementById('btn-delivery');
     const btnPayment = document.getElementById('btn-payment');
     const btnPossibilitiest = document.getElementById('btn-possibilities');
-    
+
     const windowDelivery = document.getElementById('window-delivery');
     const windowPayment = document.getElementById('window-payment');
     const windowPossibilitiest = document.getElementById('window-possibilities');
     const overlay = document.querySelector('.overlay');
     card.appendChild(windowDelivery);
 
-      
-    
     btnDelivery.addEventListener('click', () => {
         windowDelivery.style.display = 'flex';
         overlay.style.display = 'block';

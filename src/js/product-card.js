@@ -1,7 +1,9 @@
 // Глобальные переменные для хранения данных
 let data = [];
 let originalCards = [];
-const overlay = document.querySelector('.overlay')
+const overlay = document.querySelector('.overlay');
+const windowOrder = document.querySelector('.window-order');
+const btnClose = document.querySelector('.btn-close');
 
 // Перемешивание массива данных
 function shuffleData() {
@@ -119,12 +121,34 @@ function displayCards(productsData) {
       <path d="M12.1533 23.0557C12.1533 23.0557 16.1533 15.0557 23.1533 15.0557C30.1533 15.0557 34.1533 23.0557 34.1533 23.0557C34.1533 23.0557 30.1533 31.0557 23.1533 31.0557C16.1533 31.0557 12.1533 23.0557 12.1533 23.0557Z" stroke="#692F6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M23.1533 26.0557C24.8102 26.0557 26.1533 24.7125 26.1533 23.0557C26.1533 21.3988 24.8102 20.0557 23.1533 20.0557C21.4965 20.0557 20.1533 21.3988 20.1533 23.0557C20.1533 24.7125 21.4965 26.0557 23.1533 26.0557Z" stroke="#692F6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>`; // Ваш SVG код
-      productReview.addEventListener('click', () =>  {
-        createOrderWindow();
+      
+     /* productReview.addEventListener('click', () =>  {
+        const orderName = document.querySelector('.order-name');
+        orderName.innerHTML = '';
+
+        createOrderWindow(productName);
         overlay.style.display = 'block';
         console.log("ghbdtn");
        
+    });*/
+    const buttons = document.querySelectorAll('.product-review');
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', handleClick);
     });
+    
+    function handleClick() {
+        const orderName = document.querySelector('.order-name');
+        orderName.innerHTML = '';
+    
+        const productName = this.dataset.productName;
+    
+        createOrderWindow(productName);
+        overlay.style.display = 'block';
+        windowOrder.style.display = 'block';
+        console.log("ghbdtn");
+    }
+
        
     productCard.appendChild(productReview);
     
@@ -357,7 +381,6 @@ function createOrderWindow() {
     const productsCardsContainer = document.getElementById('products-cards');
     const windowOrder = document.createElement('div');
     windowOrder.className = 'window-order';
-    windowOrder.style.display = 'block';
 
     const windowTitle = document.createElement('div');
     windowTitle.className = 'window-title';
@@ -370,6 +393,11 @@ function createOrderWindow() {
         <div class="order-desc"></div>
         <div class="order-color"></div>
     `;
+    
+    const productName = document.querySelector('.product-name').textContent;
+    const orderName = orderBox.querySelector('.order-name');
+    orderName.textContent = productName;
+
     const btnClose = document.createElement('div');
     btnClose.className = 'btn-close';
 
@@ -408,26 +436,20 @@ function createOrderWindow() {
             </svg>
         </span></button>
     `;
-    // Append all elements
+
     form.appendChild(inputBoxes);
     form.appendChild(textarea);
     form.appendChild(inputBox);
     form.appendChild(btnWrapper);
     orderFormWrapper.appendChild(form);
+    
+    windowOrder.appendChild(btnClose);
     windowOrder.appendChild(windowTitle);
     windowOrder.appendChild(orderBox);
     windowOrder.appendChild(orderFormWrapper);
-    windowOrder.appendChild(btnClose);
+    
     productsCardsContainer.appendChild(windowOrder);
-
-
-btnClose.addEventListener('click', () =>  {
-    overlay.style.display = 'none';
-    windowOrder.style.display = 'none';
-});
-};
-
-
+}
 
 // Call the function to create the order window
 
