@@ -12,9 +12,6 @@
 }
 .card {
     position: relative;
-   
-}
-.card-images {
 }
 .card-image {
     margin-bottom: 15px;
@@ -28,7 +25,6 @@
     display: flex;
     column-gap: 15px;
 }
-
 .card-image_wrapper .card-image img {
     width: 185px;
     height: 103px;
@@ -40,8 +36,6 @@
         color:$color-purple;
         margin-bottom: 19px;
     }
-}
-.card-title {
 }
 .card-box {
     display: flex;
@@ -62,8 +56,6 @@
     font-family: Involve, sans-serif;
     font-weight: 600;
 }
-
-
 .menu-color {
     position: relative;
     display: flex;
@@ -81,8 +73,6 @@
     font-weight: 600;
     cursor: pointer;
 }
-
-
 .card-list {
     position: relative;
     margin-bottom: 20px;
@@ -103,7 +93,6 @@
     width: 357px;
     text-align: left;
 }
-
 .card-item .item-name::before {
     content: "";
     position: absolute;
@@ -113,7 +102,6 @@
     width: 70%;
     height: 1px;
 }
-
 .card-list .card-item:nth-child(6)  .item-name {
     width: 50px;
     &::before {
@@ -121,18 +109,15 @@
         right: -310px;
     }
 }
-
 .card-list .card-item:nth-child(2) .item-name::before {
     width: 87%;
 }
 .card-list .card-item:nth-child(3) .item-name::before {
     width: 82%;
 }
-
 .card-list .card-item:nth-child(4) .item-name::before {
     width: 78%;
 }
-
 .card-list .card-item:nth-child(5) .item-name::before {
     width: 42%;
 }
@@ -144,15 +129,11 @@
         width:40px;
     }
 }
-
 .card-list .card-item:nth-child(6) .item-name::before {
     width: 0;
 }
-
 .item-name:nth-of-type(3)::before {
     width: 78%;
-}
-.item-mean {
 }
 .box-size {
     display: flex;
@@ -179,7 +160,7 @@
     font-weight: 600;
     background: $color-white;
     cursor: pointer;
-} 
+}
 
 .card-btn2 {
    width: 326px;
@@ -197,7 +178,7 @@
    font-family: Involve, sans-serif;
    font-weight: 600;
    cursor: pointer;
-} 
+}
 
 .card-content__wrapper {
     height: 88.62px;
@@ -259,7 +240,6 @@
    display: none;
    z-index: 10;
 }
-
 .menu-color:hover {
     & .color-wrapper {
         display: block;

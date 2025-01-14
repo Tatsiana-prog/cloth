@@ -3,7 +3,6 @@
     padding: 66px 0 44px;
     background: $color-white;
 }
-
 .products-menu {
     display: flex;
     justify-content: space-between;
@@ -12,7 +11,6 @@
     border-radius: 31px;
     background: $color-purple;
 }
-
 .products-title {
     color:$color-beige;
     font-size: 14px;
@@ -20,13 +18,11 @@
     line-height: 18.62px;
     text-transform: uppercase;
 }
-
 .products-btns {
     display: flex;
     column-gap: 31px;
     color:$color-white;
 }
-
 .product-btn {
     display: flex;
     column-gap: 6px;
@@ -36,7 +32,6 @@
     line-height: 18.62px;
     cursor: pointer;
 }
-
 .fade-in {
     animation: fadeIn 0.5s ease-in;
 }
@@ -57,14 +52,11 @@
     background-size: cover;
     opacity: 0;
 }
-
-
 .products-contact {
     display: flex;
     column-gap: 12px;
     align-items: center;
 }
-
 .products-cards {
     position: relative;
     margin-top:  50px;
@@ -72,7 +64,6 @@
     flex-wrap: wrap;
     gap: 16px;
 }
-
 .product-card {
     position: relative;
     background: #FCF7F7;
@@ -84,7 +75,6 @@
     border-bottom-left-radius: 12px;
     text-align: center;
 }
-
 .product-image {
     width: 256px;
     height: 138px;
@@ -96,11 +86,9 @@
         border-radius: 24px;
     }
 }
-
 .product-content {
     padding: 16px 17px 35px 16px;
 }
-
 .product-name {
     font-family: 'Involve', sans-serif;
     font-size: 18px;
@@ -108,17 +96,14 @@
     line-height: 23.94px;
     color:$color-purple;
 }
-
 .product-list {
     margin-top: 11px;
 }
-
 .product-item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 13px;
 }
-
 .species {
     font-family: 'Involve', sans-serif;
     font-size: 14px;
@@ -126,7 +111,6 @@
     line-height: 18.62px;
     color:rgba(82, 68, 49, 0.56);
 }
-
 .look {
     font-size: 14px;
     font-weight: 600;
@@ -134,7 +118,6 @@
     font-family: 'Involve', sans-serif;
     color:$color-purple;
 }
-
 .product-size {
     position: relative;
     display: flex;
@@ -147,12 +130,10 @@
     line-height: 23.94px;
     color:rgba(82, 68, 49, 0.56);
 }
-
 .product-card__button-wrapper {
    margin-top: 6px;
    text-align: center;
 }
-
 .product-card__btn {
     color:rgba(42, 171, 238, 1);
     font-family: 'Involve', sans-serif;
@@ -165,7 +146,6 @@
     background: transparent;
     cursor: pointer;
 }
-
 .product-stock {
     position: absolute;
     width: 101px;
@@ -183,7 +163,6 @@
     color:$color-beige;
     display: none;
 }
-
 .product-order {
     position: absolute;
     width: 101px;
@@ -201,7 +180,6 @@
     color:$color-purple;
     display: none;
 }
-
 .product-review {
     display: inline-flex;
     position: absolute;
@@ -214,8 +192,6 @@
     background: transparent;
     z-index: 2000;
 }
-
-
 .product-density {
     font-family: 'Involve', sans-serif;
     font-size: 18px;
@@ -226,8 +202,6 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
 }
-
-
 .product-title {
     position: relative;
     padding: 14.5px 38px;
@@ -273,11 +247,9 @@
     font-weight: 600;
     line-height: 18.62px;
 }
-
 .products-content {
     margin-bottom: 77px;
 }
-
 .content-title {
     font-family: Involve, sans-serif;
     font-size: 28px;
@@ -311,9 +283,6 @@
     display: flex;
     column-gap: 59px;
 }
-
-.form-wrapper {
-}
 .form-products {
     width: 504px;
     & .btn-wrapper {
@@ -323,10 +292,6 @@
 
 #products-name, #products-email, #product-tel {
     margin-bottom: 10px;
-}
-.input {
-}
-.custom {
 }
 .row-1, .row-2, .row-3, .row-4, .row-5, .row-6, .row-7, .row-8 {
     display: flex;
@@ -351,16 +316,13 @@
 .form-content p:nth-child(2) {
     font-weight: 400;
 }
-
 .custom-all {
     font-family: 'Involve', sans-serif;
     font-size: 14px;
     font-weight: 600;
-    line-height: 18.62px; 
+    line-height: 18.62px;
     color:$color-dark;
 }
-
-
 .row-title {
     position: relative;
     padding: 14.5px 38px;
@@ -379,7 +341,6 @@
     background: $color-dark;
     opacity: 0.5;
 }
-
 .row-box {
     font-family: Involve, sans-serif;
     font-size: 14px;
@@ -388,7 +349,7 @@
     line-height: 18.62px;
     text-align: left;
 }
-.view-all {   
+.view-all {
     color: rgba(42, 171, 238, 1);
 }
 .title-name {
@@ -397,10 +358,7 @@
 .row-icon {
     color:$color-dark;
 }
-
-
 .product-info {
-    
     position: absolute;
     right: -205px;
     top:-120px;
@@ -425,5 +383,5 @@
     cursor: pointer;
 }
 .icon-info:hover .product-info {
-       display: block;
-    }
+    display: block;
+}

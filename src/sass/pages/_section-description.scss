@@ -2,8 +2,6 @@
     padding: 45px 0 101px;
     //background: rgb(50, 205, 205);
 }
-.container {
-}
 .description {
     display: flex;
     column-gap: 65px;
@@ -11,10 +9,6 @@
 .description-content {
     width: 519px;
     padding: 26px 0 15px;
-}
-.description-title {
-}
-.title-1 {
 }
 .subtitle {
     font-family: 'NK133', sans-serif;
@@ -41,7 +35,6 @@
 .list-item:last-child {
     margin-bottom: 0;
 }
-
 .arrow-right {
     display: block;
     width: 18px;
@@ -71,18 +64,12 @@
     text-align: left;
     align-items: center;
 }
-.icon-contacts {
-}
-
 .icon-element {
     display: block;
     width: 37px;
     height: 37px;
     background: url(../../../public/img/icons/icon-element.svg) no-repeat center;
     background-size: cover;
-}
-
-.icon-link {
 }
 .form {
     position: relative;
@@ -119,8 +106,4 @@
 }
 .input:last-child {
     margin-bottom: 0;
-}
-.btn-text {
-}
-.btn-icon {
 }

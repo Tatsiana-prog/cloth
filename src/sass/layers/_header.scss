@@ -26,7 +26,6 @@
 .header-box:first-child {
     column-gap: 18px;
 }
-
 .menu {
     display: flex;
     column-gap: 18px;
@@ -44,13 +43,11 @@
     text-transform: uppercase;
     align-items: center;
 }
-
 .menu-item:hover {
     .menu-list {
         display: block;
     }
 }
-
 .item-icon {
     display: block;
     width: 12px;
@@ -68,9 +65,7 @@
     border-radius: 6px;
 }
 .menu-items {
-   
     background:$color-white;
-    
     &:hover {
         background:$color-purple;
          .menu-link {
@@ -86,11 +81,10 @@
     font-weight: 600;
     line-height: 14px;
     color:$color-purple;
-   
     border-bottom: 1px solid $color-purple;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
- }
+}
 .link-phone {
     font-family: 'Involve', sans-serif;
     font-size: 14px;

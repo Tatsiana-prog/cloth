@@ -1,9 +1,7 @@
 .section-custom {
     position: relative;
     padding: 100px 0;
-    //background: red; 
 }
-
 .custom-image {
     position: absolute;
     bottom: 0;
@@ -18,7 +16,6 @@
         border-radius: 24px;
     }
 }
-
 .custom {
     padding: 52px 62px 65px 95px;
     border-radius: 65px;
@@ -33,14 +30,11 @@
 .custom-content {
     width: 50%;
 }
-.title-2 {
-}
 .custom-content {
     & .subtitle {
     margin-bottom: 22px;
     }
 }
-
 .custom-boxes {
     display: flex;
     flex-direction: column;
@@ -68,8 +62,6 @@
         color: rgba(255, 255, 255, 0.8);
     }
 }
-.box-list {
-}
 .box-item {
     display: flex;
     font-size: 18px;
@@ -84,19 +76,14 @@
         transition: all 0.5s ease-in;
     }
 }
-
 .box-item a:hover {
     text-decoration: underline;
-}
-.arrow-right {
 }
 .custom-desc {
     width: 50%;
     & .title-3 {
         text-align: left;
     }
-}
-.title-3 {
 }
 .custom-text {
     margin-top: 32px;
@@ -114,30 +101,17 @@
         border: 1px solid $color-purple;
     }
 }
-
 .form-row {
     display: flex;
     align-items: center;
     column-gap: 13px;
 }
-
-.btn-wrapper {
-}
-.btn-submit {
-}
-.btn-arrow {
-}
-.custom-column {
-
-}
-
 .custom-text {
     font-family: 'Involve', sans-serif;
     font-size: 18px;
     font-weight: 600;
     line-height: 23.94px;
 }
-
 .custom-text:nth-of-type(2) {
     font-weight: 400;
 }

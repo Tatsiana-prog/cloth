@@ -1,9 +1,7 @@
 //form for questions
-
 .questions-form .input {
     margin-bottom: 8px;
 }
-
 input::placeholder {
     font-family: Involve, sans-serif;
     font-size: 14px;
@@ -35,11 +33,9 @@ textarea {
     text-align: left;
     color:$color-dark;
 }
-
 textarea::placeholder {
     color:$color-purple;
 }
-
 /* Hide the default checkbox */
 .input-custom[type="checkbox"] {
     appearance: none;
@@ -53,15 +49,11 @@ textarea::placeholder {
     outline: none;
     cursor: pointer;
   }
-  
   /* Style the custom checkbox icon */
   .input-custom[type="checkbox"]:checked {
     background: url(/public/img/icons/icon-check.svg) no-repeat center;
   }
-  .custom-all {
-  
-  }
-.custom-all[type="checkbox"] {
+ .custom-all[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -77,7 +69,6 @@ textarea::placeholder {
   .custom-all[type="checkbox"]:checked {
     background: $color-purple url(../../../public/img/icons/custom-all.png) no-repeat center;
 }
-
 .input-box {
     margin: 16px auto 0;
     display: inline-flex;
@@ -91,26 +82,7 @@ textarea::placeholder {
     line-height: 18.62px;
 }
 //form-order for window-order
-
 .order-form__wrapper {
     width: 779px;
     margin: 0 auto;
-}
-.order-form {
-}
-.input-boxes {
-}
-.input {
-}
-.input-box {
-}
-.input-custom {
-}
-.checkbox-text {
-}
-.btn-wrapper {
-}
-.btn-submit {
-}
-.btn-arrow {
 }

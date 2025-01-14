@@ -1,13 +1,10 @@
 .slider {
     width: 577px;
     position: relative;
-   
-   
 }
 .slider-wrapper {
     width: 577px; /* Увеличиваем ширину на отступ */
     overflow: hidden;
-   
 }
 .slider-line {
     position: relative;
@@ -34,7 +31,6 @@
     height: 19px;
     width: 19px;
     margin: 0 5px;
-   
     border-radius: 50%;
     border: 6px solid $color-dark;
     cursor: pointer;

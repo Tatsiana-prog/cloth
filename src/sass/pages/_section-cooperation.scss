@@ -2,10 +2,6 @@
     padding: 33px 0;
     position: relative;
 }
-.container {
-}
-.cooperation {
-}
 .cooperation-content {
     background: $color-white;
     border-radius: 65px;
@@ -13,9 +9,7 @@
     box-shadow: 0px -12px 86.5px #F5E0C7;
     padding: 47px 97px;
 }
-
 .cooperation-title {
-  
     font-family: NK133;
     font-size: 28px;
     font-weight: 400;
@@ -36,16 +30,10 @@
     display: flex;
     column-gap: 61px;
 }
-.cooperation-list {
-}
 .cooperation-contacts {
     display: flex;
     align-items: flex-end;
     column-gap: 18px;
-}
-.btn-social {
-}
-.social-text {
 }
 .section-image {
     position: absolute;

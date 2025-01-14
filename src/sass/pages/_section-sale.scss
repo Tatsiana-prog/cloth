@@ -1,8 +1,6 @@
 .section-sale {
     position: relative;
 }
-.container {
-}
 .sale {
     position: relative;
     background: $color-beige;
@@ -22,12 +20,9 @@
 .sale-btn {
     color:$color-white;
 }
-
 .sale-content {
     padding: 47.5px 43px 73px 43px;
-
 }
-
 .sale-desc {
     width: 50%;
 }
@@ -35,30 +30,16 @@
     padding: 21px 100px;
     text-align: center;
 }
-.sale-text {
-}
-.title-3 {
-}
 .sale-form {
     margin-top: 26px;
     text-align: left;
 }
-
 .sale-form .input-box {
     justify-content: flex-start;
 }
 .form-box {
     display: flex;
     column-gap: 18px;
-   
-}
-.input {
-}
-.btn-wrapper {
-}
-.btn-submit {
-}
-.btn-arrow {
 }
 .sale-content1 {
     & .title-3 {
@@ -75,7 +56,6 @@
     border-radius: 50%;
     border-radius: 2px solid $color-white;
 }
-
 .arrow-next, .arrow-prev {
     position: absolute;
     display: flex;
@@ -95,8 +75,6 @@
     left: -30px;
     top:40%;
 }
-
-
 .sale-btn {
     display: flex;
     column-gap: 6px;
@@ -115,17 +93,13 @@
         background: $color-beige;
     }
 }
-
 .sale-custom {
     margin-bottom: 34px;
 }
-
 .slider-img {
     width: 577px;
     height: 385px;
     border-radius: 24px;
-}
-.custom {
 }
 .icon-arrow {
     display: flex;
@@ -135,30 +109,19 @@
     border-radius: 50%;
     background: $color-white;
 }
-
 .sale-image {
     position: absolute;
     bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
 }
-
-
 .sale-content {
     padding: 47px 55px 124.5px  43px;
     display: flex;
     column-gap: 49px;
-
 }
-
 .slider {
     position: relative;
-}
-.slider-wrapper {
-}
-.slider-line {
-}
-.slider-img {
 }
 .sale-desc {
     & .title-2 {
@@ -168,8 +131,6 @@
         margin-top: 10px;
     }
 }
-.title-2 {
-}
 .sale-text {
     margin-bottom: 10px;
     font-family: Involve, sans-serif;
@@ -177,15 +138,6 @@
     font-weight: 400;
     line-height: 23.94px;
 }
-.dots {
-}
-.dot {
-}
-.arrow-prev {
-}
-.arrow-next {
-}
-
 .sale-list {
     font-family: Involve, sans-serif;
     font-size: 18px;
@@ -195,11 +147,6 @@
 #sale-content4 {
     display: block;
 }
-
 #sale-content1, #sale-content2, #sale-content3{
     display: none;
-}
-
-.active-btn {
-    
 }

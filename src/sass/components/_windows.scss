@@ -1,5 +1,4 @@
 //window-delivery
-
 .window-delivery {
     position: absolute;
     top:20%;
@@ -18,7 +17,6 @@
     opacity: 1;
     z-index: 1000;
 }
-
 .window-title {
     color:$color-purple;
     margin-bottom: 34px;
@@ -49,10 +47,6 @@
 .window-item:last-child {
     margin-bottom: 0;
 }
-
-.arrow-right {
-}
-
 .btn-close {
     position: absolute;
     top:10px;
@@ -63,7 +57,6 @@
     background: url(../../../public/img/icons/icon-close.png) no-repeat center;
     background-size: cover;
     cursor: pointer;
-
 }
 
 //window-payment
@@ -82,8 +75,6 @@
     z-index: 1000;
     background: $color-white;
 }
-
-
 .window-possibilities {
     display: none;
     position: absolute;
@@ -104,7 +95,6 @@
         margin-bottom: 34px;
     }
 }
-
 .overlay {
     display: none;
     position: fixed;
@@ -112,37 +102,33 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background:rgba(0, 0, 0, 0.8);
-    z-index: 999;
+    background:rgba(64, 37, 37, 0.8);
+    z-index: 2008;
 }
-
 
 //window-order
 .window-order {
+    width: 1200px;
+    position: absolute;
+    top:20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 76px 0;
     background: white;
     border-radius: 34px;
     overflow: hidden;
+    z-index: 2010;
+    display: none;
     & .window-title .title-4 {
         text-align: center;
         font-family: 'Involve', sans-serif;
         font-weight: 600;
     }
 }
-
 .order-box {
     display: flex;
     gap: 13px;
-}
-.order-name {
-}
-.order-desc {
-}
-.order-color {
-}
-.order-form__wrapper {
-}
-.order-form {
+    width: 775px;
 }
 .input-boxes {
     display: flex;
@@ -151,24 +137,12 @@
 }
 .input-boxes .input {
     border: 1px solid gray;
-   
 }
-
 .order-form textarea {
     width: 100%;
-}
-.input-box {
-}
-.input-custom {
-}
-.checkbox-text {
 }
 .order-form .btn-wrapper {
     margin: 36.5px auto 34px auto;
     width: 326px;
     cursor: pointer;
-}
-.btn-submit {
-}
-.btn-arrow {
 }
