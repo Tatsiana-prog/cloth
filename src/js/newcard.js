@@ -1,8 +1,15 @@
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
     
+    
     if (selectedProduct) {
-        displaySelectedCard(selectedProduct); // Вызовите функцию для отображения выбранной карточки
+        displaySelectedCard(selectedProduct);
+        viewSelectedCards(selectedProduct);
+       
+         // Вызовите функцию для отображения выбранной карточки
     } else {
         console.error('Нет выбранного продукта');
     }
@@ -12,11 +19,8 @@ function displaySelectedCard(product) {
     const productCardsContainer = document.querySelector('.products-cards');
     productCardsContainer.innerHTML = ''; // Очистить контейнер
     // Создание карточки продукта
-    const productCard = document.createElement('div');
-    productCard.className = 'product-card';
     productCardsContainer.style.display = "block";
-    productCardsContainer.innerHTML = ''; // Очистить контейнер
-
+   
     // Создаем кнопку для отображения в старом формате
     const btnBackWrapper = document.createElement('div');
     btnBackWrapper.className = "btn-back__wrapper";
@@ -27,13 +31,11 @@ function displaySelectedCard(product) {
     <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M5.19061 1.9523C5.2643 1.88364 5.3234 1.80084 5.36439 1.70884C5.40538 1.61684 5.42743 1.51753 5.4292 1.41682C5.43098 1.31612 5.41245 1.21609 5.37473 1.1227C5.33701 1.02932 5.28087 0.944483 5.20965 0.873264C5.13843 0.802045 5.0536 0.745901 4.96021 0.70818C4.86682 0.670458 4.76679 0.651934 4.66609 0.65371C4.56538 0.655487 4.46607 0.677529 4.37407 0.718521C4.28207 0.759513 4.19927 0.818616 4.13061 0.892303L0.34961 4.6723L4.12961 8.4523C4.271 8.58899 4.46041 8.66468 4.65706 8.66306C4.85371 8.66144 5.04186 8.58266 5.18098 8.44367C5.3201 8.30467 5.39907 8.1166 5.40087 7.91995C5.40267 7.72331 5.32716 7.53382 5.19061 7.3923L3.22061 5.4223L13.5996 5.4223C13.7985 5.4223 13.9893 5.34329 14.1299 5.20263C14.2706 5.06198 14.3496 4.87122 14.3496 4.6723C14.3496 4.47339 14.2706 4.28263 14.1299 4.14197C13.9893 4.00132 13.7985 3.9223 13.5996 3.9223L3.22061 3.9223L5.19061 1.9523Z" fill="#524431" fill-opacity="0.56"/>
     </svg>`
-    const btnBack = document.createElement('button');
+    const btnBack = document.createElement('a');
     btnBack.className = 'back-button';
     btnBack.id = 'back-button';
     btnBack.textContent = 'вернуться назад';
-    btnBack.onclick = function() {
-        goBack();
-      };
+    btnBack.href = 'index.html#products-cards';
     btnBackWrapper.appendChild(btnBackIcon);
     btnBackWrapper.appendChild(btnBack);
 
@@ -282,20 +284,22 @@ decreaseButton.addEventListener('click', () => {
 });
     const cardBlock =document.createElement('div');
     cardBlock.className = 'card-depiction';
-     
 
      const cardSubtitle =document.createElement('p');
      cardSubtitle.className = 'card-subtitle';
      cardSubtitle.innerHTML = `Описание:`;
      cardBlock.appendChild(cardSubtitle);
 
-     const cardData =document.createElement('p');
+     const cardData = document.createElement('p');
      cardData.className = 'card-data';
      cardData.textContent = product.data;
      cardBlock.appendChild(cardData);
 
+     const viewCards = document.createElement('div');
+     viewCards.className = 'view-cards';
+
   card.appendChild(btnBackWrapper);
-  card.appendChild(cardRow);  
+  card.appendChild(cardRow);
   cardRow.appendChild(cardDescription);
   cardDescription.appendChild(cardBox);
   cardDescription.appendChild(cardList);
@@ -303,7 +307,8 @@ decreaseButton.addEventListener('click', () => {
   cardDescription.appendChild(cardContentWrapper);
 
   card.appendChild(cardBlock);
-    
+  productCardsContainer.appendChild(card);
+
   // Добавляем карточку на страницу
   productCardsContainer.innerHTML = ''; // Очистить контейнер
   productCardsContainer.appendChild(card); // Добавить карточку в контейнер
@@ -354,7 +359,7 @@ decreaseButton.addEventListener('click', () => {
 
     const btnClose = document.querySelectorAll('.btn-close');
 
-btnClose.forEach(btn => {
+    btnClose.forEach(btn => {
     btn.addEventListener('click', () => {
         const windows = document.querySelectorAll('.window-delivery, .window-possibilities, .window-payment');
         const overlay = document.querySelector('.overlay');
@@ -365,17 +370,154 @@ btnClose.forEach(btn => {
 
         overlay.style.display = 'none';
         document.body.style.overflow = 'scroll';
-    }); productCardsContainer.appendChild(productCard); // Добавьте карточку в контейнер
+    });
+    
     // Показать кнопку назад
     document.getElementById('back-button').style.display = 'block';
 });
-
-
-
-// Функция для возврата к первоначальному виду карточек
-function goBack() {
-    const productCardsContainer = document.querySelector('.products-cards');
-    productCardsContainer.innerHTML = ''; // Очистить контейнер
-    displayCards(originalCards); // Отображаем оригинальные карточки
 }
-}
+function viewSelectedCards(product) {
+    const viewCards = document.createElement('div');
+    viewCards.className = 'view-cards';
+    const productCard = document.createElement('div');
+    productCard.classList.add('product-card');
+
+    const productImage = document.createElement('div');
+    productImage.classList.add('product-image');
+    const image = document.createElement('img');
+    image.src = product.image1;
+    image.alt = product.description;
+    productImage.appendChild(image);
+    productCard.appendChild(productImage);
+
+    const productContent = document.createElement('div');
+    productContent.classList.add('product-content');
+    const productName = document.createElement('h3');
+    productName.classList.add('product-name');
+    productName.textContent = product.description;
+    productContent.appendChild(productName);
+
+    const productDenst = document.createElement('p');
+    productDenst.classList.add('product-density');
+    productDenst.innerHTML = product.content['Плотность']; // Используем card для плотности
+    productContent.appendChild(productDenst);
+
+    // Список свойств
+    const productList = document.createElement('ul');
+    productList.classList.add('product-list');
+    const content = product.content || {}; // Используем card.content
+    const keysToDisplay = ['Состав', 'Цвет', 'ширина'];
+    productContent.appendChild(productList);
+
+    // Размер продукта
+    const productSize = document.createElement('div');
+    productSize.classList.add('product-size');
+    const sizeText = document.createElement('p');
+    sizeText.classList.add('size-text');
+    sizeText.innerHTML = 'От <span class="color-purple">500₽</span>/кг (5 п/м)';
+    productSize.appendChild(sizeText);
+    productContent.appendChild(productSize);
+
+    // Кнопка "Заказать образец ткани"
+    const btnWrapper = document.createElement('div');
+    btnWrapper.classList.add('product-card__button-wrapper');
+    const productBtn = document.createElement('button');
+    productBtn.classList.add('product-card__btn');
+    productBtn.innerHTML = 'Заказать образец ткани';
+    btnWrapper.appendChild(productBtn);
+    productContent.appendChild(btnWrapper);
+
+    // Статус наличия
+    const productStock = document.createElement('div');
+    productStock.innerHTML = 'В наличии';
+    productStock.classList.add('product-stock');
+
+    const productOrder = document.createElement('div');
+    productOrder.innerHTML = 'Под заказ';
+    productOrder.classList.add('product-order');
+    if (product.sale === 'В наличии') {
+        productStock.style.display = "block";
+        productOrder.style.display = "none";
+    } else if (product.sale === 'Под заказ') {
+        productStock.style.display = "none";
+        productOrder.style.display = "block";
+    }
+
+    productCard.appendChild(productStock);
+    productCard.appendChild(productOrder);
+
+    // Отзывы
+    const productReview = document.createElement('button');
+    productReview.classList.add('product-review');
+    productReview.innerHTML = `<svg width="48" height="47" viewBox="0 0 48 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="23.1533" cy="23.0557" r="23.0557" fill="#F5E0C7"/>
+    <path d="M12.1533 23.0557C12.1533 23.0557 16.1533 15.0557 23.1533 15.0557C30.1533 15.0557 34.1533 23.0557 34.1533 23.0557C34.1533 23.0557 30.1533 31.0557 23.1533 31.0557C16.1533 31.0557 12.1533 23.0557 12.1533 23.0557Z" stroke="#692F6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M23.1533 26.0557C24.8102 26.0557 26.1533 24.7125 26.1533 23.0557C26.1533 21.3988 24.8102 20.0557 23.1533 20.0557C21.4965 20.0557 20.1533 21.3988 20.1533 23.0557C20.1533 24.7125 21.4965 26.0557 23.1533 26.0557Z" stroke="#692F6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`; // Ваш SVG код
+    const buttons = document.querySelectorAll('.product-review');
+    buttons.forEach((button) => {
+        button.addEventListener('click', handleClick);
+    });
+    function handleClick() {
+        const orderName = document.querySelector('.order-name');
+        orderName.innerHTML = '';
+
+        const productName = this.dataset.productName;
+
+        createOrderWindow(productName);
+        overlay.style.display = 'block';
+        windowOrder.style.display = 'block';
+        console.log("ghbdtn");
+    }
+
+    productCard.appendChild(productReview);
+
+    const iconInfo = document.createElement('span');
+    iconInfo.classList.add('icon-info');
+    iconInfo.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="9.59753" cy="9.5155" r="9.5155" fill="#F5E0C7"/>
+    <path d="M9.22195 12.0099C9.22195 11.6901 9.24099 11.4121 9.27907 11.176C9.32476 10.9323 9.39711 10.7076 9.49612 10.502C9.59512 10.2964 9.72839 10.0984 9.89594 9.908C10.0711 9.71761 10.2881 9.51199 10.5471 9.29114C10.7908 9.08552 10.9621 8.89132 11.0611 8.70854C11.1601 8.52577 11.2096 8.32776 11.2096 8.11452C11.2096 7.74136 11.0878 7.43673 10.8441 7.20065C10.6004 6.95695 10.2881 6.8351 9.90736 6.8351C9.13818 6.8351 8.69648 7.31488 8.58224 8.27445H7.30282C7.32566 7.85559 7.40563 7.48243 7.54271 7.15495C7.67979 6.81987 7.85876 6.53809 8.07961 6.30962C8.30808 6.07354 8.57843 5.89457 8.89067 5.77272C9.20291 5.64325 9.54943 5.57852 9.93021 5.57852C10.3034 5.57852 10.6461 5.64325 10.9583 5.77272C11.2782 5.90218 11.5523 6.08115 11.7808 6.30962C12.0093 6.53809 12.1882 6.81225 12.3177 7.13211C12.4472 7.44435 12.5119 7.78324 12.5119 8.14879C12.5119 8.33918 12.4929 8.51815 12.4548 8.68569C12.4167 8.84562 12.352 9.00555 12.2606 9.16548C12.1768 9.31779 12.0626 9.47391 11.9179 9.63384C11.7732 9.79377 11.598 9.96893 11.3924 10.1593C11.2096 10.3192 11.0611 10.4639 10.9469 10.5934C10.8327 10.7229 10.7413 10.8561 10.6727 10.9932C10.6118 11.1303 10.5661 11.2788 10.5356 11.4387C10.5128 11.5987 10.5014 11.7891 10.5014 12.0099H9.22195ZM9.22195 12.7182H10.5128V14.1689H9.22195V12.7182Z" fill="#423A2F"/>
+    </svg>`; // Ваш SVG код
+    productCard.appendChild(productReview);
+    productSize.appendChild(iconInfo); // Переместили сюда
+
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+    productInfo.innerHTML = 'Предоставленная на сайте информация носит ознакомительный характер и не является публичной офертой.Наличие и актуальную цену уточняйте у менеджеров отдела продаж.';
+    iconInfo.appendChild(productInfo);
+
+    // Отображаем свойства продукта
+    keysToDisplay.forEach(key => {
+        if (content[key] !== undefined) {
+            const listItem = document.createElement('li');
+            listItem.classList.add('product-item');
+            const spanSpecies = document.createElement('span');
+            spanSpecies.classList.add('species');
+            spanSpecies.textContent = key;
+            listItem.appendChild(spanSpecies);
+
+            // Если ключ "Цвет", нужно отобразить только фиалковый
+            if (key === "Цвет") {
+                const purpleColor = content[key]["фиалковый"];
+                if (purpleColor) {
+                    const spanLook = document.createElement('span');
+                    spanLook.classList.add('look');
+                    spanLook.textContent = purpleColor;
+                    listItem.appendChild(spanLook);
+                    productList.appendChild(listItem);
+                }
+            } else {
+                const spanLook = document.createElement('span');
+                spanLook.classList.add('look');
+                spanLook.textContent = content[key];
+                listItem.appendChild(spanLook);
+                productList.appendChild(listItem);
+            }
+        }
+    });
+    productCard.appendChild(productContent);
+    viewCards.appendChild(productCard);
+    productCardsContainer.appendChild(viewCards);
+    
+    
+};

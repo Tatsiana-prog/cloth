@@ -366,16 +366,9 @@ function showNewFormat(index) {
     const product = data[index]; // Получаем выбранный продукт
     localStorage.setItem('selectedProduct', JSON.stringify(product)); // Сохраняем продукт в localStorage
     window.location.href = 'newcard.html'; // Перенаправляем на новую страницу
-}
-// Функция для возврата к первоначальному виду карточек
-function goBack() {
-    const productCardsContainer = document.querySelector('.products-cards');
-    productCardsContainer.innerHTML = ''; // Очистить контейнер
-    displayCards(originalCards); // Отображаем оригинальные карточки
+    }
 
-    // Скрыть кнопку назад
-    document.getElementById('back-button').style.display = 'none';
-}
+
 
 function createOrderWindow() {
     const productsCardsContainer = document.getElementById('products-cards');

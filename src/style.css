@@ -609,10 +609,6 @@ textarea::placeholder {
   margin: 0 auto;
 }
 
-.section-card .product-card {
-  display: none;
-}
-
 .card-row {
   display: flex;
   column-gap: 33px;
@@ -928,6 +924,11 @@ textarea::placeholder {
   font-family: "Involve", sans-serif;
   font-weight: 500;
   margin-bottom: 57px;
+}
+
+.view-cards {
+  height: 400px;
+  background: #692F6C;
 }
 
 .count-card {
