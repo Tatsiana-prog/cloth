@@ -1,17 +1,15 @@
-// Обработчик события загрузки страницы
-document.addEventListener('DOMContentLoaded', () => {
+ // Обработчик события загрузки страницы
+ document.addEventListener('DOMContentLoaded', () => {
     const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
-
     if (selectedProduct) {
         displaySelectedCard(selectedProduct);
         addToSelectedProducts(selectedProduct); // Добавляем продукт в массив выбранных продуктов
-
+    
     } else {
         console.error('Нет выбранного продукта');
     }
-
+});   
     renderSelectedProducts(); // Отображаем все выбранные карточки при загрузке
-});
 
 function displaySelectedCard(product) {
     const productCardsContainer = document.querySelector('.products-cards');
@@ -375,19 +373,21 @@ decreaseButton.addEventListener('click', () => {
 });
 }
 
+
+
 function viewSelectedCards(product) {
         // Получение текущих выбранных продуктов из localStorage
-        let selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+let selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
     
-        // Проверка на дублирование
-        const productExists = selectedProducts.some(item => item.id === product.id); // предполагая, что у продукта есть уникальный id
-        if (!productExists) {
-            // Добавление нового продукта
-            selectedProducts.push(product);
-            // Сохранение обновленного списка в localStorage
-            localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
-        }
-
+       // Проверка на дублирование
+    const productExists = selectedProducts.some(item => item.id === product.id); // предполагая, что у продукта есть уникальный id
+    if (!productExists) {
+        // Добавление нового продукта
+        selectedProducts.push(product);
+        // Сохранение обновленного списка в localStorage
+        localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+    }
+    const productCardsContainer = document.querySelector('.products-cards');
     const viewCards = document.createElement('div');
     viewCards.className = 'view-cards';
     const productCard = document.createElement('div');
@@ -533,14 +533,24 @@ function viewSelectedCards(product) {
     
 };
 
+function addToSelectedProducts(product) {
+    let selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+    // Проверяем, есть ли уже этот продукт в массиве по уникальному идентификатору (например, id)
+const productExists = selectedProducts.some(existingProduct => existingProduct.id === product.id);
+
+if (!productExists) {
+    selectedProducts.push(product);
+    localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts)); // Сохраняем обратно в localStorage
+} else {
+    console.log('Этот продукт уже был добавлен.');
+}}
+
 // Функция для отображения всех выбранных карточек
 function renderSelectedProducts() {
     const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
-    
     selectedProducts.forEach(product => {
         viewSelectedCards(product); // Создаем карточку для каждого продукта
-    });
-}
+    });}
 
 // Обработчик события загрузки страницы
 document.addEventListener('DOMContentLoaded', () => {
