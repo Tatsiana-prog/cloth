@@ -1,5 +1,7 @@
 .section-card .product-card {
-    
+    display: inline-block;
+    margin-right: 12px;
+    margin-bottom: 12px;
 }
 
 .card-row {
@@ -9,9 +11,9 @@
 }
 .wrapper-card {
     position: relative;
+    padding: 37px 90px 37px 81px;
 }
 .card {
-    padding: 37px 90px;
     position: relative;
 }
 .card-image {
@@ -295,12 +297,10 @@
    font-size: 18px;
    font-family: 'Involve', sans-serif;
    font-weight: 500;
-   margin-bottom: 57px;
 }
-.view-cards {
-    display: flex;
-    column-gap: 12px;
-    flex-wrap: wrap;
-    height: 400px;
-    background: red;
+.view-title {
+   margin: 57px 0 10px;
+   font-family: 'Involve', sans-serif;
+   font-size: 18px;
+   color: rgba(83, 69, 50, 0.56);
 }

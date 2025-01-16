@@ -291,8 +291,11 @@ decreaseButton.addEventListener('click', () => {
      cardData.textContent = product.data;
      cardBlock.appendChild(cardData);
 
-     const viewCards = document.createElement('div');
-     viewCards.className = 'view-cards';
+     const viewTitle = document.createElement('p');
+     viewTitle.innerHTML = `Вы смотрели ткани:`;
+     viewTitle.className = 'view-title';
+     cardBlock.appendChild(viewTitle);
+    
 
   card.appendChild(btnBackWrapper);
   card.appendChild(cardRow);
@@ -303,6 +306,7 @@ decreaseButton.addEventListener('click', () => {
   cardDescription.appendChild(cardContentWrapper);
 
   card.appendChild(cardBlock);
+  
   productCardsContainer.appendChild(card);
 
   // Добавляем карточку на страницу
@@ -388,8 +392,8 @@ let selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [
         localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
     }
     const productCardsContainer = document.querySelector('.products-cards');
-    const viewCards = document.createElement('div');
-    viewCards.className = 'view-cards';
+    //const viewCards = document.createElement('div');
+    //viewCards.className = 'view-cards';
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
 
@@ -527,8 +531,8 @@ let selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [
         }
     });
     productCard.appendChild(productContent);
-    viewCards.appendChild(productCard);
-    productCardsContainer.appendChild(viewCards);
+    //viewCards.appendChild(productCard);
+    productCardsContainer.appendChild(productCard);
     console.log(product);
     
 };
