@@ -3,14 +3,15 @@
     margin-right: 12px;
     margin-bottom: 12px;
 }
-
+body {
+    position: relative;
+}
 .card-row {
     display: flex;
     column-gap: 33px;
     justify-content: space-between;
 }
 .wrapper-card {
-    position: relative;
     padding: 37px 90px 37px 81px;
 }
 .card {

@@ -1,7 +1,10 @@
+
+
+
 //window-delivery
 .window-delivery {
     position: absolute;
-    top:20%;
+    top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 76px 120px 93px 120px;
@@ -15,7 +18,7 @@
     background: $color-white;
     display: none;
     opacity: 1;
-    z-index: 1000;
+    z-index: 2000;
 }
 .window-title {
     color:$color-purple;
@@ -64,7 +67,7 @@
 .window-payment {
     display: none;
     position: absolute;
-    top:40%;
+    top:25%;
     left: 50%;
     width: 1200px;
     transform: translate(-50%, -50%);
@@ -73,13 +76,13 @@
     border-radius: 34px;
     overflow: hidden;
     font-size: 28px;
-    z-index: 1000;
+    z-index: 3000;
     background: $color-white;
 }
 .window-possibilities {
     display: none;
     position: absolute;
-    top:40%;
+    top:25%;
     left: 50%;
     width: 1200px;
     transform: translate(-50%, -50%);
@@ -90,7 +93,7 @@
     overflow: hidden;
     font-size: 28px;
     background: $color-white;
-    z-index: 1000;
+    z-index: 3000;
     & .window-text {
         margin-top: 5px;
         margin-bottom: 34px;
@@ -104,7 +107,7 @@
     width: 100%;
     height: 100vh;
     background:rgba(64, 37, 37, 0.8);
-    z-index: 2008;
+    z-index: 1000;
 }
 
 //window-order
