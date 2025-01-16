@@ -11,19 +11,28 @@
     "image4": "./public/img/products/flis/onesided/product1/img4.png",
     "data": "Ткань флис одностороннее полотно. Полимерный полиэстер. Полотно ткани содержит  другие нити, это даёт преимущества, для таких как: полное отсутствие скрипучести, ткань не электризуется, не оставляет катошки, не выгорает и не выстирывается цвет. Применяется высококачественные краски. Флис быстро сохнет. Используется как подкладочная ткань для пошива 2-го слоя.",
     "content": {
-      "Плотность": "140г/м2",
-      "Цвет": {
-        "первый цвет": "первый цвет",
-        "второй цвет": "второй цвет",
-        "третий цвет": "третий цвет",
-        "четвертый цвет": "четвертый цвет",
-        "фиалковый": "фиалковый"
+        "Плотность": "140г/м2",
+         "Цвет": {
+            "первый цвет": "первый цвет",
+            "второй цвет": "второй цвет",
+            "третий цвет": "третий цвет",
+            "четвертый цвет": "четвертый цвет",
+            "фиалковый": "фиалковый"
+        },
+        "color-image":{
+          "первый цвет": {
+             "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+             "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+             "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+             "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+          }  
       },
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
     }
+    
   },
 
   { "id": 2,
@@ -45,11 +54,20 @@
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
       },
+      "color-image":{
+        "первый цвет":{
+            "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+            "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+            "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+            "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+        }
+      },
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
-    }
+    }   
+
   },
   { "id": 3,
     "name": "Флис",
@@ -70,11 +88,21 @@
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
       },
+      "color-image":{
+        "первый цвет":{
+            "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+            "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+            "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+            "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+        },
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
-    }
+    }}
+   
+
+   
   },
   { "id": 4,
     "name": "Флис",
@@ -95,10 +123,18 @@
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
       },
+      "color-image":{
+        "первый цвет":{
+            "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+            "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+            "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+            "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+        },
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
+    }
     }
   },
   { "id": 5,
@@ -121,11 +157,19 @@
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
       },
+      "color-image":{
+        "первый цвет":{
+            "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+            "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+            "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+            "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+        },
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
-    }
+    }}
+    
   },
 
   
@@ -147,6 +191,14 @@
         "третий цвет": "третий цвет",
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
+      },
+      "color-image":{
+        "первый цвет":{
+            "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+            "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+            "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+            "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+        }
       },
       "Состав": "100% полиэстер",
      "ширина": "150-220",
@@ -174,10 +226,19 @@
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
       },
+      "color-image":{
+        "первый цвет":{
+            "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+            "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+            "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+            "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+      },
+  
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
+    }
     }
   },
   { "id": 8,
@@ -198,7 +259,15 @@
         "третий цвет": "третий цвет",
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
-},
+    },
+    "color-image":{
+      "первый цвет":{
+          "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+          "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+          "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+          "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+      }
+    },
       "Состав": "100% полиэстер",
       "ширина": "150-220",
       "Страна производитель": "Китай",
@@ -225,12 +294,20 @@
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
       },
+      "color-image":{
+        "первый цвет":{
+            "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+            "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+            "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+            "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+        }},
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
     }
-  },
+  }
+ ,
   { "id": 10,
     "name": "Флис",
     "description": "Флис двуxcторонний",
@@ -249,14 +326,21 @@
         "третий цвет": "третий цвет",
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
-
       },
+      "color-image":{
+        "первый цвет":{
+            "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+            "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+            "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+            "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+        }},
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
     }
-  }, 
+  }
+  ,
 
   { "id": 11,
     "name": "Флис",
@@ -276,6 +360,14 @@
           "третий цвет": "третий цвет",
           "четвертый цвет": "четвертый цвет",
           "фиалковый": "фиалковый"
+        },
+        "color-image":{
+          "первый цвет":{
+              "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+              "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+              "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+              "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+          }
         },
         "Состав": "100% полиэстер",
        "ширина": "150-220",
@@ -303,6 +395,14 @@
         "четвертый цвет": "четвертый цвет",
         "фиалковый": "фиалковый"
       },
+      "color-image":{
+        "первый цвет":{
+            "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+            "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+            "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+            "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+        }
+      },
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
@@ -328,6 +428,14 @@
       "третий цвет": "третий цвет",
       "четвертый цвет": "четвертый цвет",
       "фиалковый": "фиалковый"
+    },
+    "color-image":{
+      "первый цвет":{
+          "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+          "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+          "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+          "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+      }
     },
     "Состав": "100% полиэстер",
    "ширина": "150-220",
@@ -355,13 +463,21 @@
       "четвертый цвет": "четвертый цвет",
       "фиалковый": "фиалковый"
     },
+    "color-image":{
+      "первый цвет":{
+          "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+          "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+          "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+          "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+      }
+    },
     "Состав": "100% полиэстер",
    "ширина": "150-220",
     "Страна производитель": "Китай",
     "Цена": "от 500р /кг (5 п / м)"
   }
-} ,
-{
+  } ,
+  {
   "id": 15,
   "name": "Футер",
 "description": "Футер 2-х нитка",
@@ -385,6 +501,14 @@
  "ширина": "150-220",
   "Страна производитель": "Китай",
   "Цена": "от 500р /кг (5 п / м)"
+  },
+  "color-image":{
+    "первый цвет":{
+        "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+        "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+        "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+        "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+    }
   }
 },
 {
@@ -408,14 +532,20 @@
         "фиалковый": "фиалковый"
 
     },
+    "color-image":{
+      "первый цвет":{
+          "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+          "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+          "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+          "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+      }
+    },
     "Состав": "100% полиэстер",
    "ширина": "150-220",
     "Страна производитель": "Китай",
     "Цена": "от 500р /кг (5 п / м)"
   }
 } ,
-
-
 
 { "id": 17,
   "name": "Футер",
@@ -436,12 +566,20 @@
     "четвертый цвет": "четвертый цвет",
     "фиалковый": "фиалковый"
 },
+"color-image":{
+  "первый цвет":{
+      "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+      "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+      "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+      "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+  }
+},
   "Состав": "100% полиэстер",
  "ширина": "150-220",
   "Страна производитель": "Китай",
   "Цена": "от 500р /кг (5 п / м)"
   }
-} ,
+},
 {
   "id": 18,
   "name": "Футер",
@@ -461,6 +599,14 @@
     "третий цвет": "третий цвет",
     "четвертый цвет": "четвертый цвет",
     "фиалковый": "фиалковый"
+  },
+  "color-image":{
+    "первый цвет":{
+        "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+        "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+        "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+        "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+    }
   },
   "Состав": "100% полиэстер",
  "ширина": "150-220",
@@ -488,6 +634,14 @@
     "четвертый цвет": "четвертый цвет",
     "фиалковый": "фиалковый"
 },
+"color-image":{
+  "первый цвет":{
+      "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+      "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+      "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+      "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+  }
+},
   "Состав": "100% полиэстер",
  "ширина": "150-220",
   "Страна производитель": "Китай",
@@ -513,6 +667,14 @@
     "четвертый цвет": "четвертый цвет",
     "фиалковый": "фиалковый"
 },
+"color-image":{
+  "первый цвет":{
+      "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+      "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+      "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+      "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+  }
+},
   "Состав": "100% полиэстер",
  "ширина": "150-220",
   "Страна производитель": "Китай",
@@ -537,6 +699,14 @@
     "третий цвет": "третий цвет",
     "четвертый цвет": "четвертый цвет",
     "фиалковый": "фиалковый"
+},
+"color-image":{
+  "первый цвет":{
+      "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+      "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+      "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+      "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+  }
 },
   "Состав": "100% полиэстер",
  "ширина": "150-220",
@@ -564,10 +734,18 @@
     "четвертый цвет": "четвертый цвет",
     "фиалковый": "фиалковый"
 },
+"color-image":{
+  "первый цвет":{
+      "image1": "./public/img/products/flis/onesided/product1/color-red/img1.jpg",
+      "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
+      "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
+      "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
+  }
+},
   "Состав": "100% полиэстер",
  "ширина": "150-220",
   "Страна производитель": "Китай",
   "Цена": "от 500р /кг (5 п / м)"
   }
-}
+ }
 ]

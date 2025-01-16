@@ -142,25 +142,33 @@ function displaySelectedCard(product) {
       label.appendChild(iconColor);
       iconColor.appendChild(iconImg);
   }
-
-  // Обработка события выбора радиокнопки
   colorWrapper.addEventListener('change', function(event) {
-      if (event.target.name.includes('color')) {  // Проверяем, что это выбор цвета
-          const selectedColorKey = event.target.value;
-          selectedColor = product.content['Цвет'][selectedColorKey]; // Сохраняем выбранный цвет
+    if (event.target.name.includes('color')) {
+        const selectedColorKey = event.target.value;
+        selectedColor = product.content['Цвет'][selectedColorKey];
 
-          // Обновляем элемент для текущей карточки
-          const colorLi = card.querySelector('.card-item.color'); // Используем card как родитель
-          if (colorLi) {
-              const itemMean = colorLi.querySelector('.item-mean');
-              itemMean.textContent = selectedColor || 'Не указано';
-          }
+        const colorImages = product.content['color-image'][selectedColorKey];
+        if (colorImages) {
+            const colorImageElement = card.querySelector('.card-image img');
+            if (colorImageElement) {
+                colorImageElement.src = colorImages.image1; // Обновляем источник основного изображения на основе выбранного цвета
+            }
 
-          // Дополнительные действия, например, вывод в консоль
-          console.log(`Выбранный цвет для товара ${product.id}:`, selectedColor);
-      }
-  });
+            const smallImages = card.querySelectorAll('.card-image_wrapper img');
+            smallImages.forEach((img, index) => {
+                img.src = colorImages[`image${index + 2}`]; // Обновляем источник каждого маленького изображения на основе выбранного цвета
+            });
+        }
 
+        const colorLi = card.querySelector('.card-item.color');
+        if (colorLi) {
+            const itemMean = colorLi.querySelector('.item-mean');
+            itemMean.textContent = selectedColor || 'Не указано';
+        }
+
+        console.log(`Выбранный цвет для товара ${product.id}:`, selectedColor);
+    }
+});
   legendColor.appendChild(colorWrapper);
   cardBox.appendChild(fieldsetColor);
 
