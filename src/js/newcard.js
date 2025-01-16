@@ -1,18 +1,16 @@
-
-
-
+// Обработчик события загрузки страницы
 document.addEventListener('DOMContentLoaded', () => {
     const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
-    
-    
+
     if (selectedProduct) {
         displaySelectedCard(selectedProduct);
-        viewSelectedCards(selectedProduct);
-       
-         // Вызовите функцию для отображения выбранной карточки
+        addToSelectedProducts(selectedProduct); // Добавляем продукт в массив выбранных продуктов
+
     } else {
         console.error('Нет выбранного продукта');
     }
+
+    renderSelectedProducts(); // Отображаем все выбранные карточки при загрузке
 });
 
 function displaySelectedCard(product) {
@@ -376,7 +374,20 @@ decreaseButton.addEventListener('click', () => {
     document.getElementById('back-button').style.display = 'block';
 });
 }
+
 function viewSelectedCards(product) {
+        // Получение текущих выбранных продуктов из localStorage
+        let selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+    
+        // Проверка на дублирование
+        const productExists = selectedProducts.some(item => item.id === product.id); // предполагая, что у продукта есть уникальный id
+        if (!productExists) {
+            // Добавление нового продукта
+            selectedProducts.push(product);
+            // Сохранение обновленного списка в localStorage
+            localStorage.setItem('selectedProducts', JSON.stringify(selectedProducts));
+        }
+
     const viewCards = document.createElement('div');
     viewCards.className = 'view-cards';
     const productCard = document.createElement('div');
@@ -518,6 +529,20 @@ function viewSelectedCards(product) {
     productCard.appendChild(productContent);
     viewCards.appendChild(productCard);
     productCardsContainer.appendChild(viewCards);
-    
+    console.log(product);
     
 };
+
+// Функция для отображения всех выбранных карточек
+function renderSelectedProducts() {
+    const selectedProducts = JSON.parse(localStorage.getItem('selectedProducts')) || [];
+    
+    selectedProducts.forEach(product => {
+        viewSelectedCards(product); // Создаем карточку для каждого продукта
+    });
+}
+
+// Обработчик события загрузки страницы
+document.addEventListener('DOMContentLoaded', () => {
+    renderSelectedProducts(); // Отображаем все выбранные карточки при загрузке
+});

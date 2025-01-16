@@ -927,8 +927,11 @@ textarea::placeholder {
 }
 
 .view-cards {
+  display: flex;
+  column-gap: 12px;
+  flex-wrap: wrap;
   height: 400px;
-  background: #692F6C;
+  background: red;
 }
 
 .count-card {

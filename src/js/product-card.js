@@ -369,7 +369,6 @@ function showNewFormat(index) {
     }
 
 
-
 function createOrderWindow() {
     const productsCardsContainer = document.getElementById('products-cards');
     const windowOrder = document.createElement('div');
