@@ -50,7 +50,7 @@ function displayCards(productsData) {
       };
 
       productImage.appendChild(image);
-      productCard.appendChild(productImage);     
+      productCard.appendChild(productImage);
 
       const productContent = document.createElement('div');
       productContent.classList.add('product-content');
@@ -80,9 +80,6 @@ function displayCards(productsData) {
       productSize.appendChild(sizeText);
       productContent.appendChild(productSize);
 
-
-      
-
       // Кнопка "Заказать образец ткани"
       const btnWrapper = document.createElement('div');
       btnWrapper.classList.add('product-card__button-wrapper');
@@ -111,9 +108,7 @@ function displayCards(productsData) {
       productCard.appendChild(productStock);
       productCard.appendChild(productOrder);
 
-      // Отзывы
-
-       // Example index value
+      // Example index value
       const productReview = document.createElement('button');
       productReview.classList.add('product-review');
       productReview.innerHTML = `<svg width="48" height="47" viewBox="0 0 48 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -121,37 +116,21 @@ function displayCards(productsData) {
       <path d="M12.1533 23.0557C12.1533 23.0557 16.1533 15.0557 23.1533 15.0557C30.1533 15.0557 34.1533 23.0557 34.1533 23.0557C34.1533 23.0557 30.1533 31.0557 23.1533 31.0557C16.1533 31.0557 12.1533 23.0557 12.1533 23.0557Z" stroke="#692F6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M23.1533 26.0557C24.8102 26.0557 26.1533 24.7125 26.1533 23.0557C26.1533 21.3988 24.8102 20.0557 23.1533 20.0557C21.4965 20.0557 20.1533 21.3988 20.1533 23.0557C20.1533 24.7125 21.4965 26.0557 23.1533 26.0557Z" stroke="#692F6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>`; // Ваш SVG код
-      
-     /* productReview.addEventListener('click', () =>  {
-        const orderName = document.querySelector('.order-name');
-        orderName.innerHTML = '';
 
-        createOrderWindow(productName);
-        overlay.style.display = 'block';
-        console.log("ghbdtn");
-       
-    });*/
     const buttons = document.querySelectorAll('.product-review');
 
     buttons.forEach((button) => {
         button.addEventListener('click', handleClick);
     });
-    
+
     function handleClick() {
-        const orderName = document.querySelector('.order-name');
-        orderName.innerHTML = '';
-    
-        const productName = this.dataset.productName;
-    
-        createOrderWindow(productName);
+        createOrderWindow();
         overlay.style.display = 'block';
         windowOrder.style.display = 'block';
         console.log("ghbdtn");
     }
 
-       
     productCard.appendChild(productReview);
-    
       const iconInfo = document.createElement('span');
       iconInfo.classList.add('icon-info');
       iconInfo.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -199,10 +178,6 @@ function displayCards(productsData) {
       productCardsContainer.appendChild(productCard);
   });
 }
-
-
-
-
 
 // Клики по кнопкам
 const productCardsContainer = document.querySelector('.products-cards');
@@ -275,7 +250,6 @@ custom2Button.addEventListener('click', () => {
     content3.style.display = "none";
     content2.style.display = "none";
 });
-
 
 const btnSelection1 = document.getElementById('selection-1');
 btnSelection1.addEventListener('click', () => {
@@ -361,18 +335,16 @@ document.addEventListener('DOMContentLoaded', () => {
     displayCards(data); // Показываем начальные карточки
 });
 
-
 function showNewFormat(index) {
     const product = data[index]; // Получаем выбранный продукт
     localStorage.setItem('selectedProduct', JSON.stringify(product)); // Сохраняем продукт в localStorage
     window.location.href = 'newcard.html'; // Перенаправляем на новую страницу
     }
 
-
 function createOrderWindow() {
     const productsCardsContainer = document.getElementById('products-cards');
     const windowOrder = document.createElement('div');
-    windowOrder.className = 'window-order';
+    windowOrder.className = 'window-order';   
 
     const windowTitle = document.createElement('div');
     windowTitle.className = 'window-title';
@@ -385,13 +357,6 @@ function createOrderWindow() {
         <div class="order-desc"></div>
         <div class="order-color"></div>
     `;
-    
-    const productName = document.querySelector('.product-name').textContent;
-    const orderName = orderBox.querySelector('.order-name');
-    orderName.textContent = productName;
-
-    const btnClose = document.createElement('div');
-    btnClose.className = 'btn-close';
 
     const orderFormWrapper = document.createElement('div');
     orderFormWrapper.className = 'order-form__wrapper';
@@ -429,27 +394,27 @@ function createOrderWindow() {
         </span></button>
     `;
 
+    const btnClose = document.createElement('div');
+    btnClose.className = 'btn-close';
+
+    
+    // Append all elements
     form.appendChild(inputBoxes);
     form.appendChild(textarea);
     form.appendChild(inputBox);
     form.appendChild(btnWrapper);
     orderFormWrapper.appendChild(form);
-    
-    windowOrder.appendChild(btnClose);
+
     windowOrder.appendChild(windowTitle);
     windowOrder.appendChild(orderBox);
     windowOrder.appendChild(orderFormWrapper);
-    
+    windowOrder.appendChild(btnClose);
+    windowOrder.appendChild(btnWind);
     productsCardsContainer.appendChild(windowOrder);
 }
 
-// Call the function to create the order window
-
-
-
 // Инициализация отображения карточек после загрузки данных из JSON файла
 loadDataFromJson();
-
 
 
 

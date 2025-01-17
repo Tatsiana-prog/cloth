@@ -61,6 +61,7 @@ function createOrderWindow() {
     windowOrder.appendChild(windowTitle);
     windowOrder.appendChild(orderBox);
     windowOrder.appendChild(orderFormWrapper);
+    windowOrder.appendChild(btnClose);
     productsCardsContainer.appendChild(windowOrder);
 }
 

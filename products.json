@@ -25,14 +25,13 @@
              "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
              "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
              "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
-          }  
+          }
       },
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
     }
-    
   },
 
   { "id": 2,
@@ -66,8 +65,7 @@
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
-    }   
-
+    }
   },
   { "id": 3,
     "name": "Флис",
@@ -94,16 +92,13 @@
             "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
             "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
             "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
-        },
+        }},
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
     }}
-   
-
-   
-  },
+  ,
   { "id": 4,
     "name": "Флис",
     "description": "Флис односторонний",
@@ -129,14 +124,14 @@
             "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
             "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
             "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
-        },
+        }},
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
     }
-    }
-  },
+    },
+  
   { "id": 5,
     "name": "Флис",
     "description": "Флис односторонний",
@@ -163,14 +158,12 @@
             "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
             "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
             "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
-        },
+        }},
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
-    }}
-    
-  },
+    }},
 
   
     { "id": 6,
@@ -209,7 +202,7 @@
   {
      "id": 7,
     "name": "Флис",
-    "description": "Флис двуxcторонний",
+    "description": "Флис двуxcтороннний",
     "category": "ткань Флис",
     "sale":"В наличии",
     "image1": "./public/img/products/flis/twosided/product2/img1.jpg",
@@ -232,15 +225,15 @@
             "image2": "./public/img/products/flis/onesided/product1/color-red/img2.png",
             "image3": "./public/img/products/flis/onesided/product1/color-red/img3.png",
             "image4": "../public/img/products/flis/onesided/product1/color-red/img4.png"
-      },
+      }},
   
       "Состав": "100% полиэстер",
      "ширина": "150-220",
       "Страна производитель": "Китай",
       "Цена": "от 500р /кг (5 п / м)"
     }
-    }
-  },
+    },
+  
   { "id": 8,
     "name": "Флис",
     "description": "Флис двуxcторонний",

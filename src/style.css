@@ -697,6 +697,71 @@ body {
   cursor: pointer;
 }
 
+.menu-width {
+  position: absolute;
+  right: 6px;
+  top: 90px;
+  padding: 10px 20px;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  font-size: 18px;
+  color: #692F6C;
+  font-style: italic;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Involve, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu-width:hover {
+  color: #2AABEE;
+}
+.menu-width:hover .icon-hover {
+  fill: #2AABEE;
+}
+.menu-width:hover .width-wrapper {
+  display: flex;
+}
+
+.width-wrapper {
+  top: 40px;
+  position: absolute;
+  display: flex;
+  column-gap: 18px;
+  padding: 15px 26px;
+  background: #FCF7F7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 22px;
+  display: none;
+  color: #692F6C;
+}
+
+.width-wrapper div {
+  display: flex;
+}
+
+.custom-width {
+  display: flex;
+  column-gap: 6px;
+}
+
+.icon-label {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.icon-check {
+  opacity: 0;
+}
+
+.input-width[type=radio]:checked + .custom-width .icon-label .icon-check {
+  opacity: 1;
+}
+
 .card-list {
   position: relative;
   margin-bottom: 20px;
@@ -706,6 +771,14 @@ body {
   display: flex;
   column-gap: 24px;
   margin-bottom: 12px;
+}
+
+.card-item:nth-child(4) {
+  height: 90px;
+}
+
+.card-item:nth-child(4) .item-name::before {
+  top: 15px;
 }
 
 .item-name {
@@ -723,7 +796,7 @@ body {
   content: "";
   position: absolute;
   bottom: 5px;
-  right: 0;
+  right: -2px;
   background: rgba(81.81, 68.03, 49.09, 0.56);
   width: 70%;
   height: 1px;
@@ -884,7 +957,7 @@ body {
 }
 
 /* Hide the default checkbox */
-.input-color[type=radio] {
+.input-color[type=radio], .input-width[type=radio] {
   display: none;
 }
 
@@ -1033,7 +1106,7 @@ body {
   margin-bottom: 0;
 }
 
-.btn-close {
+.btn-close, .wind-close {
   display: block;
   position: absolute;
   top: 10px;
@@ -1044,6 +1117,7 @@ body {
   background: url(../../../public/img/icons/icon-close.png) no-repeat center;
   background-size: cover;
   cursor: pointer;
+  z-index: 2050;
 }
 
 .window-payment {

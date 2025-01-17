@@ -50,7 +50,7 @@
 .window-item:last-child {
     margin-bottom: 0;
 }
-.btn-close {
+.btn-close, .wind-close {
     display: block;
     position: absolute;
     top:10px;
@@ -61,6 +61,7 @@
     background: url(../../../public/img/icons/icon-close.png) no-repeat center;
     background-size: cover;
     cursor: pointer;
+    z-index: 2050;
 }
 
 //window-payment
