@@ -71,13 +71,11 @@ body {
     background-size: contain;
     color:$color-white;
     cursor: pointer;
-
     font-size: 18px;
     font-family: Involve, sans-serif;
     font-weight: 600;
     cursor: pointer;
 }
-
 .menu-width {
     position: absolute;
     right: 6px;
@@ -96,7 +94,6 @@ body {
     font-weight: 500;
     cursor: pointer;
 }
-
 .menu-width:hover {
     color:$color-blue;
     & .icon-hover {
@@ -106,7 +103,6 @@ body {
         display: flex;
     }
 }
-
 .width-wrapper {
     top:40px;
     position: absolute;
@@ -119,7 +115,6 @@ body {
     display: none;
     color:$color-purple;
 }
-
 .width-wrapper div {
     display: flex;
 }
@@ -133,16 +128,12 @@ body {
     border-radius: 50%;
     background: #fff;
 }
-
 .icon-check {
     opacity: 0;
 }
-
 .input-width[type="radio"]:checked + .custom-width .icon-label .icon-check {
     opacity: 1;
 }
-
-
 .card-list {
     position: relative;
     margin-bottom: 20px;
@@ -153,11 +144,9 @@ body {
     margin-bottom: 12px;
     //justify-content: space-between
 }
-
 .card-item:nth-child(4) {
     height: 90px;
 }
-
 .card-item:nth-child(4) .item-name::before {
     top: 15px;
 }
@@ -239,7 +228,6 @@ body {
     background: $color-white;
     cursor: pointer;
 }
-
 .card-btn2 {
    width: 326px;
    height: 54px;
@@ -250,7 +238,6 @@ body {
    align-items: center;
    gap: 10px;
    display: inline-flex;
-
    color: white;
    font-size: 14px;
    font-family: Involve, sans-serif;
@@ -298,12 +285,10 @@ body {
     word-wrap: break-word;
     color:$color-dark;
 }
-
 .item-mean {
     font-size: 18px;
     color:$color-purple;
 }
-
 .color-wrapper {
    position: absolute;
    top:35px;
@@ -328,7 +313,6 @@ body {
 .input-color[type="radio"], .input-width[type="radio"] {
     display: none;
 }
-
 .custom-color {
     display: flex;
     justify-content: space-between;
@@ -338,7 +322,6 @@ body {
     font-weight: 600;
     margin-bottom: 10px;
 }
-
 .icon-label {
     display: flex;
     justify-content: center;
@@ -348,13 +331,10 @@ body {
     border-radius: 50%;
 }
 
-
-
 /* Show the image when the radio button is checked */
 .input-color[type="radio"]:checked + .custom-color .icon-label .icon-check {
     opacity: 1;
 }
-
 .card-subtitle {
     font-family: 'Involve', sans-serif;
     font-size: 18px;

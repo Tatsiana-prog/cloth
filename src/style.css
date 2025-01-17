@@ -322,7 +322,7 @@ legend {
 }
 
 .link-social:hover, .link-phone:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: all 0.3s ease-in;
   color: #ffffff;
 }
@@ -1098,7 +1098,7 @@ body {
   margin-bottom: 0;
 }
 
-.btn-close, .wind-close {
+.btn-close {
   display: block;
   position: absolute;
   top: 10px;
