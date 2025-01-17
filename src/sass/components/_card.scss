@@ -348,17 +348,11 @@ body {
     border-radius: 50%;
 }
 
-.icon-img {
-    display: block;
-    width: 24px;
-    height: 24px;
-    background: rgb(239, 161, 135);
-}
+
 
 /* Show the image when the radio button is checked */
-.input-color[type="radio"]:checked .icon-img {
-    background: url("../../../public/img/icons/icon-check.svg") no-repeat center;
-    display: block;
+.input-color[type="radio"]:checked + .custom-color .icon-label .icon-check {
+    opacity: 1;
 }
 
 .card-subtitle {
